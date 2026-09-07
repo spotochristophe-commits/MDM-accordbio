@@ -7877,23 +7877,23 @@ function fsB(s) { if(s==='Validé'||s==='Remboursé') return 'badge-client'; if(
 document.addEventListener('keydown', e => { if(e.key==='Escape') ['prospect','client','commande','frais'].forEach(closeModal); });
 // Config Firebase MDM 2026 — PROD (base réelle)
 const FIREBASE_CONFIG = {
-  apiKey:            "AIzaSyBk9X0E5XGx8GPXzZoD7bt4AdJE4NUwEyQ",
-  authDomain:        "bdcmdm26.firebaseapp.com",
-  projectId:         "bdcmdm26",
-  storageBucket:     "bdcmdm26.firebasestorage.app",
-  messagingSenderId: "907040110034",
-  appId:             "1:907040110034:web:3c5f1d4a3c56a7efe9840b"
+  apiKey: "AIzaSyBzJqYmivZ-dJxLDfPgujaTdPa4FsuRO4c",
+  authDomain: "bio-n-truffe.firebaseapp.com",
+  projectId: "bio-n-truffe",
+  storageBucket: "bio-n-truffe.firebasestorage.app",
+  messagingSenderId: "129941520406",
+  appId: "1:129941520406:web:bd70f730d72856e68a7537"
 };
 
 // Config Firebase — STAGING (bac à sable, données bidon). Utilisé UNIQUEMENT
 // si l'URL contient ?test  (ex: https://.../BioNTruffe/?test). Sinon = PROD.
 const FIREBASE_CONFIG_STAGING = {
-  apiKey:            "AIzaSyDWaz0ZGgc9Wiz0gRbrxr1nO4jMf0nhhec",
-  authDomain:        "bdcmdm26-staging.firebaseapp.com",
-  projectId:         "bdcmdm26-staging",
-  storageBucket:     "bdcmdm26-staging.firebasestorage.app",
-  messagingSenderId: "997211002087",
-  appId:             "1:997211002087:web:c066f014e94a45090afe42"
+  apiKey: "AIzaSyBzJqYmivZ-dJxLDfPgujaTdPa4FsuRO4c",
+  authDomain: "bio-n-truffe.firebaseapp.com",
+  projectId: "bio-n-truffe",
+  storageBucket: "bio-n-truffe.firebasestorage.app",
+  messagingSenderId: "129941520406",
+  appId: "1:129941520406:web:bd70f730d72856e68a7537"
 };
 
 // Interrupteur prod/test : ?test dans l'URL → bac à sable. Par défaut → PROD.
