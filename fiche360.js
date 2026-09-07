@@ -1,1 +1,1 @@
-// Module Fiche 360 - Stub
+// Module fiche360.js - Stub

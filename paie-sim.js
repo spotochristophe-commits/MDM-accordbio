@@ -1,1 +1,1 @@
-// Module Paie Simulateur - Stub
+// Module paie-sim.js - Stub

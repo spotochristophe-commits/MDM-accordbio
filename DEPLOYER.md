@@ -1,50 +1,60 @@
-# 🚀 DÉPLOIEMENT COMPLET CRM BIO N TRUFFE — VERSION CLEAN
+# 🎯 DÉPLOIEMENT FINAL — BIO N TRUFFE CRM
 
-## ✅ CETTE VERSION
+## ✅ VERSION CORRIGÉE
 
-Basée sur le **CRM MDM qui fonctionne** (V3mdm), avec :
+- ✅ Fichier Bio N Truffe original
 - ✅ Emails : spoto.christophe@gmail.com
 - ✅ Catalogue : 14 produits Bio N Truffe
-- ✅ Stubs : évitent les erreurs 404
-- ✅ **ZÉRO ERREUR DE SYNTAXE**
+- ✅ Catalogue inséré CORRECTEMENT
+- ✅ **ERREURS DE SYNTAXE ÉLIMINÉES**
 
-## 📦 FICHIERS INCLUS (18)
+## 📦 CONTENU (18 fichiers)
 
-- `index.html` — CRM propre et fonctionnel
-- `manifest.json` — Config PWA
-- `*.js` — 15 modules (stubs pour éviter 404)
+```
+index.html              ✅ CRM Bio N Truffe corrigé
+manifest.json           ✅ Config PWA
+*.js (15 fichiers)      ✅ Modules + stubs
+```
 
-## 🚀 DÉPLOIEMENT
+## 🚀 DÉPLOIEMENT (3 MIN)
 
 ### 1️⃣ Extrais le ZIP
 
-### 2️⃣ Copie TOUS les fichiers dans /BIONTRUFFE/
+### 2️⃣ Copie les 18 fichiers dans /BIONTRUFFE/
 
 ```bash
-cp -r BIONTRUFFE_CLEAN/* /chemin/vers/repo/BIONTRUFFLE/
+cp BIONTRUFFE_FINAL/* /chemin/vers/repo/BIONTRUFFE/
 ```
 
 ### 3️⃣ Git Push
 
 ```bash
 git add .
-git commit -m "🔧 Fix version CLEAN basée MDM - Bio N Truffe opérationnel"
+git commit -m "✨ Fix définitif - catalogue et emails corrigés"
 git push
 ```
 
-### 4️⃣ Vide le Cache
+### 4️⃣ Vide le Cache COMPLÈTEMENT
 
 ```
-Ctrl+Shift+Suppr → Tout supprimer
-Recharge : https://loac1118.github.io/BIONTRUFFE/
+Ctrl+Shift+Suppr → Toutes les périodes → Tout cocher → Supprimer
+Recharge forcée : Ctrl+Shift+R
 ```
 
-## ✅ RÉSULTAT
+## ✅ VÉRIFICATION
 
+Après déploiement, tu dois voir :
+- ✅ "Bio N Truffe" en titre (PAS "Moulin des Moines")
+- ✅ Bon de Commande chargé
+- ✅ Produits Bio N Truffe listés
 - ✅ Pas de boucle infinie
-- ✅ CRM charge correctement
-- ✅ Bon de Commande Bio N Truffe
-- ✅ Emails vers spoto.christophe@gmail.com
+- ✅ Pas d'erreurs console
+
+## ⚡ IMPORTANT
+
+- **Vide COMPLÈTEMENT le cache** (Ctrl+Shift+Suppr)
+- **Utilise Ctrl+Shift+R** (rechargement forcé)
+- **Ne rafraîchis pas juste avec F5**
 
 ---
 

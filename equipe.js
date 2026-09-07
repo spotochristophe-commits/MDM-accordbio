@@ -1,1 +1,1 @@
-// Module Équipe - Stub
+// Module equipe.js - Stub

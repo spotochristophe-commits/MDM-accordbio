@@ -1,1 +1,1 @@
-// Module BDC Suggest - Stub
+// Module bdc-suggest.js - Stub

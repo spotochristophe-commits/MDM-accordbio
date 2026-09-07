@@ -1,1 +1,1 @@
-// Module RGPD - Stub
+// Module rgpd.js - Stub

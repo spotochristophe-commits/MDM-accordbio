@@ -1,1 +1,1 @@
-// Module Remises Accord - Stub
+// Module remises-accord.js - Stub

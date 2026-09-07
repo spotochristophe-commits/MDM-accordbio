@@ -1,1 +1,1 @@
-// Module Alertes - Stub
+// Module alertes.js - Stub

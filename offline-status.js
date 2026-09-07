@@ -1,1 +1,1 @@
-// Module Offline Status - Stub
+// Module offline-status.js - Stub

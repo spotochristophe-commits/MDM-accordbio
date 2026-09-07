@@ -1,1 +1,1 @@
-// Module Visites - Stub
+// Module visites.js - Stub

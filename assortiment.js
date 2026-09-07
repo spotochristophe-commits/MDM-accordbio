@@ -1,1 +1,1 @@
-// Module Assortiment - Stub
+// Module assortiment.js - Stub
