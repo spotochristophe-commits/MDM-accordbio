@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bio N Truffe — Initialisation Firebase</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #e8f1de 0%, #f0f4f0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem;
+  }
+  
+  .container {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 10px 40px rgba(45, 80, 22, 0.15);
+    border: 1px solid #e8f1de;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a2f0d;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subtitle {
+    color: #74776f;
+    font-size: 0.9rem;
+  }
+  
+  .info-box {
+    background: #e8f1de;
+    border-left: 4px solid #2d5016;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    color: #4a4d49;
+    line-height: 1.5;
+  }
+  
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+  
+  label {
+    display: block;
+    font-weight: 600;
+    color: #4a4d49;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #dcdbd3;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #2d5016;
+    box-shadow: 0 0 0 3px #e8f1de;
+  }
+  
+  input:disabled {
+    background: #f3f2ed;
+    cursor: not-allowed;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: #2d5016;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .btn:hover:not(:disabled) {
+    background: #234010;
+    transform: translateY(-1px);
+  }
+  
+  .btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .message {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    display: none;
+  }
+  
+  .message.success {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #6ee7b7;
+    display: block;
+  }
+  
+  .message.error {
+    background: #fee2e2;
+    color: #7f1d1d;
+    border: 1px solid #fca5a5;
+    display: block;
+  }
+  
+  .message.info {
+    background: #dbeafe;
+    color: #1e3a8a;
+    border: 1px solid #93c5fd;
+    display: block;
+  }
+  
+  .spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255,255,255,.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  .link {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .link a {
+    color: #2d5016;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .link a:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <div class="icon">🍄</div>
+    <div class="title">Bio N Truffe CRM</div>
+    <div class="subtitle">Initialisation Firebase</div>
+  </div>
+  
+  <div class="info-box">
+    ✅ Cette page initialise Firebase et crée votre compte administrateur pour accéder au CRM Bio N Truffe.
+  </div>
+  
+  <form id="init-form" onsubmit="handleInit(event)">
+    <div class="form-group">
+      <label for="email">Email Admin</label>
+      <input type="email" id="email" value="spoto.christophe@gmail.com" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" placeholder="Minimum 6 caractères" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="password-confirm">Confirmer le mot de passe</label>
+      <input type="password" id="password-confirm" placeholder="Répéter le mot de passe" required>
+    </div>
+    
+    <button type="submit" class="btn" id="btn-init">Initialiser le compte admin</button>
+  </form>
+  
+  <div id="message" class="message"></div>
+  
+  <div class="link">
+    <a href="https://loac1118.github.io/BIONTRUFFE/">← Retourner au CRM</a>
+  </div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBzJqYmivZ-dJxLDfPgujaTdPa4FsuRO4c",
+  authDomain: "bio-n-truffe.firebaseapp.com",
+  projectId: "bio-n-truffe",
+  storageBucket: "bio-n-truffe.firebasestorage.app",
+  messagingSenderId: "129941520406",
+  appId: "1:129941520406:web:bd70f730d72856e68a7537"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+window.handleInit = async (e) => {
+  e.preventDefault();
+  
+  const email = document.getElementById('email').value.trim();
+  const pwd = document.getElementById('password').value.trim();
+  const pwdConfirm = document.getElementById('password-confirm').value.trim();
+  const msg = document.getElementById('message');
+  const btn = document.getElementById('btn-init');
+  
+  msg.className = 'message';
+  msg.textContent = '';
+  
+  // Validations
+  if (!pwd || !pwdConfirm) {
+    msg.className = 'message error';
+    msg.textContent = '❌ Remplissez les deux mots de passe';
+    return;
+  }
+  
+  if (pwd !== pwdConfirm) {
+    msg.className = 'message error';
+    msg.textContent = '❌ Les mots de passe ne correspondent pas';
+    return;
+  }
+  
+  if (pwd.length < 6) {
+    msg.className = 'message error';
+    msg.textContent = '❌ Le mot de passe doit avoir au minimum 6 caractères';
+    return;
+  }
+  
+  btn.disabled = true;
+  btn.innerHTML = '<div class="spinner"></div> Initialisation...';
+  
+  try {
+    console.log('📝 Création du compte Firebase Auth...');
+    
+    // Créer l'utilisateur
+    const userCred = await createUserWithEmailAndPassword(auth, email, pwd);
+    const user = userCred.user;
+    
+    console.log('✅ Utilisateur créé:', user.uid);
+    console.log('📝 Mise à jour du profil...');
+    
+    // Mettre à jour le profil
+    await updateProfile(user, {
+      displayName: 'Christophe Spoto - Admin'
+    });
+    
+    console.log('✅ Profil mis à jour');
+    console.log('📝 Création du document Firestore...');
+    
+    // Créer le document admin dans Firestore
+    await setDoc(doc(db, 'accounts_biontruffle', email), {
+      email: email,
+      displayName: 'Christophe Spoto - Admin',
+      uid: user.uid,
+      role: 'admin',
+      status: 'active',
+      permissions: [
+        'bdc',
+        'stock_entry',
+        'stock_view',
+        'accounts_manage',
+        'clients_view',
+        'invoices_view',
+        'delivery_view'
+      ],
+      createdAt: serverTimestamp(),
+      createdBy: 'system'
+    });
+    
+    console.log('✅ Document Firestore créé');
+    
+    msg.className = 'message success';
+    msg.innerHTML = `
+      ✅ <strong>Succès!</strong><br>
+      Compte admin créé<br>
+      Email: ${email}<br>
+      <br>
+      👉 <a href="https://loac1118.github.io/BIONTRUFFE/" style="color:#065f46; font-weight:600;">Aller au CRM →</a>
+    `;
+    
+    setTimeout(() => {
+      window.location.href = 'https://loac1118.github.io/BIONTRUFFE/';
+    }, 2000);
+    
+  } catch (error) {
+    console.error('❌ Erreur:', error);
+    msg.className = 'message error';
+    
+    if (error.code === 'auth/email-already-in-use') {
+      msg.textContent = '❌ Ce compte existe déjà! Va au CRM pour te connecter.';
+    } else if (error.code === 'auth/weak-password') {
+      msg.textContent = '❌ Le mot de passe est trop faible (minimum 6 caractères)';
+    } else {
+      msg.textContent = `❌ Erreur: ${error.message}`;
+    }
+    
+    btn.disabled = false;
+    btn.innerHTML = 'Initialiser le compte admin';
+  }
+};
+</script>
+
+</body>
+</html>
