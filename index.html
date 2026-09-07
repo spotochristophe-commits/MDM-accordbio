@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<script>
+window.CURRENT_BRAND = 'BIO_N_TRUFFE';
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Bio N Truffe CRM — Gestion Commerciale</title>
@@ -3608,7 +3612,7 @@ function promoInit() {
   // Construire le catalogue au format attendu par PromoGenerator
   // Le module est prévu pour les champs BIONTRUFFE (libelle, code, ean, pu_ht, poids, pcb, tva)
   function buildPGMCatalog() {
-    return PRODUCTS.map(function(p) {
+    return PRODUCTS_BIONTRUFFE.map(function(p) {
       return {
         libelle: p.libelle || '',
         code:    p.code || '',
@@ -3660,7 +3664,7 @@ function promoUnmount() {
 function promoRefreshCatalogue() {
   if (promoGeneratorMounted && typeof PromoGenerator !== 'undefined') {
     try {
-      PromoGenerator.setCatalogue(PRODUCTS.map(function(p) {
+      PromoGenerator.setCatalogue(PRODUCTS_BIONTRUFFE.map(function(p) {
         return {
           libelle: p.libelle || '', code: p.code || '', ean: p.ean || '',
           prixHT: bdcPrixNet ? bdcPrixNet(p) : (p.pu_ht || 0),
@@ -3814,7 +3818,7 @@ function bdcOnCodeDetected(code) {
 
 function bdcAddByEan(ean) {
   var clean = String(ean).trim();
-  var p = PRODUCTS.find(function(x){ return String(x.ean||'').trim() === clean; });
+  var p = PRODUCTS_BIONTRUFFE.find(function(x){ return String(x.ean||'').trim() === clean; });
   var foundEl = document.getElementById('bdc-scan-found');
   if (!p) {
     bdcSetScanStatus('Code ' + clean + ' non reconnu dans le catalogue ' + (CURRENT_BRAND === 'biontruffe' ? 'BIONTRUFFE' : 'BIONTRUFFE') + '.');
@@ -5255,7 +5259,7 @@ function top100ComputeMobi(){
   var rows = Object.keys(src).map(function(code){
     var m = src[code];
     var prod = (typeof PRODUCTS !== 'undefined' && PRODUCTS)
-      ? PRODUCTS.find(function(p){ return String(p.code).toUpperCase() === code; }) : null;
+      ? PRODUCTS_BIONTRUFFE.find(function(p){ return String(p.code).toUpperCase() === code; }) : null;
     var stk = null;
     if (typeof bdcStockMap !== 'undefined' && bdcStockMap) {
       if (bdcStockMap[code] !== undefined) stk = bdcStockMap[code];
@@ -5375,7 +5379,7 @@ function top100Compute(){
 
   var rows = Object.keys(agg).map(function(code){
     var a = agg[code];
-    var prod = (typeof PRODUCTS !== 'undefined') ? PRODUCTS.find(function(p){ return String(p.code)===String(code); }) : null;
+    var prod = (typeof PRODUCTS !== 'undefined') ? PRODUCTS_BIONTRUFFE.find(function(p){ return String(p.code)===String(code); }) : null;
     return {
       code: code,
       libelle: a.libelle || (prod?prod.libelle:''),
@@ -5768,7 +5772,7 @@ function cadBuild(){
     var key = d.getFullYear() + '-' + ('0'+(d.getMonth()+1)).slice(-2);
     var col = mIdx[key];
     if (!prods[code]) {
-      var p = (typeof PRODUCTS !== 'undefined') ? PRODUCTS.find(function(x){ return String(x.code)===String(code); }) : null;
+      var p = (typeof PRODUCTS !== 'undefined') ? PRODUCTS_BIONTRUFFE.find(function(x){ return String(x.code)===String(code); }) : null;
       prods[code] = { code:code, libelle: libelle || (p?p.libelle:''), ean: ean || (p?p.ean:''),
                       cells: new Array(months.length).fill(0), caCells: new Array(months.length).fill(0),
                       totQ:0, totCA:0, nb:0, last:null };
@@ -5802,7 +5806,7 @@ function cadBuild(){
       cmdDates[r.date] = 1;
       var qte = Number(r.qty) || 0;
       // pas de prix dans l'export -> CA estimé depuis le catalogue
-      var p = (typeof PRODUCTS !== 'undefined') ? PRODUCTS.find(function(x){ return String(x.code)===String(r.code); }) : null;
+      var p = (typeof PRODUCTS !== 'undefined') ? PRODUCTS_BIONTRUFFE.find(function(x){ return String(x.code)===String(r.code); }) : null;
       var pu = p ? (Number(p.pu_ht) || 0) : 0;
       addLine(d, r.code, r.libelle, qte, pu * qte, r.ean, pu > 0);
     });
@@ -8054,7 +8058,7 @@ function bdcOnRemiseLigne(input) {
     bdcRemiseLigne[code] = v;
   }
   // Recalculer le prix de cette ligne uniquement
-  var p = PRODUCTS.find(function(x){return x.code===code;});
+  var p = PRODUCTS_BIONTRUFFE.find(function(x){return x.code===code;});
   if (!p) return;
   var qty = bdcQtys[code] || 0;
   var pcb = parseFloat(p.pcb)||1;
@@ -9080,7 +9084,7 @@ function bdcUpdateRecapBar() {
   var lines = [];
   var totalNet = 0;
   var nbRuptures = 0;
-  PRODUCTS.forEach(function(p) {
+  PRODUCTS_BIONTRUFFE.forEach(function(p) {
     var q = bdcQtys[p.code] || 0;
     if (q <= 0) return;
     var pcb = parseFloat(p.pcb) || 1;
@@ -9131,7 +9135,7 @@ function bdcRenderRecapDetail() {
   if (!tbody) return;
 
   var rows = '';
-  PRODUCTS.forEach(function(p) {
+  PRODUCTS_BIONTRUFFE.forEach(function(p) {
     var qty = bdcQtys[p.code] || 0;
     if (qty <= 0) return;
     var pcb = parseFloat(p.pcb) || 1;
@@ -9234,7 +9238,7 @@ function bdcStockBadgeHtml(p, light) {
 
 function buildTable() {
   var rows = '';
-  for (var i = 0; i < PRODUCTS.length; i++) {
+  for (var i = 0; i < PRODUCTS_BIONTRUFFE.length; i++) {
     var p = PRODUCTS[i];
     var qty = bdcQtys[p.code] || 0;
     var pcb = parseFloat(p.pcb) || 1;
@@ -9298,7 +9302,7 @@ function bdcOnQty(input) {
   if (val > 0) bdcQtys[code] = val; else delete bdcQtys[code];
   var tr = input.closest('tr');
   tr.className = tr.className.replace(' bdc-tr-has-qty','') + (val>0?' bdc-tr-has-qty':'');
-  var p = PRODUCTS.find(function(x){return x.code===code;});
+  var p = PRODUCTS_BIONTRUFFE.find(function(x){return x.code===code;});
   if (!p) return;
   var cell = document.getElementById('bdc-t-'+code);
   if (cell) cell.textContent = val ? bdcFmt(bdcPrixNet(p)*val*(parseFloat(p.pcb)||1)) : '';
@@ -9311,7 +9315,7 @@ function bdcUpdateTotals() {
   bdcUpdateRecapBar();
   bdcSaveLocal();
   var nbR=0,nbC=0,nbU=0,tB=0,tN=0;
-  PRODUCTS.forEach(function(p){
+  PRODUCTS_BIONTRUFFE.forEach(function(p){
     var q = bdcQtys[p.code]||0;
     if (q>0) {
       var pcb = parseFloat(p.pcb)||1;
@@ -9368,9 +9372,9 @@ function bdcDoSearch() {
     var nbCmd = document.querySelectorAll('#bdc-tbody tr.bdc-tr-has-qty').length;
     countEl.textContent = nbCmd > 0
       ? nbCmd + ' produit' + (nbCmd > 1 ? 's' : '') + ' commandé' + (nbCmd > 1 ? 's' : '')
-      : '🔍 Recherchez dans les ' + PRODUCTS.length + ' produits du catalogue';
+      : '🔍 Recherchez dans les ' + PRODUCTS_BIONTRUFFE.length + ' produits du catalogue';
   } else {
-    countEl.textContent = vis + ' résultat' + (vis > 1 ? 's' : '') + ' sur ' + PRODUCTS.length;
+    countEl.textContent = vis + ' résultat' + (vis > 1 ? 's' : '') + ' sur ' + PRODUCTS_BIONTRUFFE.length;
   }
 }
 
@@ -9404,7 +9408,7 @@ function bdcBuildHtml() {
 
   // Construire les lignes articles
   var tB=0, tN=0, nbC=0, nbR=0, rowsHtml='';
-  PRODUCTS.forEach(function(p) {
+  PRODUCTS_BIONTRUFFE.forEach(function(p) {
     var q = bdcQtys[p.code] || 0; if (!q) return;
     var pcb = parseFloat(p.pcb)||1, pN = bdcPrixNet(p), tot = pN*q*pcb;
     tB += p.pu_ht*q*pcb; tN += tot; nbC += q; nbR++;
@@ -9435,7 +9439,11 @@ function bdcBuildHtml() {
   // ── Version "Outlook-safe" : pas de linear-gradient, box-shadow ni border-radius
   // (non supportés par Outlook desktop/web, voir https://www.contactmonkey.com/blog/outlook-rendering-issues)
   // Couleur pleine en fallback, bordures carrées, bgcolor en attribut HTML en plus du style inline.
-  return '<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body style="margin:0;padding:0;background-color:#f0f6fb;font-family:Arial,Helvetica,sans-serif;">' +
+  return '<!DOCTYPE html><html><head>
+<script>
+window.CURRENT_BRAND = 'BIO_N_TRUFFE';
+</script>
+<meta charset="UTF-8"></head><body style="margin:0;padding:0;background-color:#f0f6fb;font-family:Arial,Helvetica,sans-serif;">' +
     '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f0f6fb;">' +
     '<tr><td align="center" style="padding:24px 12px;">' +
     '<table role="presentation" width="620" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff;border:1px solid #e6efe6;">' +
@@ -9492,25 +9500,24 @@ function bdcBuildHtml() {
     '</td></tr>' +
 
     '</table></td></tr></table>
-<!-- ═══ CATALOGUE BIO N TRUFFE ═══ -->
+<!-- Bio N Truffe Catalog -->
 <script>
 const PRODUCTS_BIONTRUFFE = [
-  {code:'TARTUFFADE80',ean:'3770028175086',libelle:'TARTUFFADE à la Truffe Noire 2% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'CEPES80',ean:'3770028175079',libelle:'DELICE DE CEPES et Truffe Noire 2% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'SAUCE80',ean:'3770028175062',libelle:'SAUCE CREMEE à la Truffe Noire 1,5% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'PARMESAN80',ean:'3770028175055',libelle:'CREME DE PARMESAN et Truffe Noire 1,5%',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'BALSAMIQUE150',ean:'3770028175017',libelle:'CREME DE BALSAMIQUE Truffe Noire 1,1%',poids:'150ml',pcb:12,tva:5.5,pu_ht:10.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'BALSAMIQUE100',ean:'3770028175147',libelle:'CREME DE BALSAMIQUE Truffe Noire 1,1% Format compact',poids:'100ml',pcb:12,tva:5.5,pu_ht:10.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'HUILE250',ean:'3770028175109',libelle:'HUILE D\'OLIVE VIERGE EXTRA Truffe Noire Bio AOP Nyons 250ml',poids:'250ml',pcb:12,tva:5.5,pu_ht:19.00,categorie:'Huiles',certif:'AB AOP',origine:'France'},
-  {code:'HUILE100',ean:'3770028175116',libelle:'HUILE D\'OLIVE VIERGE EXTRA Truffe Noire Bio AOP Nyons 100ml',poids:'100ml',pcb:12,tva:5.5,pu_ht:11.00,categorie:'Huiles',certif:'AB AOP',origine:'France'},
-  {code:'MIEL100',ean:'3770028175000',libelle:'MIEL D\'ACCACIA à la Truffe Noire 1,1% Bio',poids:'100g',pcb:12,tva:5.5,pu_ht:10.50,categorie:'Huiles',certif:'AB',origine:'France'},
-  {code:'TRUFFE20BROSS',ean:'3770028175130',libelle:'TRUFFES NOIRES Brossées 1ere Cuisson Bio Tuber Melanosporum',poids:'20g',pcb:6,tva:5.5,pu_ht:25.00,categorie:'Truffes',certif:'AB',origine:'France'},
-  {code:'TRUFFE20BRISURES',ean:'3770028175123',libelle:'TRUFFE NOIRE Brisures 1ere Cuisson Bio Tuber Melanosporum',poids:'20g',pcb:6,tva:5.5,pu_ht:20.00,categorie:'Truffes',certif:'AB',origine:'France'},
-  {code:'DUO_CAJOU_AMANDE',ean:'3770028175161',libelle:'DUO CAJOU AMANDE Truffe d\'Ete 1,4% Bio NEW',poids:'100g',pcb:6,tva:5.5,pu_ht:9.50,categorie:'Nouveautés',certif:'AB',origine:'France'},
-  {code:'CHIPS_PDT',ean:'3770028175154',libelle:'CHIPS ARTISANALES Truffe d\'Ete 1% Bio NEW',poids:'100g',pcb:16,tva:5.5,pu_ht:3.90,categorie:'Nouveautés',certif:'AB',origine:'France'}
+  {code:'TARTUFFADE80',libelle:'TARTUFFADE à la Truffe Noire 2% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50},
+  {code:'CEPES80',libelle:'DELICE DE CEPES et Truffe Noire 2% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50},
+  {code:'SAUCE80',libelle:'SAUCE CREMEE à la Truffe Noire 1,5% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50},
+  {code:'PARMESAN80',libelle:'CREME DE PARMESAN et Truffe Noire 1,5%',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50},
+  {code:'BALSAMIQUE150',libelle:'CREME DE BALSAMIQUE Truffe Noire 1,1%',poids:'150ml',pcb:12,tva:5.5,pu_ht:10.50},
+  {code:'BALSAMIQUE100',libelle:'CREME DE BALSAMIQUE Format compact',poids:'100ml',pcb:12,tva:5.5,pu_ht:10.50},
+  {code:'HUILE250',libelle:'HUILE D\'OLIVE AOP Nyons 250ml',poids:'250ml',pcb:12,tva:5.5,pu_ht:19.00},
+  {code:'HUILE100',libelle:'HUILE D\'OLIVE AOP Nyons 100ml',poids:'100ml',pcb:12,tva:5.5,pu_ht:11.00},
+  {code:'MIEL100',libelle:'MIEL D\'ACCACIA Truffe Noire 1,1% Bio',poids:'100g',pcb:12,tva:5.5,pu_ht:10.50},
+  {code:'TRUFFE20BROSS',libelle:'TRUFFES NOIRES Brossées 20g',poids:'20g',pcb:6,tva:5.5,pu_ht:25.00},
+  {code:'TRUFFE20BRISURES',libelle:'TRUFFE NOIRE Brisures 20g',poids:'20g',pcb:6,tva:5.5,pu_ht:20.00},
+  {code:'DUO_CAJOU_AMANDE',libelle:'DUO CAJOU AMANDE Truffe d\'Ete NEW',poids:'100g',pcb:6,tva:5.5,pu_ht:9.50},
+  {code:'CHIPS_PDT',libelle:'CHIPS ARTISANALES Truffe d\'Ete NEW',poids:'100g',pcb:16,tva:5.5,pu_ht:3.90}
 ];
 </script>
-<!-- ═══ FIN CATALOGUE BIO N TRUFFE ═══ -->
 
 </body></html>';
 }
@@ -9529,7 +9536,7 @@ function bdcBuildText() {
   if(com) lines.push('Commentaire : '+com);
   lines.push('Date : '+today,'','ARTICLES :','');
   var tB=0,tN=0,nbC=0,nbR=0;
-  PRODUCTS.forEach(function(p){
+  PRODUCTS_BIONTRUFFE.forEach(function(p){
     var q=bdcQtys[p.code]||0; if(!q) return;
     var pcb=parseFloat(p.pcb)||1, pN=bdcPrixNet(p), tot=pN*q*pcb;
     tB+=p.pu_ht*q*pcb; tN+=tot; nbC+=q; nbR++;
@@ -9597,7 +9604,7 @@ function bdcSendOrder() {
 
   // Calculer le total et la liste des articles
   var tN=0, nbRefs=0, lignes=[];
-  PRODUCTS.forEach(function(p){
+  PRODUCTS_BIONTRUFFE.forEach(function(p){
     var q=bdcQtys[p.code]||0;
     if(q>0){
       var pcb=parseFloat(p.pcb)||1;
@@ -9756,7 +9763,7 @@ function bdcParseRows(rows) {
 
   // Index de recherche
   var byCode = {}, byEan = {}, byLib = [];
-  PRODUCTS.forEach(function(p) {
+  PRODUCTS_BIONTRUFFE.forEach(function(p) {
     byCode[p.code.toUpperCase()] = p;
     if (p.ean) byEan[String(p.ean).trim()] = p;
     byLib.push({lib: (p.libelle||'').toLowerCase(), p: p});
@@ -9840,7 +9847,7 @@ function bdcDetectUnit() {
   var nbUVC = 0, nbTotal = 0;
   Object.keys(bdcImportedQtys).forEach(function(code) {
     var qty = bdcImportedQtys[code];
-    var prod = PRODUCTS.find(function(p){ return p.code === code; });
+    var prod = PRODUCTS_BIONTRUFFE.find(function(p){ return p.code === code; });
     var pcb = prod && parseFloat(prod.pcb) ? parseFloat(prod.pcb) : 1;
     nbTotal++;
     // Si la quantité est > PCB ET est un multiple du PCB → probablement en UVC
@@ -9856,7 +9863,7 @@ function bdcApplyImport() {
   Object.keys(bdcImportedQtys).forEach(function(code){
     var qty = bdcImportedQtys[code];
     if (unit === 'uvc') {
-      var prod = PRODUCTS.find(function(p){ return p.code === code; });
+      var prod = PRODUCTS_BIONTRUFFE.find(function(p){ return p.code === code; });
       var pcb = prod && parseFloat(prod.pcb) ? parseFloat(prod.pcb) : 1;
       converted[code] = Math.ceil(qty / pcb);
     } else {
@@ -9974,7 +9981,7 @@ function boxSelectProduct(idx, code) {
     nbEtages: parseInt(document.getElementById('box-etg-' + idx).value) || 1,
     // Prix depuis le catalogue CRM si dispo, sinon null
     puHt: (function() {
-      var allP = PRODUCTS.find(function(x){ return x.code === code; });
+      var allP = PRODUCTS_BIONTRUFFE.find(function(x){ return x.code === code; });
       return allP ? bdcPrixNet(allP) : null;
     })()
   };
@@ -10568,7 +10575,7 @@ function parsePdfText(text) {
 
   // ── Index produits ───────────────────────────────────────────────────────
   var byCode = {}, byEan = {};
-  PRODUCTS.forEach(function(p) {
+  PRODUCTS_BIONTRUFFE.forEach(function(p) {
     byCode[p.code.toUpperCase()] = p;
     if (p.ean) byEan[String(p.ean).trim()] = p;
   });
@@ -10651,7 +10658,7 @@ function parsePdfText(text) {
     // Fallback : recherche partielle si code pas trouvé exactement
     if (!prod && codeRef.length >= 4) {
       var cu = codeRef.toUpperCase();
-      PRODUCTS.some(function(p) {
+      PRODUCTS_BIONTRUFFE.some(function(p) {
         var pc = p.code.toUpperCase();
         if (pc.startsWith(cu) || cu.startsWith(pc)) { prod = p; return true; }
       });
@@ -14632,7 +14639,11 @@ var ML_AI_SYS = 'Tu es un assistant qui rédige des emails commerciaux B2B en fr
   'Va droit au bénéfice pour le revendeur (marge, rotation, nouveauté, saisonnalité). ' +
   'Termine par un appel à l\'action simple et concret. ' +
   'Tu réponds UNIQUEMENT avec un objet JSON valide, sans balises markdown, au format exact : ' +
-  '{"subject":"...","body_html":"..."} où body_html contient du HTML simple (<p>, <strong>, <ul>, <li>, <br>) — jamais de <html>, <head> ni <style>.';
+  '{"subject":"...","body_html":"..."} où body_html contient du HTML simple (<p>, <strong>, <ul>, <li>, <br>) — jamais de <html>, <head>
+<script>
+window.CURRENT_BRAND = 'BIO_N_TRUFFE';
+</script>
+ ni <style>.';
 
 // Schémas de sortie (Gemini les respecte strictement)
 var ML_AI_SCHEMA_EMAIL = { type:'OBJECT',
@@ -15763,25 +15774,24 @@ if ('serviceWorker' in navigator) {
 </script>
 <!-- ═══ COHOR-SWITCH-END ═══ -->
 
-<!-- ═══ CATALOGUE BIO N TRUFFE ═══ -->
+<!-- Bio N Truffe Catalog -->
 <script>
 const PRODUCTS_BIONTRUFFE = [
-  {code:'TARTUFFADE80',ean:'3770028175086',libelle:'TARTUFFADE à la Truffe Noire 2% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'CEPES80',ean:'3770028175079',libelle:'DELICE DE CEPES et Truffe Noire 2% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'SAUCE80',ean:'3770028175062',libelle:'SAUCE CREMEE à la Truffe Noire 1,5% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'PARMESAN80',ean:'3770028175055',libelle:'CREME DE PARMESAN et Truffe Noire 1,5%',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'BALSAMIQUE150',ean:'3770028175017',libelle:'CREME DE BALSAMIQUE Truffe Noire 1,1%',poids:'150ml',pcb:12,tva:5.5,pu_ht:10.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'BALSAMIQUE100',ean:'3770028175147',libelle:'CREME DE BALSAMIQUE Truffe Noire 1,1% Format compact',poids:'100ml',pcb:12,tva:5.5,pu_ht:10.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'HUILE250',ean:'3770028175109',libelle:'HUILE D\'OLIVE VIERGE EXTRA Truffe Noire Bio AOP Nyons 250ml',poids:'250ml',pcb:12,tva:5.5,pu_ht:19.00,categorie:'Huiles',certif:'AB AOP',origine:'France'},
-  {code:'HUILE100',ean:'3770028175116',libelle:'HUILE D\'OLIVE VIERGE EXTRA Truffe Noire Bio AOP Nyons 100ml',poids:'100ml',pcb:12,tva:5.5,pu_ht:11.00,categorie:'Huiles',certif:'AB AOP',origine:'France'},
-  {code:'MIEL100',ean:'3770028175000',libelle:'MIEL D\'ACCACIA à la Truffe Noire 1,1% Bio',poids:'100g',pcb:12,tva:5.5,pu_ht:10.50,categorie:'Huiles',certif:'AB',origine:'France'},
-  {code:'TRUFFE20BROSS',ean:'3770028175130',libelle:'TRUFFES NOIRES Brossées 1ere Cuisson Bio Tuber Melanosporum',poids:'20g',pcb:6,tva:5.5,pu_ht:25.00,categorie:'Truffes',certif:'AB',origine:'France'},
-  {code:'TRUFFE20BRISURES',ean:'3770028175123',libelle:'TRUFFE NOIRE Brisures 1ere Cuisson Bio Tuber Melanosporum',poids:'20g',pcb:6,tva:5.5,pu_ht:20.00,categorie:'Truffes',certif:'AB',origine:'France'},
-  {code:'DUO_CAJOU_AMANDE',ean:'3770028175161',libelle:'DUO CAJOU AMANDE Truffe d\'Ete 1,4% Bio NEW',poids:'100g',pcb:6,tva:5.5,pu_ht:9.50,categorie:'Nouveautés',certif:'AB',origine:'France'},
-  {code:'CHIPS_PDT',ean:'3770028175154',libelle:'CHIPS ARTISANALES Truffe d\'Ete 1% Bio NEW',poids:'100g',pcb:16,tva:5.5,pu_ht:3.90,categorie:'Nouveautés',certif:'AB',origine:'France'}
+  {code:'TARTUFFADE80',libelle:'TARTUFFADE à la Truffe Noire 2% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50},
+  {code:'CEPES80',libelle:'DELICE DE CEPES et Truffe Noire 2% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50},
+  {code:'SAUCE80',libelle:'SAUCE CREMEE à la Truffe Noire 1,5% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50},
+  {code:'PARMESAN80',libelle:'CREME DE PARMESAN et Truffe Noire 1,5%',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50},
+  {code:'BALSAMIQUE150',libelle:'CREME DE BALSAMIQUE Truffe Noire 1,1%',poids:'150ml',pcb:12,tva:5.5,pu_ht:10.50},
+  {code:'BALSAMIQUE100',libelle:'CREME DE BALSAMIQUE Format compact',poids:'100ml',pcb:12,tva:5.5,pu_ht:10.50},
+  {code:'HUILE250',libelle:'HUILE D\'OLIVE AOP Nyons 250ml',poids:'250ml',pcb:12,tva:5.5,pu_ht:19.00},
+  {code:'HUILE100',libelle:'HUILE D\'OLIVE AOP Nyons 100ml',poids:'100ml',pcb:12,tva:5.5,pu_ht:11.00},
+  {code:'MIEL100',libelle:'MIEL D\'ACCACIA Truffe Noire 1,1% Bio',poids:'100g',pcb:12,tva:5.5,pu_ht:10.50},
+  {code:'TRUFFE20BROSS',libelle:'TRUFFES NOIRES Brossées 20g',poids:'20g',pcb:6,tva:5.5,pu_ht:25.00},
+  {code:'TRUFFE20BRISURES',libelle:'TRUFFE NOIRE Brisures 20g',poids:'20g',pcb:6,tva:5.5,pu_ht:20.00},
+  {code:'DUO_CAJOU_AMANDE',libelle:'DUO CAJOU AMANDE Truffe d\'Ete NEW',poids:'100g',pcb:6,tva:5.5,pu_ht:9.50},
+  {code:'CHIPS_PDT',libelle:'CHIPS ARTISANALES Truffe d\'Ete NEW',poids:'100g',pcb:16,tva:5.5,pu_ht:3.90}
 ];
 </script>
-<!-- ═══ FIN CATALOGUE BIO N TRUFFE ═══ -->
 
 </body>
 </html>

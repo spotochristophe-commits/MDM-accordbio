@@ -1,4 +1,2 @@
-// Service Worker - Stub
-self.addEventListener('install', () => {});
-self.addEventListener('activate', () => {});
-self.addEventListener('fetch', () => {});
+self.addEventListener('install', (e) => self.skipWaiting());
+self.addEventListener('activate', (e) => self.clients.claim());

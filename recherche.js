@@ -1,1 +1,1 @@
-// Module recherche.js - Stub
+/**/

@@ -1,1 +1,1 @@
-// Module rgpd.js - Stub
+/**/

@@ -1,1 +1,1 @@
-// Module radar.js - Stub
+/**/

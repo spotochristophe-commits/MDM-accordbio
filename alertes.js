@@ -1,1 +1,1 @@
-// Module alertes.js - Stub
+/**/
