@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Bio N Truffe CRM — Bio N Truffe</title>
+<title>MDM CRM — Bio N Truffe</title>
 
 <!-- ═══ PWA ═══ -->
 <link rel="manifest" href="manifest.json">
@@ -11,22 +11,13 @@
 <!-- iOS / Safari -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Bio N Truffe CRM">
-<link rel="apple-touch-icon" href="icons/icon-152.png">
-<link rel="apple-touch-icon" sizes="120x120" href="icons/icon-128.png">
-<link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="icons/icon-192.png">
-
+<meta name="apple-mobile-web-app-title" content="MDM CRM">
 <!-- Android / Chrome -->
 <meta name="theme-color" content="#1e3a5f">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="application-name" content="Bio N Truffe CRM">
+<meta name="application-name" content="MDM CRM">
 
 <!-- Favicon -->
-<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
-<link rel="icon" type="image/png" sizes="32x32"   href="icons/icon-96.png">
-<link rel="shortcut icon"                          href="icons/icon-96.png">
-
 <!-- SEO / Description -->
 <meta name="description" content="CRM Bio N Truffe — Bons de commande, base clients, analyse CA">
 <meta name="robots" content="noindex, nofollow">
@@ -42,7 +33,7 @@
   --fmono: 'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace;
 
   /* ═══════════════════════════════════════════════════════════
-     THÈME BIO N TRUFFE — blanc & vert (maquette validée).
+     THÈME MOULIN DES MOINES — blanc & vert (maquette validée).
      Fond clair chaud, accent vert sapin du logo, gris chauds.
      Noms de variables conservés (--blue-p700, --g900…) : seules
      les VALEURS changent, pour ne pas toucher les 14 000 lignes.
@@ -62,7 +53,7 @@
   --g200: #dcdbd3;
   --g100: #efeee9;
 
-  /* Accent BIO N TRUFFE : vert sapin du logo (#266327). --blue-p700 = accent */
+  /* Accent MDM : vert sapin du logo (#266327). --blue-p700 = accent */
   --blue-p900: #17351a;
   --blue-p800: #1c4d1e;
   --blue-p700: #266327;
@@ -97,14 +88,14 @@
 }
 
 /* ═══════════════════════════════════════════════════════════
-   THÈME BIO N TRUFFE — palette verte naturelle.
+   THÈME NATURALINE — palette verte naturelle.
    Toute l'interface s'appuie sur ces variables : les redéfinir
    suffit à re-thémer le CRM sans toucher aux règles existantes.
    Objectif : voir d'un coup d'œil sur quelle marque on travaille.
    ═══════════════════════════════════════════════════════════ */
-body.brand-bio-n-truffe {
-  /* ═══ THÈME BIO N TRUFFE — accent vert vif du logo (#034b25 / #0f7a3d) ═══
-     Mêmes gris neutres que BIO N TRUFFE : seul l'accent et les couleurs de marque
+body.brand-naturaline {
+  /* ═══ THÈME NATURALINE — accent vert vif du logo (#034b25 / #0f7a3d) ═══
+     Mêmes gris neutres que MDM : seul l'accent et les couleurs de marque
      changent, pour que la bascule se lise d'un coup d'œil. */
 
   --bg:       #fbfbf9;
@@ -122,7 +113,7 @@ body.brand-bio-n-truffe {
   --g200: #dcdbd3;
   --g100: #efeee9;
 
-  /* Accent Bio N Truffe : vert plus lumineux que BIO N TRUFFE */
+  /* Accent Naturaline : vert plus lumineux que MDM */
   --blue-p900: #034b25;
   --blue-p800: #0a5e30;
   --blue-p700: #0f7a3d;
@@ -144,7 +135,7 @@ body.brand-bio-n-truffe {
   --green:     #0f7a3d;
   --green-bg:  #ecf5ef;
 
-  /* Marque Bio N Truffe */
+  /* Marque Naturaline */
   --grain: #fcbf0c;   /* jaune vif */
   --edge:  #e01119;   /* pomme rouge */
 
@@ -275,8 +266,8 @@ body::before {
 }
 .brand-plate svg { height: 40px; width: auto; display: block; }
 .brand-plate .bl-nat { display: none; }
-body.brand-bio-n-truffe .brand-plate .bl-mdm { display: none; }
-body.brand-bio-n-truffe .brand-plate .bl-nat { display: block; }
+body.brand-naturaline .brand-plate .bl-mdm { display: none; }
+body.brand-naturaline .brand-plate .bl-nat { display: block; }
 
 /* ── Ajustements typographiques ── */
 .page-title, .modal-title, .brand-name,
@@ -1158,9 +1149,9 @@ thead th.ts-active { text-decoration:underline; text-underline-offset:3px; }
 @media (max-width: 768px) {
   /* Switcher de marque compact sur mobile : icône seule, texte masqué */
   #brand-switcher { margin-left: 6px !important; padding: 2px !important; }
-  #brand-btn-mdm, #brand-btn-bio-n-truffe { padding: 6px 8px !important; font-size: 0 !important; }
+  #brand-btn-mdm, #brand-btn-naturaline { padding: 6px 8px !important; font-size: 0 !important; }
   #brand-btn-mdm::before { content: '🌾'; font-size: 1rem; }
-  #brand-btn-bio-n-truffe::before { content: '🌿'; font-size: 1rem; }
+  #brand-btn-naturaline::before { content: '🌿'; font-size: 1rem; }
 }
 @media (max-width: 480px) {
   .page-title { font-size: 1.1rem; }
@@ -1171,7 +1162,7 @@ thead th.ts-active { text-decoration:underline; text-underline-offset:3px; }
 <!-- jsPDF chargé en lazy au besoin -->
 <!-- ═══ COHOR-PALETTE-START — couleur principale → orange COHOR (les 2 marques) ═══ -->
 <style id="cohor-palette">
-  :root, body.brand-bio-n-truffe {
+  :root, body.brand-naturaline {
     --blue-p50:  #FFF4EF;
     --blue-p100: #FFE7DE;
     --blue-p300: #F6C7B4;
@@ -1293,7 +1284,7 @@ thead th.ts-active { text-decoration:underline; text-underline-offset:3px; }
   body.cohor-nuit #login-screen .btn-primary:hover{ background:#c4f02b !important; }
   body.cohor-nuit #login-screen .login-switch a{ color:#D6FF3F; }
 
-  /* Barre du haut — nuit (logo BIO N TRUFFE forcé en blanc pour rester visible) */
+  /* Barre du haut — nuit (logo MDM/NATURALINE forcé en blanc pour rester visible) */
   body.cohor-nuit .topbar{ background:#141416; border-bottom-color:rgba(255,255,255,.08); }
   body.cohor-nuit .brand-name{ color:#F4F2ED; }
   body.cohor-nuit .brand-plate svg{ filter:brightness(0) invert(1); }
@@ -1432,8 +1423,8 @@ thead th.ts-active { text-decoration:underline; text-underline-offset:3px; }
 <script>
   // Thème appliqué AVANT le rendu pour éviter un flash de la mauvaise couleur
   try {
-    if (localStorage.getItem('biontruffe_current_brand') === 'bio-n-truffe') {
-      document.body.classList.add('brand-bio-n-truffe');
+    if (localStorage.getItem('mdm_current_brand') === 'naturaline') {
+      document.body.classList.add('brand-naturaline');
     }
   } catch(e) {}
 </script>
@@ -1507,8 +1498,8 @@ thead th.ts-active { text-decoration:underline; text-underline-offset:3px; }
       <div class="cohor-topbrand"><span class="cohor-topbrand-ico"><svg viewBox="0 0 46 26" fill="none"><circle cx="30" cy="13" r="9.5" stroke="currentColor" stroke-width="3.8"/><circle cx="16" cy="13" r="9.5" stroke="currentColor" stroke-width="3.8"/><path d="M26.75 21.93 A9.5 9.5 0 0 1 20.82 15.46" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/></svg></span><span class="cohor-topbrand-name">COHOR</span></div>
     </div>
     <div id="brand-switcher" style="display:flex;align-items:center;background:var(--bg2);border-radius:10px;padding:3px;margin-left:12px;">
-      <button id="brand-btn-mdm" onclick="setCurrentBrand('biontruffe')" style="border:none;background:var(--surface);color:var(--blue-p700);font-size:.72rem;font-weight:600;padding:6px 10px;border-radius:7px;cursor:pointer;transition:background .15s;white-space:nowrap;box-shadow:0 1px 2px rgba(26,28,26,.08);">BIO N TRUFFE</button>
-      <button id="brand-btn-bio-n-truffe" onclick="setCurrentBrand('bio-n-truffe')" style="border:none;background:transparent;color:var(--g500);font-size:.72rem;font-weight:600;padding:6px 10px;border-radius:7px;cursor:pointer;transition:background .15s;white-space:nowrap;">BIO N TRUFFE</button>
+      <button id="brand-btn-mdm" onclick="setCurrentBrand('mdm')" style="border:none;background:var(--surface);color:var(--blue-p700);font-size:.72rem;font-weight:600;padding:6px 10px;border-radius:7px;cursor:pointer;transition:background .15s;white-space:nowrap;box-shadow:0 1px 2px rgba(26,28,26,.08);">Bio N Truffe</button>
+      <button id="brand-btn-naturaline" onclick="setCurrentBrand('naturaline')" style="border:none;background:transparent;color:var(--g500);font-size:.72rem;font-weight:600;padding:6px 10px;border-radius:7px;cursor:pointer;transition:background .15s;white-space:nowrap;">Bio N Truffe</button>
     </div>
   </div>
   <div class="topbar-center">
@@ -2102,7 +2093,7 @@ thead th.ts-active { text-decoration:underline; text-underline-offset:3px; }
   <!-- BON DE COMMANDE BDC -->
   <div id="sec-bdc" class="hidden" style="flex-direction:column;width:100%;">
     <div style="background:var(--surface);border-bottom:1px solid var(--border);padding:.55rem 1rem;display:flex;align-items:center;gap:8px;flex-shrink:0;flex-wrap:wrap;">
-      <div style="font-family:var(--fdisp);font-size:.9rem;color:var(--g900);flex:1;min-width:140px;">🌾 Bon de Commande BIO N TRUFFE 2026</div>
+      <div style="font-family:var(--fdisp);font-size:.9rem;color:var(--g900);flex:1;min-width:140px;">🌾 Bon de Commande Bio N Truffe 2026</div>
       <button class="btn btn-ghost" style="font-size:1rem;padding:.34rem .58rem;line-height:1;" onclick="openBdcImport()" title="Importer une commande" aria-label="Importer une commande">📄</button>
       <button class="btn btn-ghost" style="font-size:1rem;padding:.34rem .58rem;line-height:1;color:#FF4D1C;border-color:rgba(255,77,28,.35);" onclick="if(typeof BdcSuggest!=='undefined')BdcSuggest.open();" title="Suggérer des produits" aria-label="Suggérer">🧠</button>
       <button class="btn btn-ghost" style="font-size:1rem;padding:.34rem .58rem;line-height:1;color:#FF4D1C;border-color:rgba(255,77,28,.35);" onclick="if(typeof RemisesAccord!=='undefined')RemisesAccord.open();" title="Remises" aria-label="Remises">💰</button>
@@ -2730,7 +2721,7 @@ thead th.ts-active { text-decoration:underline; text-underline-offset:3px; }
     <div class="page-header">
       <div>
         <div class="page-title">👥 Gestion des comptes</div>
-        <div class="page-sub">Comptes ayant accès au CRM BIO N TRUFFE</div>
+        <div class="page-sub">Comptes ayant accès au CRM MDM / NATURALINE</div>
       </div>
       <button class="btn" onclick="comptesRender()">🔄 Actualiser</button>
     </div>
@@ -3278,7 +3269,7 @@ thead th.ts-active { text-decoration:underline; text-underline-offset:3px; }
 <!-- ══ BASCULE MARQUE MOBILE — bouton flottant, zone du pouce ══ -->
 <button id="brand-fab" onclick="brandFabToggle()" aria-label="Changer de marque">
   <span id="brand-fab-ico">🌾</span>
-  <span id="brand-fab-label">BIO N TRUFFE</span>
+  <span id="brand-fab-label">Bio N Truffe</span>
   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" style="width:13px;height:13px;opacity:.8;"><path d="M5 6l3-3 3 3M5 10l3 3 3-3"/></svg>
 </button>
 
@@ -3563,7 +3554,7 @@ thead th.ts-active { text-decoration:underline; text-underline-offset:3px; }
 <script>
 
 // ─── Multi-marque : doit être défini avant tout usage (clés cache, collections) ───
-var CURRENT_BRAND = localStorage.getItem('biontruffe_current_brand') || 'biontruffe';
+var CURRENT_BRAND = localStorage.getItem('mdm_current_brand') || 'mdm';
 
 // ══════════════════════════════════════════════════════════════════════════
 //  LAZY LOADER — charge les scripts externes uniquement quand nécessaire
@@ -3606,7 +3597,7 @@ function promoInit() {
   if (!container) return;
 
   // Construire le catalogue au format attendu par PromoGenerator
-  // Le module est prévu pour les champs BIO N TRUFFE (libelle, code, ean, pu_ht, poids, pcb, tva)
+  // Le module est prévu pour les champs MDM (libelle, code, ean, pu_ht, poids, pcb, tva)
   function buildPGMCatalog() {
     return PRODUCTS.map(function(p) {
       return {
@@ -3624,7 +3615,7 @@ function promoInit() {
   }
 
   function mountPGM() {
-    var brand = CURRENT_BRAND === 'bio-n-truffe' ? 'natura' : 'biontruffe';
+    var brand = CURRENT_BRAND === 'naturaline' ? 'natura' : 'mdm';
     var nom = currentUser ? (currentUser.displayName || currentUser.email.split('@')[0]) : '';
     var email = currentUser ? currentUser.email : '';
     PromoGenerator.mount(container, {
@@ -3817,7 +3808,7 @@ function bdcAddByEan(ean) {
   var p = PRODUCTS.find(function(x){ return String(x.ean||'').trim() === clean; });
   var foundEl = document.getElementById('bdc-scan-found');
   if (!p) {
-    bdcSetScanStatus('Code ' + clean + ' non reconnu dans le catalogue ' + (CURRENT_BRAND === 'bio-n-truffe' ? 'BIO N TRUFFE' : 'BIO N TRUFFE') + '.');
+    bdcSetScanStatus('Code ' + clean + ' non reconnu dans le catalogue ' + (CURRENT_BRAND === 'naturaline' ? 'BIO N TRUFFE' : 'BIO N TRUFFE') + '.');
     foundEl.classList.add('hidden');
     if (navigator.vibrate) navigator.vibrate(120);
     return;
@@ -3945,18 +3936,18 @@ function bcol(name) {
   return db.collection(name);
 }
 function setCurrentBrand(brand) {
-  if (brand !== 'biontruffe' && brand !== 'bio-n-truffe') return;
+  if (brand !== 'mdm' && brand !== 'naturaline') return;
   CURRENT_BRAND = brand;
-  localStorage.setItem('biontruffe_current_brand', brand);
-  PRODUCTS = (brand === 'bio-n-truffe') ? PRODUCTS_BIO N TRUFFE : PRODUCTS_BIONTRUFFE;
+  localStorage.setItem('mdm_current_brand', brand);
+  PRODUCTS = (brand === 'naturaline') ? PRODUCTS_NATURALINE : PRODUCTS_MDM;
   // Rechargement complet pour repartir avec des données/collections propres à la marque
   location.reload();
 }
 function applyBrandTheme() {
   // Bascule toute la palette CSS (fond, topbar, sidebar, boutons, graphiques…)
-  document.body.classList.toggle('brand-bio-n-truffe', CURRENT_BRAND === 'bio-n-truffe');
+  document.body.classList.toggle('brand-naturaline', CURRENT_BRAND === 'naturaline');
   // Le bouton flottant montre la marque ACTIVE et propose l'autre au tap
-  var isNat = (CURRENT_BRAND === 'bio-n-truffe');
+  var isNat = (CURRENT_BRAND === 'naturaline');
   var fi = document.getElementById('brand-fab-ico');
   var fl = document.getElementById('brand-fab-label');
   if (fi) fi.textContent = isNat ? '🌿' : '🌾';
@@ -3965,21 +3956,21 @@ function applyBrandTheme() {
 
 // Tap sur le bouton flottant : bascule vers l'autre marque
 function brandFabToggle() {
-  var target = (CURRENT_BRAND === 'bio-n-truffe') ? 'biontruffe' : 'bio-n-truffe';
-  var name = (target === 'bio-n-truffe') ? 'BIO N TRUFFE' : 'BIO N TRUFFE';
+  var target = (CURRENT_BRAND === 'naturaline') ? 'mdm' : 'naturaline';
+  var name = (target === 'naturaline') ? 'BIO N TRUFFE' : 'BIO N TRUFFE';
   if (confirm('Basculer sur ' + name + ' ?')) {
     setCurrentBrand(target);
   }
 }
 
 function initBrandSwitcherUI() {
-  var isNat = (CURRENT_BRAND === 'bio-n-truffe');
+  var isNat = (CURRENT_BRAND === 'naturaline');
   applyBrandTheme();
   var btnMdm = document.getElementById('brand-btn-mdm');
-  var btnNat = document.getElementById('brand-btn-bio-n-truffe');
+  var btnNat = document.getElementById('brand-btn-naturaline');
   if (btnMdm) { btnMdm.style.background = isNat ? 'transparent' : 'var(--surface)'; btnMdm.style.color = isNat ? 'var(--g500)' : 'var(--blue-p700)'; btnMdm.style.boxShadow = isNat ? 'none' : '0 1px 2px rgba(26,28,26,.08)'; }
   if (btnNat) { btnNat.style.background = isNat ? 'var(--surface)' : 'transparent'; btnNat.style.color = isNat ? 'var(--blue-p700)' : 'var(--g500)'; btnNat.style.boxShadow = isNat ? '0 1px 2px rgba(26,28,26,.08)' : 'none'; }
-  // Le logo (blason + nom) est un SVG piloté par la classe body.brand-bio-n-truffe ; rien à faire ici.
+  // Le logo (blason + nom) est un SVG piloté par la classe body.brand-naturaline ; rien à faire ici.
 }
 
 // ─── Accords commerciaux ──────────────────────────────────────────────────
@@ -4007,8 +3998,8 @@ var ACCORDS_DEFAUT = [
     nom: 'KOALIBIO 2026',
     debut: '2026-01-01', fin: '2026-12-31',
     paliers: [
-      { seuil: 650, remise: 11, label: 'Franco 650€ brut → 11% (578€ net) — BIO N TRUFFE/Bionade/Valdéna/Chocolats tablettes' },
-      { seuil: 950, remise: 13, label: 'Franco 950€ brut → 13% (826€ net) — BIO N TRUFFE/Bionade/Valdéna/Chocolats tablettes' }
+      { seuil: 650, remise: 11, label: 'Franco 650€ brut → 11% (578€ net) — MDM/Bionade/Valdéna/Chocolats tablettes' },
+      { seuil: 950, remise: 13, label: 'Franco 950€ brut → 13% (826€ net) — MDM/Bionade/Valdéna/Chocolats tablettes' }
     ],
     promos: [],
     franco: 450, implantation: '15% net (commande à passer avec le commercial secteur)',
@@ -4057,7 +4048,7 @@ var ACCORDS_DEFAUT = [
       'Gamme farine : 20% RSF (non cumulable avec le 16%).',
       'Condition de passage de 15% à 16% : passage de 9 à 12 magasins partenaires avec 120 réfs minimum en permanent. Sinon retour à 15% en 2027.',
       'RFA 2026 (base CA 2025 = 83 929€) : +5% CA → 0,5% / +10% CA → 1% / +15% CA → 1,5%.',
-      'Magasins commandant chez BIO N TRUFFE : Bagnols, Bollène, Carpentras, Montélimar, Morières, Orange, Perpignan, Uzes, Entrepôt.',
+      'Magasins commandant chez MDM : Bagnols, Bollène, Carpentras, Montélimar, Morières, Orange, Perpignan, Uzes, Entrepôt.',
       'Interlocuteur : M. Clément Meckert — ordo@moulindesmoines.com — 03 90 29 11 86.'
     ].join('\n')
   },
@@ -4371,7 +4362,7 @@ function accordsGetHtml(accordId) {
 // ─── Gestion des comptes (admin uniquement) ───────────────────────────────
 // ⚠️ Emails administrateurs. En cas de changement d'adresse de connexion,
 // ajoutez simplement la nouvelle ici (l'ancienne peut rester, sans effet).
-var ADMIN_EMAILS = ['spoto.christophe@gmail.com', 'spoto.christophe@gmail.com'];
+var ADMIN_EMAILS = ['loacdev@outlook.fr', 'cspoto@moulindesmoines.com'];
 var ADMIN_EMAIL = ADMIN_EMAILS[0];   // conservé pour compatibilité
 // Repli : l'uid de l'admin est mémorisé au 1er accès, ce qui préserve les
 // droits même si l'email change (l'uid, lui, ne change jamais).
@@ -4380,10 +4371,10 @@ function isAdminUser() {
   var mail = (currentUser.email || '').toLowerCase();
   var byMail = ADMIN_EMAILS.some(function(e){ return e.toLowerCase() === mail; });
   if (byMail) {
-    try { localStorage.setItem('biontruffe_admin_uid', currentUser.uid); } catch(e){}
+    try { localStorage.setItem('mdm_admin_uid', currentUser.uid); } catch(e){}
     return true;
   }
-  try { return localStorage.getItem('biontruffe_admin_uid') === currentUser.uid; } catch(e){ return false; }
+  try { return localStorage.getItem('mdm_admin_uid') === currentUser.uid; } catch(e){ return false; }
 }
 function initAdminAccountsUI() {
   // Affiche Équipe/Comptes pour l'admin, et les MASQUE explicitement pour tous
@@ -4609,7 +4600,7 @@ async function comptesDelete(uid, label) {
   }
 }
 
-// ─── Migration automatique des données saisies avant l'ajout de BIO N TRUFFE ───
+// ─── Migration automatique des données saisies avant l'ajout de NATURALINE ───
 // Avant ce changement, toutes les collections (clients, frais, commandes, ...)
 // n'avaient pas de suffixe de marque. On copie une seule fois ces anciennes
 // données vers "<collection>_mdm" (la marque historique), sans jamais écraser
@@ -4619,7 +4610,7 @@ async function migrateLegacyCollectionsToMdm() {
   // faite. On n'exécute plus cette routine (elle noyait le démarrage d'appels
   // en échec et fragilisait le cache Firebase).
   if (typeof useSharedModel === 'function' && useSharedModel()) return;
-  if (localStorage.getItem('biontruffe_legacy_migration_done_v1') === '1') return;
+  if (localStorage.getItem('mdm_legacy_migration_done_v1') === '1') return;
   var report = [];
   try {
     for (var i = 0; i < BRAND_SCOPED_COLLECTIONS.length; i++) {
@@ -4646,9 +4637,9 @@ async function migrateLegacyCollectionsToMdm() {
   } catch (e) {
     console.warn('[Migration] erreur générale', e);
   }
-  localStorage.setItem('biontruffe_legacy_migration_done_v1', '1');
+  localStorage.setItem('mdm_legacy_migration_done_v1', '1');
   if (report.length) {
-    console.log('[Migration] Données rapatriées vers BIO N TRUFFE : ' + report.join(', '));
+    console.log('[Migration] Données rapatriées vers MDM : ' + report.join(', '));
     toast('Données existantes retrouvées : ' + report.join(', '));
   }
 
@@ -4675,9 +4666,9 @@ async function migrateLegacyCollectionsToMdm() {
 async function migrateLegacyDataToCurrentUser() {
   // Obsolète en modèle équipe (voir ci-dessus).
   if (typeof useSharedModel === 'function' && useSharedModel()) return;
-  if (localStorage.getItem('biontruffe_user_migration_done_v1') === '1') return;
+  if (localStorage.getItem('mdm_user_migration_done_v1') === '1') return;
   if (!currentUser || !currentUser.uid) return;
-  var brands = ['biontruffe', 'bio-n-truffe'];
+  var brands = ['mdm', 'naturaline'];
   var report = [];
   for (var b = 0; b < brands.length; b++) {
     var brand = brands[b];
@@ -4705,7 +4696,7 @@ async function migrateLegacyDataToCurrentUser() {
       }
     }
   }
-  localStorage.setItem('biontruffe_user_migration_done_v1', '1');
+  localStorage.setItem('mdm_user_migration_done_v1', '1');
   if (report.length) {
     console.log('[Migration uid] Données rattachées à votre compte : ' + report.join(', '));
     toast('Vos données ont été rattachées à votre compte : ' + report.join(', '));
@@ -5298,7 +5289,7 @@ function top100Int(n){return Number(n||0).toLocaleString('fr-FR');}
 
 function top100Init(){
   var lbl = document.getElementById('top100-brand-label');
-  if (lbl) lbl.textContent = (CURRENT_BRAND==='bio-n-truffe'?'BIO N TRUFFE':'Bio N Truffe');
+  if (lbl) lbl.textContent = (CURRENT_BRAND==='naturaline'?'BIO N TRUFFE':'Bio N Truffe');
   // Charger l'export Mobilogic en tache de fond des la premiere ouverture :
   // le bandeau et le compteur de references sont alors justes d'emblee.
   if (!top100MobiCharge && typeof bcol === 'function' && db) {
@@ -5456,7 +5447,7 @@ function top100RenderChart(){
       data:{ labels:labels, datasets:[{
         label: metric==='qte'?'Colis vendus':'CA HT (€)',
         data:data,
-        backgroundColor: (CURRENT_BRAND === 'bio-n-truffe') ? 'rgba(56,132,80,.78)' : (metric==='qte' ? 'rgba(59,130,212,.78)' : 'rgba(5,150,105,.78)'),
+        backgroundColor: (CURRENT_BRAND === 'naturaline') ? 'rgba(56,132,80,.78)' : (metric==='qte' ? 'rgba(59,130,212,.78)' : 'rgba(5,150,105,.78)'),
         borderRadius:4
       }]},
       options:{
@@ -5957,7 +5948,7 @@ function cadExportPDF(){
     var M = cadMatrix, isCA = (cadState.unit === 'ca');
     var doc = new window.jspdf.jsPDF({ orientation:'landscape', unit:'mm', format:'a4' });
     if (typeof doc.autoTable !== 'function') { toast('Plugin PDF non chargé — réessayez','err'); return; }
-    var brand = (CURRENT_BRAND === 'bio-n-truffe') ? 'BIO N TRUFFE' : 'Bio N Truffe';
+    var brand = (CURRENT_BRAND === 'naturaline') ? 'BIO N TRUFFE' : 'Bio N Truffe';
     var W = doc.internal.pageSize.getWidth();
 
     doc.setFillColor(4,44,83); doc.rect(0,0,W,22,'F');
@@ -6009,12 +6000,12 @@ function top100ExportPDF(){
    try {
     var doc = new window.jspdf.jsPDF({ orientation:'portrait', unit:'mm', format:'a4' });
     if (typeof doc.autoTable !== 'function') { toast('Plugin PDF non chargé — réessayez','err'); return; }
-    var brand = (CURRENT_BRAND === 'bio-n-truffe') ? 'BIO N TRUFFE' : 'Bio N Truffe';
+    var brand = (CURRENT_BRAND === 'naturaline') ? 'BIO N TRUFFE' : 'Bio N Truffe';
     var metric = (top100State.metric === 'qte') ? 'quantité (colis)' : "chiffre d'affaires";
     var W = doc.internal.pageSize.getWidth();
 
     // Bandeau de titre
-    var HDR = (CURRENT_BRAND === 'bio-n-truffe') ? [22,53,31] : [4,44,83];
+    var HDR = (CURRENT_BRAND === 'naturaline') ? [22,53,31] : [4,44,83];
     doc.setFillColor(HDR[0], HDR[1], HDR[2]);
     doc.rect(0, 0, W, 26, 'F');
     doc.setTextColor(255, 255, 255);
@@ -6063,7 +6054,7 @@ function top100ExportPDF(){
       }
     });
 
-    var fname = 'Top_produits_' + (CURRENT_BRAND === 'bio-n-truffe' ? 'BIO N TRUFFE' : 'BIO N TRUFFE') +
+    var fname = 'Top_produits_' + (CURRENT_BRAND === 'naturaline' ? 'BIO N TRUFFE' : 'BIO N TRUFFE') +
                 '_' + new Date().toISOString().slice(0,10) + '.pdf';
     doc.save(fname);
     toast('PDF généré : ' + top100Rows.length + ' produits', 'ok');
@@ -6078,7 +6069,7 @@ function top100ExportPDFTerrain(){
    try {
     var doc = new window.jspdf.jsPDF({ orientation:'portrait', unit:'mm', format:'a4' });
     if (typeof doc.autoTable !== 'function') { toast('Plugin PDF non chargé — réessayez','err'); return; }
-    var brand  = (CURRENT_BRAND === 'bio-n-truffe') ? 'BIO N TRUFFE' : 'Bio N Truffe';
+    var brand  = (CURRENT_BRAND === 'naturaline') ? 'BIO N TRUFFE' : 'Bio N Truffe';
     var isQte  = (top100State.metric === 'qte');
     var W = doc.internal.pageSize.getWidth();
     var H = doc.internal.pageSize.getHeight();
@@ -6134,7 +6125,7 @@ function top100ExportPDFTerrain(){
     doc.setFontSize(6.5); doc.setTextColor(150,150,150);
     doc.text('Édité depuis le CRM ' + brand, 12, H - 7);
 
-    var fname = 'Top_terrain_' + (CURRENT_BRAND === 'bio-n-truffe' ? 'BIO N TRUFFE' : 'BIO N TRUFFE') +
+    var fname = 'Top_terrain_' + (CURRENT_BRAND === 'naturaline' ? 'BIO N TRUFFE' : 'BIO N TRUFFE') +
                 '_' + new Date().toISOString().slice(0,10) + '.pdf';
     doc.save(fname);
     toast('PDF terrain généré (1 page)', 'ok');
@@ -6152,7 +6143,7 @@ function top100ExportCSV(){
   });
   var blob=new Blob(['\ufeff'+lines.join('\r\n')],{type:'text/csv;charset=utf-8;'});
   var a=document.createElement('a'); a.href=URL.createObjectURL(blob);
-  a.download='Top_produits_'+(CURRENT_BRAND==='bio-n-truffe'?'BIO N TRUFFE':'BIO N TRUFFE')+'_'+new Date().toISOString().slice(0,10)+'.csv';
+  a.download='Top_produits_'+(CURRENT_BRAND==='naturaline'?'BIO N TRUFFE':'BIO N TRUFFE')+'_'+new Date().toISOString().slice(0,10)+'.csv';
   a.click(); URL.revokeObjectURL(a.href);
   toast('Export CSV : '+top100Rows.length+' produits','ok');
 }
@@ -6164,7 +6155,7 @@ function top100ExportXLS(){
     top100Rows.forEach(function(r,i){ aoa.push([ i+1, r.libelle||'', r.code, r.ean||'', r.qte, Math.round(r.ca*100)/100, r.nbCmd, r.nbCli, (r.stock==null?'':r.stock) ]); });
     var ws=XLSX.utils.aoa_to_sheet(aoa);
     var wb=XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, ws, 'Top produits');
-    XLSX.writeFile(wb, 'Top_produits_'+(CURRENT_BRAND==='bio-n-truffe'?'BIO N TRUFFE':'BIO N TRUFFE')+'_'+new Date().toISOString().slice(0,10)+'.xlsx');
+    XLSX.writeFile(wb, 'Top_produits_'+(CURRENT_BRAND==='naturaline'?'BIO N TRUFFE':'BIO N TRUFFE')+'_'+new Date().toISOString().slice(0,10)+'.xlsx');
     toast('Export Excel généré','ok');
   });
 }
@@ -6525,8 +6516,8 @@ function nfdGetPeriod(mois, annee) {
 
   return { filtered: filtered, periodLabel: periodLabel, dateDebut: dateDebut, dateFin: dateFin };
 }
-function NFD_CACHE_KEY() { return 'biontruffe_nfd_lines_v1_' + CURRENT_BRAND + (currentUser && currentUser.uid ? '_' + currentUser.uid : ''); }
-function NFD_IDENTITY_KEY() { return 'biontruffe_nfd_identity_v1_' + CURRENT_BRAND + (currentUser && currentUser.uid ? '_' + currentUser.uid : ''); }
+function NFD_CACHE_KEY() { return 'mdm_nfd_lines_v1_' + CURRENT_BRAND + (currentUser && currentUser.uid ? '_' + currentUser.uid : ''); }
+function NFD_IDENTITY_KEY() { return 'mdm_nfd_identity_v1_' + CURRENT_BRAND + (currentUser && currentUser.uid ? '_' + currentUser.uid : ''); }
 
 function nfdSwitchTab(tab) {
   var zCom = document.getElementById('frais-zone-com');
@@ -7154,7 +7145,7 @@ function nfdExportCSV() {
   toast('Export CSV : ' + filtered.length + ' lignes', 'ok');
 }
 
-// Génération PDF — reproduit exactement le modèle NOTE DE FRAIS BIO N TRUFFE
+// Génération PDF — reproduit exactement le modèle NOTE DE FRAIS MDM
 function nfdGeneratePDF() {
   if (typeof jspdf === 'undefined') {
     toast('Chargement PDF...', 'ok');
@@ -7198,12 +7189,12 @@ function nfdGeneratePDF() {
   var doc = new jspdf.jsPDF({ orientation:'portrait', unit:'mm', format:'a4' });
   var W = 210, H = 297;
 
-  // ── Logo BIO N TRUFFE (extrait du modèle original) ─────────────────────────
-  var LOGO_BIO N TRUFFE = 'iVBORw0KGgoAAAANSUhEUgAAAM4AAAC9CAIAAAB0y9X8AAAACXBIWXMAAA7EAAAOxAGVKw4bAABhQUlEQVR4nOxdB1hUR9e+yRdjYu+9YsWK3di7RhNNYoldLEjvInZsoHTpvQjSBAVREQs2QAFBUKp0REGQvoWFbf+Ze3eXbbAXMYr5c55JHoFb5s68c9qccwbjyiIOCRJcxmKxiP8LE/yGwWAIriQuZrPZwk9g4yT5ZDafJP/NZDLZosRqDQl62/IXCX8O8QrBn6QODvFL4mKik0Q/hX8j3GfiWwQPF/woIMEThB8l/LTGxkbhrgqeJnyj5BuFB03yT82Nv9QJEv52wVcI5lpAWMvwEv4qsTcRl7WARcH1YqND/EYmxFtG/yesCjFctnyxVBLMPZmL2/KBkiR4tfBnEgNL/LJVJBgBsUkRrCWSXZJ6vfDUC/9eHGoNDQ0UCoXoRGs/4F9PxHx/+fe2vDY+7YFSH0W8iHyXWhgQ+CuwW+G/SuFqbWQ5/9F/RBDgDBQnAdMVh9pn5/z/0f9nEmZbmPBvCYXua3TpP/p3kkAd5AqgBvpZaWkpKGpftWP/0b+QBMyLB7Xs7Ozbt29XVVV9vS79R/9OEpggCGpGRkYYhpmamlKp1K/dsf/oX0iEDG2C2okTJ752l/6jfyEJ1DWMwBnQkiVLMjMzv3bH/qN/IRHbFU1Q69mzZ1hY2Nfu1X/0byOBf7gJaoMGDYqMjPzaHfvyxOFyWFwOk8tu4LIZXFY9h0njMKmcxjpOQy2noZrDqOIwKjj15Rx6GYf+gUMr4VDfcajFbEoRu66QXVfArstn1+aya6Blo1adhVpVJrsqHbXKNHZlKrsC2ivUPqawy1+yPyazyxPZZQmofYhjlcSwSmJRex/NeveY14ofsYrusd4S7S6zMIJZcIvX8m8w867jLZSZe42ZfZWZHYT//yozy4+ZdYXXMi4z0735zbMx1Y3fXBtfOTam4A3+kWzb+PKSoDUkWTW8MJfSEswbXtoxC+5w6itaN74cDrFt0AS1CRMmPH/+vHXTxKSz3j1BXwvfnB/ObzfwsQhD/xaMDhqgm01N5Pf8W3gtnD+UoajlhKAGr8gJRgOagw/om0BmNrQA5hs/YkwbMzwb090bU10aU50aX9k3vrJrTIaBs2xMMmtIvNjwwqQh/lxD3JmG50YNsScZMccY0YaMJwaMx3qMR9r1UZr1D9TqHyjX3ztQH7m3/s7u+ogd9be21odvrr/xFz1sPf36Ovq1NbTgFbTgZbSgRbTA+bSAuTS/WTS/GTRfBZrvFNrlCTRvearXWKrXGKqnHNVjJNV9ONV9CNV9MMV1AGou/SjOvSkufShOPSmO3SlOPSgOXSkOnfHWiWL3E8Ueb3Y/Uuw68NsPFJvvmtolTKRZCzUroWYp1CxEWp2gmUs0M34T/re0RrH8jh7yG7uUFE4EO13iUJs7d25aWhp5mMECpYdsoDgNoHoNpV4eRfMZjbcxNN/xNF959P8r8rQrE3nNfwrNX4HfptL8JjX96Qp+saDBE7xHUb1HUr2GUz2HUD0GUT0GUN36UV37UF17UV16UJ27UZy7Upw6URxhejpQbGEmeKNfZyU0mmZYrSlWexGru4A3E6zOGKs7j9Wew9tZvJ3Bak8LNSN+OyX0b0E7LdrO4I14DvHM8/xmzG8m/HZBqF3kN9OmVmcqNNliTQARS1EkCZqVtGbdTLskq9k032zRE+C7YEXB7MtGCB5UQgQEiOhqq1atKioqIokzTk0OzXc21VOBmXOdBSLgQzz+f6K9YJXx24cEXitLZJcn8VpZYtPv0Z9eiDR4Qin+wNLnrNJnvP8LRExJNJIy8OP7p6z3T1BD4uYREjdv74PE4QkaYI3AVnNw4fIGmN+VxkyfxgyvxjT3xtcuuPiwa0i+1PAShIVZw4uLDfHGDXFnGc+MGLHHGdFHGU8NGE8Qw2NEaTAeqDDuK9Xf3VsfuQdxu9tb6bc20cP/oIf9Tg9dS7++hh6ynB6ylB68mH51AT3wFzowvACc4flNQwzPdzLNZyL1sjxq3qOpXtBGUT1HUD1gIQ2negDnGwSN4jaI4tqP4tqf4taf4tqX4tyL11x6UZy6CxrVqQvVoZOgURw68pp9R8QFBc32e7QCiWbTLKrqiMVJNEsSzQJHmy1CW/19VU4jRQZI+LEn4rrahg0bKirIiuGGZBuKXSdW8QOS1387xIHVyNfeGgUKHJdF5zJpXCaVy6QgNa4R1LgaviZXiStzH1GjEypdGYcGWl0pUuyQbvee34o5FKK95bW6Qk4tauzafHY16Hk57JocdvUbdmUGr1VlsCtesz++4ql65clCK/YFWpO89hytQLT88IbW3gNWcRRqoOoV3uG3CKS95ME6xNWY3FC0GomWHczMCkSaidSG64Kw/Ci2PwJ2gftSvcdDV2UMpWioSBPUtmzZQt6Fy3hiSPOaBGPXpmn9j74pYtfmAcIIUU51GwIWT8vXc0QDLZug9scff9TU1JB8K+PJEarXBLC82tz//+ibITC3qb6TkfoIUHMfxq5Ml3G9aBRqE9QWLFiQm0sWOoxHBlRPgJoMFvof/ZsIcTWfieShxuWjTdwsWLRoUUFBAcm3Iqh5jGPXvGlT3/+jb4paCzWOaOaBiK5WX19P8q2MKD2q2xh29X8bWf+PSARqbkNJ6mpSoHby5Enyb2VE6VLdRrOrM9rW+f/oWyIRqLkOBNNYxvV8T4eIAO3UqZO3tzf5tzIe6FBdRrIrU9vW+f/oW6JPgBpbKEeQB7UJEyY8fvyY/EsZ9zWozsNlvuw/+jeRqK5GVoCKmwW//fbbhw8fSL+UVX9XjeI4lF0he3fi30ov3+befv2orl6Gx1xASYWZlx4EVtNp/2iv/lH6NLNAfGNKV1e3Fe/kNNbfUabYD2J/TGpT379BqqI33s14bRB0Yfap6Vsc9nyorSRzV0lt3R7Xg9MN++gGnq+u/1YTONi1uZ8Batu2baurqyP9zob6iAMUu/7s8oS2dv/boazyCrfoyJ0u6pstJrpf6+gZiKl4KBZWyR40eiNLxc/ykGPXd4mYln1PRa8zlTT6F+jwZyd2bT7Vd0qrXLgcoTIRhPWJde3a1cfHh/Q76+m3FCm2fdllrQw6+gapkcV9lJ19Ktxjo82fB20HBIdhdckYtxiLugtQUyqQBTUWm2sceXWz6ZDiRIybj9W+xlRteih6n62gfnuSlFNXQLsyjQc1j+HkdwtEoDZ48OBbt26RfSeTVh++q+5Sb1ZpbFu7346pklbvmxBz0OfMZqtfTrt1in6AcTMxbg7GTUf/j7yNKXsoyeRq/onPVhpPTXuK3/ga42ZhNa+xA1Y91fysKN9aKmQT1CwwqucodpUMr6pwHZAmqO3YsYN8EiiHSaGHbadY92SVRLe5/+2RssrLTO9e3ey4f4/NGI/A77OeY9xsHsg4r1Hj5pKCWlxhwfKLa27fwrh5+I2p+L1vsPIk7G/TgWduX/liX/RZqK1QI3Q1dXX1VryysZYetoVi1Y31nrx/5BugWgbrSW6W/lWrDVar9Zz73YvAypNxkL3BuGl8rKSShdrb6toNdgft/P4HF3PS+Pfyb0+NwX41meSf+C2JhdZCjcv34opATVlZuRWvbKimX99IsezMehfVhp63I8qrqPZLeLLHXW+jhYKpT6fMGIyRjiMsEwdZqmgjAbWa+np1v3OGjl04WRg3Q+IJqUhvCwvD1lttSi0p/cIf+8nEoRTR/GfzdDVPOXaV7L0itlBFOp4A3bp1K/lqHZyGCvq1DXUWP7OK77ep71+bWBxubEGByR3/zXZb914a4nPt++qXOBvLQgjjSuCDPNSup8T+YSpX9RKBVepDAH8AZV2HzucivBjMb6P0Ew61OTyu5jWWXZUl8xbCCOUKQ23lypXk99o5jHJa8Lo68x9ZRd9qhlUdgxmcnKDuf3Gz9RJD527372LsDKRRIQQ0h7DWQO3y8/u6TkOYLTztFXrI03vYLsct2R+/jfoVIlDzHs+ulh3XIxCgTVCbP3/+x48fyb6yvox29dc68x9YRRFt6/xXoKKqauuosG3OqjutJzj5/S8tBudhuXyVXybOyEHtauJTDUc5Rqo0+UtwNWiFCGqbLq3L+FD+hQfh06hJgJKGGlFhUwRqM2fOJB+sxqGX0gJX1pl9zyok7R/52kRvZMcV5Bpes99g9buGw8A7N7FSQlZmi6r8nwlqQYnRqvYjWOlSoIZEcxbGycaeRWG/mwy1exhA3NLI5lbSGIUVH2poZGOhvzBxKG9pAb+gtC7SUCPS8kSgNmXKlNRUsmEaHFoJLWBZnSnGLLjRts5/IUp+m6l8+cgf5rPOenZ9/Rijp+OcTKrK/5mgFl+Ys8Fs+od4BGUR0zUDOU0K4jFjz5/XW/56Jf4htZH7przyWkrc6RsO2xx3LjFZdSulnRpbHGoxLWgBH2oTSApQQSgRD2ry8vIvXrwg/cp3NP9FdRcxZn5o2zr/hehUmONusx/fJ/JV/nQSClnboMbkcA8HWx6w+rnqNa4CZuISMwtjZWJB17DNljNO3XB7XvguIiPtaIj137brDtgMt/b76dYtTPnS4MtxD7/w+JAkYajRfCbLzJgSkIgLd9SoUdHRZP2xHOpbmv8CBLXca5/a7S9HYP+cvelu59cZKWSfxsZkQa2ByYjOfnEl4VHoq5dP8nJzPlaCTUlrZBsEW+2xGhx2C6tJQbeAyNZz7LbDRSP09euglwlK3vq7rcde8v1f4iPkeAPVjZGBHXMb6RXXTr2VONTmtxZqTaGRAqg9ffqU7CvrCmlX5tZdwJg5V9vQ8y9EALVzt9zNLnfjZP1TUHtfU7nZYecWs0F6bhP3O87b7fTnAS9944jLEelpNo8jVLw0D9hPPeTcfaPp8FM3XB/m5GsHXNhzaWRQKFaRjFsk2TijzcSqX2IGLnLe7Rdq7z6Bq4lDbcyYMc+ePSP7yrp8ms/MOhOMme3fhp5/IfoCUMurqN7luPHBHawiA+lhqU+wyJuY6eWu++ymKXkbuMQ+ickv9I27d+PV85i8nI1228wv/68c53PIPkjlKXMIasntG2q0EvrVJW2FWvfu3S9fvkzylezaXNrlaYirZZEOBvl6BFA7c9PFyqfrPwe1/MrqA67b46MwbgGu+Gch9yw7C6tMxm7c/G6r5fjjoY6g/oNU/dtxr3sgX2UUfSxArSYZO+wCAvTR1x4z6YRDbSlRWIR2ZRq7No/UXYI0FgEdP36c5CvZNdm0y5OBqzVmeLSh51+IAGpGNxwv+Xb5R6G232V7zD1kXfJYFOHUwGNASpOxPRZdToe7+b2I1XIaUZ/WzFZVJlabgh1xHe75rL1aoLT3QlCb0SqocYULKZw+fZrkK9k1WTSvCQhqaa6f3vEvRTjUnL4w1JoA9Br9siQJU3aYtcL2hKnvcCZuAkuF2jcgQIOXo6JJrYGalOx2MzMzkq9kV2XQPMbVGWONrx3a0PMvRF8Xarzr8zG3qz0WmR3cbD0PpKTUjVH4Zd0rzNB1hOfz9ursoH+gh6zmQc1vFrsun9RdYnmgP/74o729PclXsivTqO6jENRSbNrQ8y9EXwZqB1y2P7vfPNRysZAb32n7n9ztdd7Br3NT6JvgglR0zcdk7MCl4Zfjn3ztMZNOIlALmMOuKyRzlzhX69atG/k8UHZlKtV9ZC1ALdmiDT3/QvQFoJbzsWqnw8bEh3gI5CvpXA2sgVOh5rGFxWvMVt2+ift13+A2BB7iAeArS8FOuXy3zUm5sKqdboly6GX062v5UJvLriuQcb1QJSKuQFfr27dvSEgIyVeyK15R3YbWnscaky62sfdfgL4A1Moo1N1umufcMU4uwo0IY8M3oxoysQNWPRweh0Jnric/W3Fhkd0VLP0ZRn0NptV3JSkdHtztrOU8WTvgfFEVqRSsr0Kc+nJ66O9EgUt64AIORUbhR0H8LfEjD2pDhw4ln1vA/phCdRmEuNqL823q+xehLwA1oBeFOesv7T7i3KHqVVMwErIJMpEHxMYH22SvVFxTTVz8JCdD2/+8lsfvhh7T99qMm2c0deLpLfv83MNfpz7LS6uht9ftdmGoBQHU3rZ8vXDJyCYBOmLEiHv37pF8Jbv8JcW5H0CtIZ6s0foV6ctAjYs0thr9q7b7bSfevPNjQyovbAQ0fVNvbIXZ78/yRRyeHyiNOtf8xp3aNVB/7owT0/fZzz9zZbGa48RVF+bdfNVedTVGBf3GnzyoXV0ks5Cj2DGmnwa1RIpTbxCgDc+/gQNcAGqnbzhZ/5NQq2+s93127fwtF9eY+4o+9nONN/9tpXD68ujTl4fvvjR5j8ehF0VNxhq9kWkdFbLRZvNRz3E3b/V+E/tzycsO5clY2SssNx5Ts+3v3m79aiJQW8ahvpdxvdRauIMGDQoPDyf5SnbZC4pTT8TVnh1tc///cQKonQizt/XtzP0HdTXKbhelXeY/mPoPOuwx4y+rZfLHV046s/ugn+PjnDzhaG4Ko0En0Hyr2cDoB1gdHuvBC2fC0/7oqdhRNznvuHbL1Srp4RuFoPau5esFBTtEoDZgwIDQULIRQewPcRTHbghqMYfb3P9/nABqx67b2Pt1+ueg9q6WpuqlcfM2xi1CMRpVSVhMVCcL/0H7HRfpBJg8zmmKwXd8fH2zaX+0y56DbycI9ecbcOEyqui3/q7DS9/TQ1ZxaCUyb5GSnAcWaFBQEMlXsktjKQ6d64wxxhN9fCrbNUH/jl+3/Ueh9r6WpuatFXYD30FP5cU/Iv9FEmbjh600mWF5P6SBxaY3sjbb7350B/+rxGO/Eaht5UHt2q8cmoxcL8FBZkTSFA9qXbt2Je9XY71/SrH7CXQ1xmNtVHe9fdMXg1ooDrWm1GJCPhZgLx9ha84Pv/z8QXENdafdsvL4ZvdA2zvUGmvqb+/kQe36Wg5dRukqQQ6LCFfr2LGjk5MTyVeyih9S7DogrvZIA97f5k/4Z+nrQC1VCHCF2L0IbIfDlse5hftd/iqKbXm7faTn80dfe8ykE6extj5iNw9qYes59WUtXy+wQEUqEX3//feXLl0i+Urm23sU2x8Q1KLU0CES7Zu+JtQIDAGw0jE1uxFhqSk6Aca+V/+HHG+pIhtT6LIcjJaKadgNacdQq6u/s4cPtQ3koUb82LTdbmpqSvKVzMI7FNvvAGr1D5TRSSXtm74+1PAIW33HATdTkx7nZKwxGZ8dg0e2ZeOGZxb+jzyMloE5XsH+tF7/6j2pvcUvTxwmpf7efh7Ubmwkc4Se9LLL5IOImAW30OkvJlj9vQPoRJz2TV8AaqCEKXuo3rmN9jrFoYbXg6lLwXZZjY96gyoPmEb6rjMefSUEy36OIrw/JmKp0djVG5ie05C97mrP82WnjH8twqF2gAe18E0chow9NMIsIGwCrjBXO3ToEMlXMvNvoMOwAGqRe7mN7f249y8AtUpa/X6PQydccNPyDa8IA69lIvzZ+WLbHJXf1dTCxWwONzAxeq+7jqL9Mk3nWfoeS3S8tqn6Hje6FXwtJflZXnI1rfprj5l04rBo9fdVCKjV3/xbJtS4zXG1PXv2kCzbwcy7zoNaxG5uI+lak1+JcL/aPws1GLa0kkJFd00txwEZMd+x3uCAy8I4WchPe8nnu5Wm657kiBRToTRwXpd8jMrOt3/6RC3QTdHzhNblXdsvTV1jtjqxsJ2eBsFh0esfqPKgdns7p0HGkmhWV9uyZUtjIylzkplzlQe12zu4DbVt/YJ/mOBDj1675OT/D0KNxWaW1VU8ysnWCPJYbf6Hruu4gBv97kZ2cwnqtsNKbruLZlyh+IlKlXSGf8JjZW/9A47zzK4Munfnp+IELDYKU7Sd+yinvR6nxGIwHmryobZTJtS4eAaoFK5GPreAmR2AznkFqN3axiXxvq9LbC73cIiFW+BP/xzUqmgU5ct6ay/O0Lu8a4PdgfEnt8uf3vOb/WGjm95RWan1EoWGItNT/rLbt9t6QGj4d5RkxPxQ3/Kw/DhM2Wnhw+zsrzFOJIjNYDzS5kHtjiKnUTaXEexKNUHt+++/Jx+Fy8y6QrFCRwfTb27hMNp7FR2YZ8MQS9fAn/9RC/Sgp9rlYCznBRZ550eva/2PeUza5/zXkeu2N16/rGeJqCUBiY+XnpvtG4JSqnjlTgmt7g2W/Qw76DT/wZv2ahmwGxiP9XhQi9zHIaE7EVyN+DcPah06dHB2dib5xsbMywhqJqTMkK9OXwZqat5aN29h3Le8UqbsNCwlGnMN+G675ZjtrnoPsnj1UBKL8pabLHp8h5fGJ2yu8qG2oB1DrZHxxIAHtXtKHKYMi1B6EBFAzdHRkeQbG9O9KJY41G78walvp9HJAvpiUEN+tRxewDfaBsUxV5KMufpjy03musdEQk9OhjmcdftJakmHbwBqHGZD9BEEtYtY/X1lDlNGkXLpoZEgQO3s7Ei+sTHNDUHtAgE1slXZvhZ9UajliuwBEPWtUMm+KGyNyeTApDgt/5P3b3+P7FOJx34LUGM1xBwjoMZ4oC7TpUr41bj8pKkms8DS0pLkG5ugFvqbzD3Xr04E1FwAap9c5erToCbAUCoSl2Hh2A7ng3+7HA0J64wYXjNQU27PuhqX0/DsFA9qUZpkNoqIjXZxqBkbG5N8YeNrFx7Urq/j0Nt71WBkgQZb+l/ryC38HBWvWg81Qp6C9qbpPG2bh6mawzh2upSsY8Bf9nNsv8O8dg2156d5UHukAwapzBukpLEAHT1KNqS28bUTxQKH2rV1HFp752pg/2j5n99jjj1+gL2Lxyc1i18iPhNHXlqLRZY/C9RwSXrUbajdk4gdLuq3wr8jIttEOF8udu82tsn274LK9mvUN8SfR4UUTPFQRbZsL6yApXGFoaatrU3yfY2vHRHULmL0kNUcmowA8/ZAj7Keawec2uO8Z5fd0oO2Y4+69nYO7Bh1ByuIxejJWGOGUOA1kZgprbBoC1B7V0NV9dK4JXwUhhjUcDamZDPicU7WrdSUtcZj8uN5BXhRy0D/zorB/rwo5/y0Xdd8bUy4gKAGXO3pYbASZF4vwBlXGGoqKipk35diy4faqm8Caly8Fm5pHf1N+ce7GSmOj8MOB1vs81DfYb9ur62CvstgO78uwGnSH2PvErCaV3i1b7yaUBPn44NMKtRK62h7XFWdA1BompgLg3d9Hhb/APvLel1+ZRUH2aGuGy8OfPkERXMwM7CKV1j4TWydydhzt30aWe26sHzji4s8rhZzlMuR3VWB+ckVhpqioiLZ9wmgdnWlzFyG9kksDpfB4hZX1z7JyXSPvXvyhrOKz9FdTlsV7edpO8mZeXcPCvk+5i6WHoN9fNmUgM4L+0lDULtzqwlqICR8nkesNpl5ORhjZOLsKoN3RBDCWTbGyMIULbtdjPRrwKMcaA1M07t+v5svNnAZYOLdS9lu9Ca7nQEv2mnwrTA1JpnzuFrsCS6JHXPpUNu5cyfZ9yVf4kEtaJnMvNP2QLnlBc/yswAWrBYH50MdLTY/zzf+ycW7/rqBJvvcD+xxWKHmIH/Krber3w83wrGkx9jHJBx579B+pZqHUkFlk8f8dlryehtFNZvuD+/jfDEXb/lYTRpm4Pj9NmetkloR93payTuP2HvO0RGR6a/rWVw6k/uy+N3TnORKSvv1ije+tEbF5E2xhudGZK4XDuBogpqenh7J9zUkWaD3fTtQO3PDasn52ftct2n6nTp728st5t6DrHTQvpktIq+MUp/w9m3oqySnp7dPhNmrXNbd47h+n52CvtNAm8Cf9Oyx7Y7b31aLZKLDj+cj/Dba/KFiO8jat4NPCGbt9/1OiyF7PQ7nVYg7IDm4kvcw+41b7F2jcCdVb82NVguXmix7mBn/2UfgcxEINB7U4s6SuV6KrtaqNJZvC2qgUOgHXjjnjsU/wW6EYTa+nQ+7Dt1nP2OXw4b9ntoGwdY2D6/fTkt6U1ZOaWA3NqN+wGiVUxlppeVPcnP8Xzwxi/Ta5apx4vqFKmlnDGSVfQxIjDa57XosxMT4tkvYq8QqOtKg4X+5FZV30pIvRV3TDzLf6666036NssMkI49+XgEdou9jUfewvZfGXk9J/EcHpC3U+MqBmPqGeFKuMcGhBU1+td69e5NPzvvmoGYYYuUT/BPIMqL4DzUVK03EsqOxRxGYR+BPJ9z7HrQfv9Nu2R4XRU2/02Z3fUOSY18Wvy2uoVTSG6WCD9hhTX0DhUHjNK8a1zC4ORW0rPLauMICt+ib+kEXFV0P7rBbccBOHt7ofbVjbCSWH4sKXTWk8yIoK1MwbWeF669e/oPD0TZqTHWus0BcrTGRVGUgwq9GHJTBg1r37t2vXCF7PKUQ1JZ+I1Br2pji1Q3N4OeUZyEbsP4VVh6PJTzA/K79cN6rm6bDUEW7Wbsd/lK9rH8m3Mnz2b2H2ZnJ70rf1VIZzeciwp+KqimJxe9up4GRG3rsmoWyh7Ki40pl+7HH3Xq5B/0YfQ97H4fVv0anF4i4V9J5jrfiF5i6o0Joe4ZamjsPaknmZK6XUkihU6dOnp6eJN8ngBotcKHMIltfnVrYA+UKitam8cslE0cBZWA1SVjKY+zaDeyS749HnPsctJuwx2G1kofy4WAzEH9BSXFP8vLeVteV1tHjit4GJyeAFDYIvrjfff9u+6Uq9qNPuXV3CfpfVCT2No636cSLBc9o1mP8bUAtw4sHtWQrMtdLiezo3LmzhwfZGspCUFvwTUNNauOBjwjNyMUhkonyUNKiscgIzDvoe2OPblqOcvscFu5z3b3P7cBex+UajqPPu3f3DvruXiSWHYsx8NQV3r2kt8K+Cagxs3zRnqQZ2YKhUrbbgau5ubmRfB8Paucxqs8skrV3vyJ9emTHa36GZhou6d7wyiMQRWtzn2PP72HRd7HMGPywlUz+odtv+Cc9vpa+c/BtQy07oM4K52rkyiATWpqIX61Lly6tEKCJFrVnMYp154Z4Ey6r2T1XlNYMkpr9lSstfPYgoiZpy09XIXYUmrYTPu2xnwlqVAbtUWbsuZvWqr6Gh4LO+MeFVlA+26YqM+cqghpwtTRSgbRS0lj69+8fFhZG6m0cdkP0CYrdQPzUH3HHFI1Bz/6QfzftidMjn7M3rI6EGBsGG5+5YeXy2Dc6O/599VfYm//88Wr/TPssUIvPS97qpDpIT6Gb+tieGvJdVcd0PDh8ycWNEa+jOJ+jkA8z7zoBNWY6KXVLCtQGDRpEFmosBjP3OqtYvOD5u+rSoITwfZ66CkYrBuoo9FAf1+HAMGx3X2gdlYb30hg/QHvq4ot/WUa6FH78okbr/xOosdhsz+iAMYbzuqiMHqw3bYTBbPh/X81JE44v7qU+fqjejMuxwS24ZkgSMz+cB7VMUmf3SIFaK8ouS3S3ll7nFRO0wvzvPpoTu6iM6qs1sbfmRFhPow1/2ex40PSOQ+jLiHtpTwyvGndVG/Oj0rAlphsfpJM9Oq3t9P8BaqClmEU4wvj30pQfeXiO3OG5g3RhtY8HkQIjP9VoxQ/7h8w5t66ooq0b1qzCCIr196CpM9/4ybwYQEake4qYBT179vT3/5SzyZ7nJW5yUOqtMaGb2tghetOH6s+AL5Q/vuhoiElCfnIltSl1r+Dj2/nGv3dTH9dZZdTYowvupD76hNd9Av1/gJrlXedeGhP6ak+SOzwHoDZARwGk56lQ8wZW482U+0P0pwOr+8X4t5yygjYOJuvtXcqlDghq2YEyLxaUjBRx4bbK2cF7EIcNzGz8sYVdVEcP0p0GXwirqp/WZCWvQ6+KMyStgQ+15astt/XQGA9XdlaRW3zxz7eVrVhkDGYDLMrw5HvWd10v3LJ1e+IXk5NQQ5Odivivh5p3zNX+2lNg8BE/M5gzSEehu9q4E9dNmSxUamqDjWJPjfHd1cbu9dBhsWVHmLVMrHcPKTYd6yxIHQUryJgSqa/23XffkT/4h4sKDTOMb9n01ZrUS0Me1AL4SPiYcccWekUHNLKkB2cCsJaZbQaowcrrpz15oO7Uqwmkqu9S6qn3058e9DaQM5zbSWXUEN2pw/VndFMdM0hv2kqLv4Nf3GxktTSCnz+3oD1B7UFG9Jgj83uqo1EdaTBnsN70riqjtfxO0BpQjonf82sDdRWA4cFoX3l2nfxjmyPWu0cUm58R1PJln6UuKOUnnlugrq5O8n2AM1g03VTHwmICtQCgBtJz9tlfH2c9b+Gu1HeZs8+tBWjCoAAXhHudH8k+4zGhIGWvh24frYnYrt4gl8+GWz19EweiWdFdBx4FyOujNcntyZUWXCoE1HxC8D3QbL6H4rO3rDa3fHQgS6v2QIsqipeabgLhCMwMcDZcf2YX1TF/OymX1aIokpKasmWmm2BtQ1ttuV1YmflkQgVDbbtQLDFW4W1S10umHJOvRASTeuGWXTe1cWBm4jibA8bmnHNrXxaltXwjrL9xRxcCIxzJg9pk+yivFq6HdWkf5QkC+rt9g0C9U758+HVxU4WVG8mR/XWmDD80C+yPySeXCv9JjOBDdfxNTrpgWc+RK/9NzOdv2TFYXizaO89rQytKwGIeYDssx11LSSAzEdQGmpbfyZ+V5UYcmgU4g4kAubnowp/55eiQFJjg49cu9lAbBwJkgO7U4MTPE0fOKo2h2PWgWH4HShup6yUzpkCAkswD9Ym9CnCBaQacwReCsTnxxJLnubLjXnyeBQPCgJMLoObQPNTeV39Q8zkCcuHHA0OH6s8E/YzKEElwDUwIg0EEK2SY/kzgqc6PWrK97R54rbX4VdFx3X6ndfs+f/ttn9PafY6r29iUnFZvtl78p82WuLwUMhPhFxcKg09oySBY+mpNBkn6NDuO+OutlPvDDs0CBa67+lhFD+0G5uepI8sqfUax702x+oFV/IDM9YLdApHsdjK1cOPyksB47K05YSSuGQzUmQqqQPALUivmbLg1QAeQAffCXXAvqPZSr8wuzfvTbl9nldGdlcFWnR8YHyZZjetcuDUI0GGH0NM6q446HHy+BY2NyqAWVVXlVlT/Y60q5yO0yra1quyPFe9rKhpZsmu+5pUXzjqzpifSRubiLrTpMCkuj32Jv6a/fzPP+Pfu6uOAKQDLT3v32bL9WGVxFIe+FOuOYB+QuV4K1H766ScXF5eWb6um1f5+aXc3tTEjDs2GzxtuMKuLyqjj1y82ZwcIE/CkXW4aXeFe3IYYoDN1iN6MwDgpTuOM99mrLLZ1VR0NdgbA+kayFEbNZLO2OCjD4IIAhaeBCax55Ti9sb2XSv1cBJ+v7X8SNAcYTKKBuqZy2ZCGj0AltWqHizqMyWC9acD2wD79jK9mlSVQHAZQrDux3pPKhBAIUG6r9kAvRtjDMhqiN32kwWxYTCC2lpptelcl+5wEoMySnPnG62GdjcQdPyD7Rh35JTJVfGVkf8gDoxIGsZcmWq+hSXekPi39ffbkE0tBiBPABcQfCjpDBvH/DrqT+hDY2EBdtCUAo9RTYzzYZITPDCb19A0LEAigWoDNBMoc2HCf8dWs8iSK02DKpW6skmgy1zMYDK6YC7dr165eXl4t3PPqbdqkE0thlYDcxJUtBWDO/nFk7ec7qY+GG8wGhI3EbSXQIaacWv6i4JXwNe+qSoFrAs76ak+CFen3vNmH2z3whLfjoJ8DzBVAb3aHbG2bb51AtvxqtR1UEWKZga4GQxGYwHM9XE+KAG14oJ4CDONqy23vqz7zpjO7IoXiNJxi25P14RmZ6wVcrcmv1qlTJ1fXlg5i1/Y7ATMKmhafkYze5KBExoNKkPU9F9BPiduh9daYsODCH4VC+yS19XV73LVhgPprTwHJaHPfnd3Mhl09k7HR/gAoagAy3JOELIyrL26S7Mm3TvYPPGF8BuPLDEays7Kcqs+RBiZS7xLyk6ecXAbLuIfG+Mknlj3PTfrsb2dXplJcRlHs+rLKZOfaCJ9b0LRbAGZBC6X8wBqQP74I8DGSt+8B1sDUgHhy2/P4JukeN+3OKqMIWwnYGwAFFH/CzcjFNx7AMgfxCjIRAK0feIbZvI7/+M2zUYbzeAzyMJjAEyYcXww9JNMTMB1aeHL7p5yy/Nln1/ZEbnO00Qm8TcFoBeFmyv6QD/pMD/VxfTQnDNGfHvKZvBtixK5Kp7qOp9j0YpfFybxYkC4lngfa3G4BAPPEddOufJY24vAcQMPvNrvL62SXrScoveTNrLO/9lSXJ6AGZiNATf1KU4kQ96f+wMyAOcGTAYItP/lIsDEMMegiPP6qOnq9zR7Cadkcfagpv5v6+OJte9BddPyNnB56g41GsvPth2BBngg1hQU5RH8GvqE+DcbB5oE7/Km4smQdWGzI5JwMXM0O/yVBLDYroyQ7IC7U9r67fZTX1RfhoLcIFnmr+1CdTnEcQXWSY1c368hsuliolB9XGGonTkg/3BOWC67RjyWAQigHDg+9yPcvPPkesCuQdATPR8EtWpNg4om/xuQkyB9b2EtjQi/NCdOMVr0qTm/hUdCZuefWwbLmMchDM7urjTsX3myc+/vqD04PfVaa/w2cGHDcTXVMF9UxIKaBETo98mEw2/tRMsL0oiBl4oklvfjfDl+x7tKuGnptcVXJBlvFrqpjYZBhNE6FmjP5e53wgaYRDmPxnSv4E4wbtncQGF6fHDgIApR+c2NjOqmMp2YrfCsrK0u9AdRzWCuDcHsHCSyNCbPPrSUfIwAyCz6+sypPehLeuKH604PikSb7vrp0jdV24EzI04ZcdDJ2RcEg6IM0lWmEKAfIwvqOlBYkAh8JOvJKi60wxND6aE3qozVxhMEsohs91MfDnN14GUnyK746AWh0A4xgoIbh/h3QH2CZRWfHI35mtQtU50F602Atqfseo9Q3+bpdHvvCl0IDSYLbqvKjj8wLT7nHJndqgBRqqCVzNqOApBe92rhxo2QxeeC06r5HOynLETM0FJd9Wn6tONy4tKb8V6sdAqYIDWQlaH6v3qaDRDgaYgIoBFsS0GAQdLY5U4D/qLJfrXd2VR3NQ+3hOSDWf7fdU0kVD2gurS3XCzgN2IW5AbkMQyx/fDEs/XFHFw4hJC/uiwJh2vIb2w89fRM3yvCXvpoTATGgPPTWnHjs2gXg8asstoISDAPYTW3Mbjdt4Y3OpMLXE48vwXfi50KDZTkI2fWyIzI+I0mH2rZt2xoaxAXKmw95ID17EP4wg9nAkMD2aZXKCWaRHNoemCrwN4IysdxsC3QBuNFA3WkDdKb00pRfarqxtEYGVw+KDweYDtRRIDwmg3WnAYu1jBT3PMMQr7XeCUscBhdABstDzfdISlFaQFwYiFH4EZe8s0B3BNuN+bVTH8gQrYGmfPnwz8ojRx6ejeswCjPOrDa/47TcbDOIUTACuqqN2eai9kFIYa1vZBzw0odliXxvhoRiJw/C9AsvLelQO3funOSl99KeDNGbAd/G32ib9Mv5395Vka0UCXLa/oEXzDqxwUDMMehkOv4nS6rLlptvhj8BYkAg3nktY6Ojhla7zVlNYMYStqfCqRWporsuEa8fKhit7I5vM4PgWGO5PeJ1FKjGYHjucFFHPmQDQsmbBX89GWoqk4++LHwNumbwi5t30x6DMUHeGPqM9Cjz2VD9maCK8TXUWVNOLpt4fDFMB6z8ziqjd7pqfKgVqX8NHQYU/rh/aF8tFJrbUWnEXg9deoP0DZX6xvoKSpXUohBtJAHURIKILly4IHYdh8uxe+ABaBhuMItnOWrK7/ciW0WGi44qp213VocnEBMMbQhyc091fuwD3AhEGPIMqYwCo1Kmhg4sEIZ1gA4P9DD0IBo0rogc6xEYHwYrGKCMgjS1Jx2+eq6sjrfQo9/Ew6sH604nugHfAtpbC17i9JJsk1u2y8w2g+gBEQwPBHE89uj8VZZbz4dbx+UlSW7LSlL2h7yY7ITneUktG8igzrYQBAX4OOhtAKNEbHcK+g9idJCOQheVUQe8Dgk+U0D30h7v99RbbblNwWgFMAvQWbNKxU+E4aK91CLnR77AMtfbKv5lf+B8+KWWu9pakg41yUMa6Y312v4nBRo9TBVo1pfukU0XBcouy590cukAfAeJaAAXMKOMwiymnFoO/Kynxvj5xr/nlck4lpDKoCl5HcKHm7AtZg/QBok8JyojRnCNf1zoMH1QJSf0BhvNYLb7Ez/B/MGa0fA93k1tnKAbgJvxxxZlvJdy7kkjm+kZHTjt9Cp4XQ+1cXAlzCswEmCi8JsueIMnnAo1q6Q0GwFGb2BYRbrMPLMa1hjoWGsstwXEhUoylbp6qvvTAEV3HWXvw54xAR9qpFTmj81JAAtAIFiIBo8Ftg3M+1DQ2RYc6TX0OjDg4nKTCqSlDj3LebHA5A9girDmgd9jigOAUxIxSJJUS69jsVstfKVA7bvvvpM8era8tmKj/QHQN4mPBGTAoN9vTQbKlefXYIaGHZopvBwnn1w29/w6WJHAY+CvPs9kp8+AUgw3ChQ+JIU15P92VhHExoS8uEX8EqAmf2yh2Cb9q+KMcUfn99dp0hfBTNnsqFRXTxF7EWD66DUTeA7MIvByIlQfngwzAeqRyyMfMJJQtojGhI4HR3jFSC+oA8L6OB46CioU8hfqTMH29IVPflshUmETVHgtv5PdVMf8rCIH8AW1crXlVlAkhPllA7NB2/8UQEEgFogGPQTwmd9xlNzibGQ1gvQERvi3o4qqj6HpbfsHGdFsCZTAMptzbi3ofyAfgF/CKgVxDPMlya1fFr3WDzoNth2IaZByha3JhZESr9ahQwcHB/F85aKK4iUXNwqcWKBTTz21grybA0YcODNMEiF/hRswSNDegElsdVapqZdxfgyMpvqVY51Vm4YbdLsBulOvJ0UQF4BsHW04D+RpH03A2SJJtQ8kKVg2AsSjbVP1sS6PfcWGFQSZ4dXzoOIAw5Dja4RwFyAGLN+Ut8hp6fjwMlwAjOqngyM1/KSHk1jfc4VBwx+CTD/gizB0wCkbhJQEagNNN9Cok4pcf53JhOMGoIMp9v/Lfn8dvWkBpL3LGnd0gUAswGUgN8HunnJqWVBCuKTPAsbKKMwchA90EpRR6DmmOHCni4YY56MwqFsclbsgo2HWSPTYucDbQJetEV179Aa6zX2PsUcXdFUdBQOIPHPq8jPP/ur+1J/kLr4Us6BTp07u7u5i1wGqZp35lciPQDaB9mTQXWpoZE9lfF9dOvvs2n7aU8RwNhx3boG6Ch8JZofM5yQWvCImTPCE3pryoO9TGGhcnucmgToCo9BXe9Iow7nhEkFHL4tS5Y8vgokXiB5YvpNOLM0sETmgDuwD0A1gKIm5J64EyQXzsclRSZDWBjDqrjaW2KVQ8j4EElDsddABQKcgpA+4RSeVUToBRsLBiQBx0zsOoMLyI5kRhvppTR5xaFbYy0hhS+XczUvwOmCrxDXAI4ELrrdRFItUEJDjQ29AGDyKCK+CVywz35z9IV9sUVnedYaVCVJlJL7BhV5tMAdEh/A1+R+L9nnq/qg0vB8/rB8mDoDeUWk4/AhmvsyJ40qFWvfu3X18xCP9QZGcemo59IMYehi+jQ4HyHvYQ1/eAS0eMTBRqBFiFBacqs+RljNQuPis6PobIRtWgNRDM0HDI8IqQQUB9KOUFh0FkFM+seKxWfB8ZR9DULkEO/3wLZ2U5UByiWlODzOiAakCXzwBNcATaNaFFcXENUwW61y4NaFRwJ8AQGJcLb/87UKTPwQqx8jDs6Fviy/8lSuqjAKeYOX0x9ke8SI8qXHc0WAT4cvA2p1vvL4v8jzPJuJJQdMFE6o5Kzg+P3n0kV9QSD0OILB7QB+NyxfPVEguSp10YklvjYl8KTGrs4qcYfB5RmPTzMICXmq6CdvZa87535QvGwBnJfyRwOw7K4/a6aZJpjiD8AYoVwC1Pn36BAaKZ/YB1EB5Jza2AdEgFBQ9dBpIh4XpBZ7piQfKiuGMCBMHTiM5CpKEq1kLhA0LGMpZZ9d8qCunNdB3u2mD1QLzBLN7/uYlSb31XvoT/JbJxLDyJkx3+t00kcg+GDhYRZ0OygnjDDoPn59Y2MQ/6sFO8kMxibj3eMzFCHthDkQ49EEmErHBhE8fVtr1xAjhd2WW5sw4s0awI8zTvTTlF5psEPMi+T+/TjxhBIhXvWnAAm0eeDRn99Ia6jc7KnfH1yQhZ4G9uUrEOdMbGaDGwQIYjmckACLhsmmnVwonZ4Sn3APTDXC21HTzg/RoUNFAsg1Dmutcgl9K3Z6RJCJ2SPBjU82Oa9fE/cgANYVTK4jEE4Aa9Al0L5l8iKAqas1i041wryRLI0ZBP/A0mSoSBlfPwnInJMgIXsTpGJNbtvAhphFIBsHTAG273DQpErKstp6yzUUVkDGcfy9alCj86aDYorwcGwzAArtHgEgiIM/poUjRVtB4QMUh1D7461X+NhqMKYhj50c+wBcJIYCLTlgAYwGawqKT0cjY66HbFan5TQMCMIK1FBQvsinH4rBhjqFX8O1yOBNdd2lnRfNZT344LgX7h6AH73DVAJ1M7LLbrx4Ag++nDXOKUkOG6E8HdF6MsBOsGa/oQDAUwI5ZafH328r3+LbkpIF8HxMYKKA2kA94lrLdLrVmR2554Zxz6wi1gwc178Mkg13vvH4EYwTq8EgJqMFkgFGd8ralbXWCUt9lTjyxVFjNAik55sj8N6V5sNrwpBgFsCWhk2nvpERqXEu8NQjJqSkC3QtuwW3eYOHLyusq11rvgrmUE2Iz8LEbbBXBwhe+8kNt+cILf8DQwyeMP7oQtED4JbB5L+QcWYmbOzMEtktvjQmzzv6aK2pFeTwN4Eeb8QcEzFu1sXvctRiimSYpRWkTji9GIuUwQi3g2+a+uDLNxYO/uWhhVwMyQK8gllNfzYkwStHZ4plXsP7/dlIBFI44zNMlQMcFGU04mwBtVpHOwMAwxQF/2O0tqS4DzWH2ubXd1MbJ8XacJ4I9FJVBKv6WIIGno8kClQq14qqSlRZbYdAJqCEB6q5DMvfmVKgZjLWkogb8AB6oF3iazEOOhJignSVcS8CHZu7PynJ6gUYwfwsv/NkLt/LgFaAUSt4LfAusuS78DVNiZIHDgW5XxNe9CLqRfBeeM5jfVRyRCgN0FcDOEnsmLA+YQpTWqzpmk4NSSU0ZQBxWeW+tCYgp4kVZ+Dby9L6ak9wei0RAZH/Im260CpQHIV0C7PopwAsTCpLF3mUV6dIH3wwAsdULifJlidJMAZgjWA9Xnl3jbdnhJjPwHhg6SR/z9cTbsPjR+se3GYmFZ407SpHpGmoO6/b7fYM3OyoV43H8J0NN8djxmSPxiQMmDWKtVVv1UqpGDhw4UBJqVbQaUACRUwdBbXYvjQkweQwSVi6FTll3aReK4DskztIG6kwdc2ReUqF0A0qY0t5nKRitJELMeYJGdxow/5sp9/QCjHpoyKPSTmpjj4ZckOq4D4gPQxvMQp5PYDmAcrOIJp9ONa3G4q7z3PO/9dcRNpPR8p0twZCAYEahP4QLare71tlwqwknFn+3dyBMA3yU8McCg1lvs4cqJNNB8VD3PdpdrSkUmYAaLIbj1y6KBWzCxMN84yGQ6DJQrQDQkv4F+PCojJjYnBe73LRwRyBaTvDqaUYrJRNj4WOBpXXi7zqMRJ2UX3Txj9KacrCQjoVcgPXzw/4hcE1xFfL/JeQnTzi2CCadyMIEmTvGcF50disK3UuPVwOuFhoaKnYpMOdToeYE1Ah9fLHpX2SSpB9nPRt7dD5hColBDYxBZW8DMtWXjMLMwSAHw0egP8G9W5yUzSIc5QzmAmThx+ZCr4Cl/Wm3X3gzB82BuvyM06tTizN5F3E4sI47Ko0gqvc08V0DtDGww0VdbLMI5Iua79EeuGsXVccwBBY7EubmT7t9R0NM0LrnYwhYEXA4McvjRvI9YM/9kY01W9ClPloTp5xcniHqduGiojtJoJjDX6H/A3RRBuQVaREZIODOhluD5jrt9Oo+uEo9BBe1J0Ol1ES+9eo+Hj6tQLC0wfjejyteGABEEMLZgaHAqgnTBGB9KOgsiujhyyJAsApiaU0Tl1de+LbifQssTnq8Wt++fYODgyWv9sfzWnEWiuLMQHtIJZFUaBHpBCJfWKDw+Qqag4eZMTKfAGba7LNriYgSHgLwidzrqbvAZAMesjsVpvxuM6ZQaNIdXCY2dWAYzxY5Ixis7NK88ccWETMkZrUA1A5fPS/2zLzyoqmnlg/ANT94Mliaww/NNAq1KPj4Vj/oDDxc4KkG1rXPQ1fYKwSi9lerHcLpdISXAZbxxdt2khug9lFeeIygAiwqeDJ8stSdJYeH3qsst4FWAxM0FF+TwIQUpLG0unoKDF0nfrDCCHw5LTPbBNqb1V0X6PAPSkN/v7Rb8Jb4/Jejj8zrh0obobXaX2fqaMNfngklloPKrnnlWMtuUY4o8aDWq1cvqUWvwNQHFb437sVFO+U6CsGyEkYo9bStzqrdhTxhAh0IWALwADFdWypdjLCHi4fwtTQEU/0ZAHRQtGGFofg2VDzsvFTRCc8Hg1SwYUq8GhT50Ud+eZQZK7jM5bEvnpolok3CwwHTgD/4hLLaj0SB1QZmA8zBQe/DsH4ATyC4YapAkX+W8wJWbUHFW+jYAP6uF+ADZl3MHWp516WHxjhBHDKPy2rITz+9SjL0HBbDQe9DhCtxGB5VoC9NtQW7YfKpZRvsFNdYbiO8BHBxD3V5WE6Spj2wSaS98Hf2wPCE5QojEJx4q5/2lB/2D11quimdb1rBIgGW1llFTo4fSAJr/iCSRU2P9YwOgDeCkG15HqW4cKU6O7i4urbDVR0YKR6RhzazjwTLOIYjIT8FhIKwL3QEz/WKbFjvZvYNhQmUpAUXNnRTGyv2BORBODQTJhtE3jzj9e+rpccywbAOxzfUBaIK2TTq40H4CsxnmAwYu16i+7MAIDx4bgLuNVBYYrpJxccQFGEwx2acWQ1zQ9jUg3WnuT/1E+wyIaOSb7sQrl1gMxShsg+gzk85tbwHHqIo/DnA0k5eN5W6Oznr3NqeqGTTXOgP9DBMIloYNIRfLbePPjz3xHXTqadWEIYqaJzAe8RQzsXTC45du0BECfA1ZoVFF/8E3gli+n8HhgIjfC6UB5T2Lmv8sYXIcjeYI1CRo4UeCwgbY/gL3FsqLT5A5NVSoXb9uvSIGt/YEGC2hH4N0n052ptqKSfP7Ykfro9PE1bUcLctMv5BwLfcOVg6Tg+9u6uPG6o/Q1LVExh3VxOkM1cWB9cvRUXVIL1psHY9o5t81B8pFctMN/URMgZH4Ju8ypcNQB+H66EDsNbB7P9JeSRM9mD96UMPzcBTeMaAvl8tNAIqlw0BFgRkgfXCrN942bQ5BlYUXADSVmTNoG2oSQALYS5LEChJOv6n+NsbaNCWmG4U2x4AXmsQdO67fYMMr563jHQGHkzEngAjgM5L+tiLK9/PPLMGWLhg4YGFtMpi6y/nfwN1E268mXJfePzP37Qm6hDw9YFxO101BEvrbeV7UAawXb2UvQ83FwDXNB2SUOvXr19zBUrL6io22Cr+fHAk4QUYqj9dsM8tSTBSwAbwfdzZYoMLEs2QRFzau+rS5eZbgKWJ8QBeOzy7q+ro/Z56zT2nrO7jwgt/imEI9J7Z59a9F/LFJxelTj65VDD6REzO2KMLXhVnVFGrQ5MirO+5nQ6zBI07JPEWMkQOz0V7/LhaHSiUlVhDr11mtpnwVMvhbir4kbDgCApOuClmCI/guV1Gb7Q/UCm+vcNBm5ga4wfqTuOJEc0Jh4LOiH2jY5T3j0rDCBe/5pXjhMwBmQiYc37kKzkmPrHBvTWAfze5wYn6BH3wUrJiUWEgK+aeX0fshvEXz5Tbr3jFYAD025xVOyoN76kxQXK7WZJaBzWgmOwE+eOL8Rh2ZOBsd1FvbmMfNI85538jXHHCIwszBPeSCUDyfXYNmMRQffHtLGIuQVEdd3RBC3u999OfgICDdwmrX6AV6QQYCV8WlRE9mp9Myl8Jo3e7a1fTxRk2DJaiuzbRpa4ofl9LOLMNJhvkiGDfDGTimRuWgiBy0PDmGf8Oli8ol4Qfn295IA3M9LZ44i0YiaMM56LgJcO5hOQCfIst7IB4VIIJDGfHh5dBmwQhQ2z/wzKYcnJZzod8sWeCBQiaA5ENLwy1Icg7OBY0BLpoop5fXGgfZAjy9AGY7rXWOwm3AyxjRTwt/Eel4aBW1ZDQuVsnQAkCW2OBCSq60fHg8G5q4y7HSjFXga6/vDMQN86FZZ8c7juFHpfIygmroFSut1UUbFeLNWD1MJcXbtk1t6OFM/9LeIJQ0wrG434VwkSXIHzOKMNfBFBD2reGvKTPlouzkF64D6+X5sRJJ5aKbXJEvn4IvSKYFihAg/VmRLyOIv4Eq1ET3zAFrqZwavkC4/WAIX6+E1KDhMUWF+V1v5xwYvGiC3+CatgfD4eB7oHK8VaoKkrIi9swmNjegTBKILxgYc84vRrk5gjcSbbdRU0yoRoUMtAHJHzpoLyOW2q6UUzfBYsEFE3AJbETCP8H8eL6BDmiQW7C8wHWoPOBJf4in1RlLilQGzx4cHi4jMS4d1Ulro99Nf2Og/wKkFZEiIUnqUtKz2EGMwE9phGy67fdfhUF0yBseArhFRWkAWW2uTBRLu4mBa7TC983FNLApoBS/7ZKJCwRFFt5PDafSJHvi4IgFoJFKfbA57mJeKWSCfCQfjqTr0hEcV55hiqADsLlHcwQaD8ZJbzIXjAdACvdQGs8NOt6YsTxaxdAYBE78QCL2efWCm+mJRelwfwN0Zvm8yxkk4NSN1xVAqm3w0VdYPcFxt8ATvzDgaHjji0gsvmBu4PB0Ru3i+HtFpEihUvAGgDhiDuGpowUYWkE1mc/zBD3OhVVvJt+ejUBdDx7YyIoHjllBaBXrLLcBowG+WsOz5FaHkoqSYHasGHDIiPbmhT5rqp0jeV2GCY5UenZpxkVWIyADez11JNwPvFGBzgHKC5e0S0VlgbRttZqB+6SaLoXkLfJUUlM4oMFB+Y9wQ+IuK7lZlvyREFcXFWyznonrGOQTSBHLkbYS3JTl8e+yCbVQ1AD9Wu7iyoR2QtrZsyReZ1VR0NnHPA9e+Obtr1AkoKtg6QS2ksQOMOfZD2fdXYttrvv4avnssvy55usB5aDGJX6eGDSXDy9wCHKG/AEWnw/rck+fJECLBbf6ZqAhygr3EppKq9XTavBa1OMxbehRUTEMDxP21xaQZ3br6Ogh4Pw0EDoJwz4X/b7ze44TjNa1RPPJ4W/+seJu/pbIKK+GvFvHtTk5OSioqJIP4HDbaxj1+Wjg9uF3MfAFUbh9vkIcRV4DBgWH2XlGr0sSgWhJhwCKfwQEJ3w2R9bDJOqpdct5yvpggYo0Q0wkpQsZ29YgrIyFC9K0AUp6UrC4R5gnexwRfICBZFrTjC+aSN189fzqf8AfuI+SJbDV5GrL+zlHfljizqhGO7xxrdsiFxzkAP9+fuP8Fiw6eCXH+sq7R94jj+6EGQiyMrCimKQidOMVhKMGT7kSPD5p2/iNK4cBwYJnQR2CBAReKHh+mV4fh58BVyfzK8RG5OT8Jfd/v/tGwIaFRiwYLML3MvEdADjlOrddHjoBaaSsLRFyadak+EbQeMENUPqpkULJKjj1+TCHTduXHQ02R179scUWsgKist0RuwZLptnCcJ6d3p0WcxzO5KvAsOIy3ysUZhld9F4IcHo4FK1JcuXIGBdgOle/K3DEXxnHrxd0tkL+sBSs02dkC8DXbPAeINAp36YGbvu0q6fDo4ALgJWiMfTgOaKykSlRw9ApZNQ3vwA7anA1NV8jwIL76w8ClimUZh5PT/e5iOlcrXlNngmwALUWTAXgOv8YasIbO/HA0NBDhBx6sWVJcvNNyN7H1+ugELoAKyWzqqjYL4t7jgK+zIA/QZXz4L2DMwGxge0WLCXdQJOwY/Yrl4GQWfflObOPvsrvo/MU0IAvmBog14o9XNsH7ij2GC02mcR04enZs2EeRl3bOG1RFKlloVJysl5kydPTkwke44zq/hhnTlWewKrj1LDK2gjqqun7vXQE2yYClDCq3UgK82zvK5ywYU/+kiLb0PKqepYUMIYTBk7/SDgzoZbwTyh0mt40BgBNctIZ6n7CmA/gsDtgSotoBOZfrfZcyTYeJuzGgrz3zsQmAFopfEtOsRBZAMn66s9BclZvFwXoLOT8qh+WpNA9olJ7aSC16sst3ZVGdNXcyIMC1j0gLyfDo4ENVGwBwOaDSCbSA4AOwPwChfAqIK6eTUhXNLfCzJ0zrm1HQ+O6K8zGTgfMGBMsX9vDXmTWzbwdsAlKA8/KY/A1c2p8FLom/W9ZsuDgmCZeWYNGOOwXHFmNrW/zhToyS/G6x9lkSqoJkZSqkZOnTr19WtS0eJoOEqfURy61BljjOhDghPNCj++hW8WJCIIoAYzvcJ8S4mszPXrSXeQfi2xbUrEsgJYH6STYrpgNKy0+PtnZTk8kWQKqqWgMgq4S3OpxaAwOT/y2eJ0cNa5X+VQctRMmPhVFltPXDONzX1BJrodpjM85Z6iuzZM0ihDVOUANBvXx1eY0s6jKKv9aHLLdr7JhpG4y0r++KJdrppiFbtAnQd9aLXVNpDCwNIWmGw4HWYp6cUQUFxu0gbbvcCHUNTM0fmwJkH5EywtsBzBIll44c+JJ5YO1J4CX1pa25KLP7s0z+KuCxib84zXjz+2aPSReUpe+p98jIsUs2D69Olv3pCtA8X+EEdx6FZrjDXEHBb8kohVBDYupoGiLTwJJ6QkAdtH0eES7jR8Xw+FZJJJ8SUI0GYYbDzn3Dq8TuUkUFm2OCm3nOEDswvKWdq7LDC1wApraH2FIugeTOrz3BcPM2Okbo0LEwAu+k38/fSnoJk1J5qpDCr0J7kolUw+PVwMeH2Q/jT7Qx5X2kDBikp9lwkG9YcWcdb0OVwOXAnK36u3GeRD/CVJCtRmz55dUFBA8n52WQLFsQeCWiyvRhrwDFBXu4kranMG6CLr7MozGbpkFbUGFBQxF/8IXmoxqpEenydjW1eSYL4jUx+BsXbpvhsos8I5Gv/RFyOBrgb/JzLbsTlz5hQVNeuvEiN2eSLFuXfteazhOa+OAZVBB5Oqu1D6ON5QzdtpKHhBShK5MCUVvJpwfEk/oVguPlNEMQWarSl89B+1KxKubdUEtcJCGRvhAmKXJ1Gc+yKuFn+K+E1JTdnc87/10xZR6olKMH87qcg86DghP3nk4bkoRBF3qBKFhhBT1FEYbTjvZWHqp33nf/TVSSS7/VOg9vElxXkA4moJPCUMlACiCpUw1IbgZcDOhYvXZ5AkKoO231MXLLLuqJTrxP7ak4kQeDDQtPxOfNPVa/+fk4gFShCYBdnZMsScgNgfk6kug4GrNb7gxa55x14F+1xsj3yQjsJQvRm3Xt1v+WkEldd+NI2wX2W5ddLxJUTSGPIAHZlHcq/tP2qfJGIWEDR27Ni4ONk1mwlif3xFdR2KoJZ0kYt7O06FmvfQGD9cNLsYdK+ZZ9eIpSe1TGAfJBW8vpv66HpSRGB82OOsZ2Kl9t58yAtJvBUUf+NlUSp5m/QzUnld5Y3ku/5xoSQrCQDDvvP6od/z60+y4j7vaRXfBEmBWpcuXVo+IkOY2JWvqW7D6kywxle2XPzU8ANe+r00xgs7+glFbZuzqkxFrVVkc98dT+wZqu1/6vM+mSRFZ8cP1p3eQWnYnHNrpVYsEyPv2KDemhO+3z94rfXO0pqyL9DDdkVSoAZ07NgxkvezK1Op7iMR1FLRCWgNLOZGhwNEfIEAakP1Z/TSkD8Xbv15u2573wPP7RmmHXDy60ENpU/+pDRCP+h0y4wqr7wQ+Dp0GJTONkKNzWE/SH9qeddZajZouyXpBUq1tLRI3s+uTKO6j6oz5nE1BrPxt0t7+ohCDZStgbpTpSYDt4Ucorz7ak7qojJGP+jMV4FabM4LOYM5RKjjIF2Fu82nDDHZzMNXz3VRHUVE526w3Su1Uh8ZAr3a/3koQPzngyMmHl8Sk0PqwND2QNKhtmzZsuJiUnoVuyqD5jkWhxqKI21kMvEDwuWFFTWwHyeeXPqGhIhpFQHUANOdVUZ/RagREU1yh+eCvfyr1Y6PdZVSr3yUGYt21vGyVt3UxrYFao0s5kHvQ9iefrCAsb0DTSPEK+G1W5IONVDXWj5mSkDs6kyalzwuQJ25+Jo7G27V4cAwojoGceIuyFOYBopEWcY2UvuBGi/wS32ctbSKrbX0ut9t9qDk0ENo16SNUOPiyUT9tCaBzjfuyILobLIG3FcnJpMpBWpABgYGZO5n17yheU9CUEvnjfKH2nLNK8cH6ip0Vh3dHZWSmwTaiZrP0bYcnNjAbMx4n/046/mjrNjMkhwCWE4PL/fWaAlqFZSqFwUpDzNjQKnKlZWd9QmEQ42o1TqLOFZmwvElkmnY9g89e2tMwIXstJGyuBr8Pi7vJfT5Wc6L4sr3Uq+B0QA26fbE/4VEdQ9hojfUs0mswLp6SnJR6sPM2KdZcWDc/EOLFkAGUJNy8E+HDh1InqnNrs2lXZ4KUGNmNtWEojfWR7+JPx1msdH+wNxz62Aa7KO8yJS1kiQKg3Y59io8R+HUilGGv4wynDvVaMVOVw2YZpfHvsA7OymPkoRa9oe802GWy8w2yR9fNOrw3DFH5s84u0bRXedWygOWtLCOjJIc+wceRmEWntGBJc2klEoS0tUOzwFze6X53yst/gb21k11zAGvQ8Kl3dLfZ+MF7cfClWAwTT214qeDI/+QBrVXbzMMgs4uvPDHuKMLQc6OPTL/l/O/qfgYPpXgW1QGPf/j29yygqKKYsKnDW/M/1j0LPdFYuErWGB3Xj9U8j70m82eTQ5Kp0LNm7OO31d/sIh0Wm25fdKJJTC2ow3nTTNa+beTsn9caL20TLuiinduT67AKMEiz5VVHVuMiEIKgh8x+E+w456UROr8OU5dHs13BoJalvhZQ4BfSj0VmFz6+zdkqntIUsHHt7vcNIElgOH2s/JIPKILBXX9fHDk5JPLlpptIuSRGNRuptybeWZNV7Wx/CAwFNXYU2N8D3VUovtIsHGF6Ikt15Mipp5a3k0NHTkFQnCF+Zb4ZqIFxSgWjzT+UWnYfk+9268eTD65FPoJTC6Ef6o49Er9ynF0nhU6tkI14tUDmFS4XgxqYFH6PLs64fhiuB3vM+9L4d9EyLv5HUfhSjzA9macWdNHfdwaq+3leOl4YGBgAvfWGC9/fPFfDgfGHJn3v/2D4Qnd0CCMhtGIlbAegGuiIpv4BYI3wuf3VJcHm1rJS7+woljYW/nkzfP5Jij3G7oEls3ss79GvI4i784ULw/D5UNNUVGRQiGlWnHqCmi+s+suYMycliL9P4HeVZX8bqMIw42qaGtOmH561V/2+zc7HJx3/ncwPIFP4Clu6CAV/cAmqN1MuY9Ub9UxqL6r3rQlphthjne5asw6u2YQOu1laocDQ9V9jwmKEKa8TZ92emUnlVHAIHtoyMM/sK1dQcCROSOCgFpHpeFbHJVBIQP+0Q1P7lhuvqW0FvkybryMHKqP6kOBJvc8Lymx4BXorx0PDheGGuDMOyaoH7xdbXxP3B+5ynLrVifVtdY7gM2AhgcTD4vE+JaN4BvhvWOPLsAUByy8sIEIBKI10NWuHP3hwNAhejO64UWWAbjjjy1ERyzoKMDKXGmxtVgo2wrAClKii+roXpry/XWmAIaAme1y0wKeitezmf6/fYPRGa/89MSiynewAuFL4eJeGhO6qIzGdnRHGVzNiHhJahZqSkpKkmdMSSUOpYh2ZV7dRYyZKz1F79MI5AKwn59VRqGqafozjl83ffU2vb6xHtSUnA8FVnddYKz74rHLRKEXYhpyPuT/Yvw7njAyac7ZtVeehRC1dEAXWXBhPYCJyGp0fuwjiFV0iPKCCe6Jn0kK0mTdpV173LVh7lsBtYPD4d6PlMr3VaVzULG7sT1QwpITMPINtorQGfiNjj+KRXiWkyAJtRcFr8YdWwAoB+a9wvzvsJeR5XUV0L1qWs29tCeb7JXQKR9a6FCOiFe8hI/nuUnA1H9UGr7cfDNxigVADT/BfTSgBBBmFekCSmpMTsLREJOhqLoKSr0RpAKU11Wut90DaxgplyeWODz0IhLPADfrbRRhwPETfyeev3mJyi80GZ5yDz+KbywADgb/L7v925xV7R94kT91jzh0VvBjE9T27NkjecaU9EdQi2n+ixDU8luRPCOTAFijj/wCCwg+2yzCUZJP+z+/TgTlAkpQERT8Cos7zrDg+mhNAp0jlp9dl1iYshSVR53YS0MeNJIQ0aB4GDhABqABNDlQkFt14I2Aq/1pv4+Ycp/YYOIwq7nn1+3z1MP561jgx4RmAzJIDGq8elIqcsC6gBdmlYgrVR9qPwLLhMUA+gCwGSISuDmodcaTZczvOAluhxWrj6oQj4c/6QWeJrJvAuLDoIcA3zFH54Um8ZydeeVF8Py++JmC/XWm2j/wFI5VvvbiNph3MLbrrHeV1HyAgWKyWmc9iENNYBbs2rVL+A8tPYJWQgtYWmeKMQtutOrdLZPjQ++eCAFjgGFILVkP3BhYBUAE1AsisreKWvOX/YHOyqNg2sAKIS4D62T6mVWw3GFZjz+2SCyzF+h+2tMRqD7e2CF609fb7CFT0F5AwlAjvP/44Uao8tIQ3CAFHgP49ojmZS9LQq2kpgyEF8jcQbrNlnV6nPUM2B5+bukiwrwFWSwVap2UEWSvJojk8N5MvjdAZwpoY2Cv0BsZTDZLzedIF5VRoG8dDeEd75T2LmuV5bYu+CiBDAHdX0wJS36bNuXUcng+fNFys81XE262dtNZADWRNBag3bt3k30EvZQWuLLO7HtW4Wc7tRm6YhhsjB/sMK6F9CqwQAV+NS5uQyww2QAWAFipRGXahxkx03DrDyALcyNWT48gWPfwCnhOF1wHB31ON9CIZCS0JNS4eDWyUYd5ufLABjY7HhRwShGo4a8A+xSUqp+V5eacX9fcYcvVtNq11juBLQ07xEuXj2seavAhPqLFBgBqg3UVOh4cccDbAJgiXAliHa4EcBPZwjBWi03/6qo6lgic9pV2IA5YuG5P/AbpTcMtldHwdXs8dLKbT3GQJGFdTQRqurq6JB/BqS+jXf21zvwHVpGMbLlWdIvDNrh6DiYeiYMIKdmwBMHiA/tAADVQOOYZr/9JeSToH7BMY7ITJp5YAmCFxTrzzOonWc+bew6M4+WYq2Bt9ED21zgwxPZ66pI5/UMq1EBrPB9+CdVMwCtEA7wE14tCDUEk9V2m/LHFPynLwSLJLBWvF0kQcEqk86mMAgvjFs6VWwU1ME0G4VBT8jZoYDZQGbTfbXaDoQB9u5/+NKskB7Rb/MznsWCFtHzkZnjyXbygszwMFCxpWADvqsgePSvwqxE/NkHN3FxKVUupxGF8pAf/VmfekfWWbEK97GdyOaBw9FADa270Xg/d5irungmzBCkAY0RADQZ9rfUuBLXji0FBAZMTkNpFddQv53+TWWWOiyP1xHVTlH+vCcrWeP/mD9ITkFSocfHM/sUX/8J29jIKMxfOgpHkaqCJzzq7ljg26n4zsjvlbRrwZlgwY4/Mf4F/SAsCtGWo1TMZYHrDkAJQRhv+onHl+DLzzfgpPmNBu4h4/UBqB4SprK7CItIZt20ndVEdc1Giqk1zRJxbIIWrWVhYkH0Eo5Ie8kedxc+sYlJhjyQpOjt+CIoHmTDcYHawtPJp8Xkvp55aAaoJ4exAqgCLdTLUrBM6kxWZC/3xQnzLzDYLZzOAdLC97w4iQ7KIP0Emt217a8iDRDMIOitze6M5qHHxwnLALQQ1OwiS1NVoDNp+Lz2Q3WCa7HTRlDRKGEyGTsApGAdYVKBOEZUZmjMLZEKNqJvk/MiHOIaWOF4NdMppp1c9ymoqbQHcy/SO47PcxObqC3lGB+DOc7ntLmo00eJFLZD0PdBWcLWGavq1PylWXVklrThFTyYBnycKi4JBNPnkUoCIgLeBYnv7ddQCkz/wquGzhJ0dcblJsOC640Uu+mtPXmH+dz4/N66CUgWWLKhiMEBjDOZcxo8FAqbi8thH3ffYsWsXqHhtR9v7HsDSYNHrBRrJTMtrAWpgo2R/yBOL5ZSEGhc/f22gjgJApLfmxAPeh4TLLgN3PHz1HPqr1kTolaA40idDjTgFK6+sYO6531CBvsMoEmLGmdWCBHcYBFgkY47MgxEYoqtgGYn2tWEBwHDB87X8TxZXIokZlBAOpga8bquziuSJg82RdKhJHj3bLLHr6yP215pgzHzZEqdVhATH6dUgXIB1DdWfAfoK2ArHr12Ezxtl+Ato+kQ5LQDcocCzBNRAySPO8IJfDtGfPs9kPdxiFGquG2C03HwLLESwBzsoDVthvoUoWAlYGa4/A9vTf6DOVJgJvcDTU04tg1UOuotni7VnCILbQQzBLP7lsJ9M/BlATc5wbkflEWBWC6AGEs0o1AJPIken5M48u0b58uFToWaaV47BcuqjNQkg2ElF7oCXvoATA9TAHvzx4IgVFlsEUAN7nHCVSUJtsN60jsojD3ofFhy4di3xNoweiE740/TTq2B8QNYfCjq7znoXEYEH62e60cpEPLo4p6xQ4dQKbFdf+P12Z7UjIcazzv5KbAmeuWFF3hSVDjUTE5OWbxMmZs7VuosdqZfnsoqj2DXZ7No8dl0Bh1LEoRRzqO85tFIOrYxD/8ipr+QwqjgNNZyGWk4jhcOkcpl0Lquey2rgshtRk9idBDE633hDZxU5wvCBhQiGEvwbZneo3nR5VAN6wv/2DgK2JPCkwz+sIl2H6M3ojEsldJfqmG6qY7qqjIbpxKuhHBBsvYNFdiTY5CelEV3wy7riG1M/7MfrqJPYCX36Jq6f1iTQyVZbbSPjzIzKjAH+hO3qtcpia2l1EzRr6XXHQi701Z4Egrsr6iSvM9Ar5CpTH6/kfUj4wGGweGCNwXvnnl9HQJaKH+iO7e4LrM79iUhluJAXt+A52K7eu1w1a4WOfPR9dm3s0fmgb/REozSG1/BRgpcuN9uUWMDL5IAFDFoH0ZluqKba6G5q4zocGLbo4l9Sz+ttjtrM1dAz6A3xF+os/q+9M4+J4orjuCjGP2napin/SPqHidhwSCuKlGIUbCQERUCKggh4oHItIi1eEIRwCQQhAUTAEitSjVvbYBurte16IOJZ10I5NtAIIiKHe83u9vjuTFiX3WFZWh0a8vv8AW9n3v7m99589x3z5r33xmjBLHmFvbxqvvz4e/LaBfIvFipOvq845aI4vURx1ksp9lF+66/8LkR9MVL9Y6xaksw0HWJacjX3SzXSWu3vX/05IjO33dEvSz2T/UHGJ/gVsrvJOr4rckVP88TVhuKLVegBOCS7oTlvMtyOWim0PHbB5x/pH6iyYzsoF71yAtGkNRkAHVIMZ35T5LjvY7YKW+SQ8mFMjcjCSgXGoL3omu7rkOgcYbZdOi/X2ptRPDgkOYdXxpnsVa3VaaGJgKNbuFVb9AOR+gXYlqDHV/FTnck+Ts2ye57ZAfMTnQKORnLz3ZWMKu1stoPIBRX66fELUTXev4RGBS6a9OVBk6230BqLrkletM/7nQSnN+MWvsVuYeue6XdQXNA9OG5PWRWjKr1U7ZLu87b+Sbh+Yx38Yqf6DjDPoldTLdVYdCjSmGuH1D8kqC+L1FdS1L98pr6axlw/yDSlM81ZzO08zd0ivap+Ldc8PK59dELbekrbfkbbdV7X/b3ujyu6vut/KSesg37rbUeWocUAhSHAtcAG5UPoWjZ13dEPDJu9NiJXK1HRnL3ViKrw5I1zF6U/d0+8Je/d7ofo59ff/FrS1qSyen8u1EfoYdzovNPW12HNCgNo1nDxW/s6ePscw8oRlJQNN8/D51NN4suPrvIqGIq51yOFHWlvGzeYq1/HfqAHTa5bXfdMFhRDLkETiIw2g/kLQmhN3pY9EN+5UCs5jZr3woPLFp6W4S6cu93IOiYZmsqwCgd/qZafnz9VQwRhmf/aAyUIKyGpEQLBIzUbG5vCwsLpdYuYefBIbfbs2cXFr3jOJkHw9EDnzJlj5cQCgrAeHqlRBUq8cgwD7dzHl92CPXv2TK9nxAzDZPzqpdR8fHyePZt82VWCsBLjIu1vY6nZ2dk1NEy+WSdBWINhcwzDkXGz21etWtXTM8nq1AQxKVCY8WMOjnFSQ+dgx44dQ0P/ZqowQXDoWMx383g5Oc9AZGRkezv/O+8EAVQq1cDAAFr2g4ODT58+5cJ9fX0ymQzKaWtr4230z+L+majNzc2trKxMKpVaM13v+fPnT548GR4eNjxBYRgG3hgicJO0dBPMIkRMeNbZ2QlH4S7CIyMjL168UCgUSha1Ws2wIICPhuNcAMdhHGF8sbe3Fw2Arq6uDhbYbG1tFYvFlZWVEokEZ+EqLONbFtKl0WgeP34sl/O/HT5VcCfgm8lBLkO4WzU6OooIyARc10IucaCo4MoMxGTGQLYY8oQXLgONZ5RYALegv78ft8BkUjDcg5MKlpaWFpFI5O/vv3bt2qCgoLCwsI0bNwYHBy9evLiiomIiy/xS43BycoKJtLS03NzcI0eOFBUVFRcXl45RXl5+7NixgoKCwMBA9F4DAgJ27tyZk5OTmpoaExOTmJiYl5d3+PBhHNy8eTPsbNq0CbVzYWFhBUtVVVVNTQ1sohD18/NbtmzZ8uXLYQdhmILN4DE+ZUF68DfYDByHZQTWrFmzcuVKLy8vDw+PpUuXwqCnp6e7u/u8efOQFnt7e5xF7qxfvz4kJARfiYqKSkpKysrKQtoTEhLg5/bt27du3RoeHr5ixYoNGzbs378/JSVl9+7dOLVt2zacio2NRRhHkLrk5GSk9MCBA5mZmUg18gFpKSkpQc6UjQHLq1evxhXj4uKQG7W1tUg4LookI0P8WNatW4e7FRoayiUEV8fZLRMQERERzoKYXIbgL75rni3GGIzjRiDVSMiuXbuQBPifkZGRn58Pn6urq3E39+7di1zy9fWFVzAeHR2NaMgHpJrzCkfi4+Nx0NnZmROJo6Ojq6urt7c3UlpXV2dBxLOMP/AK7jVhwyLY5f4PzJ07d7pdmBBbW9spxccP2JYF4quvr0c9YNLfnERqAqvtdZPOMt1ezCiQnxbEZBlTqRHEa4KkRggESY0QCJIaIRAkNUIgSGqEQJDUCIEgqRECQVIjBIKkRggESY0QCJIaIRAkNUIgSGqEQJDUCIH4B0oJMmQhlyqbAAAAAElFTkSuQmCC';
+  // ── Logo MDM (extrait du modèle original) ─────────────────────────
+  var LOGO_MDM = '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';
   try {
     // Logo en haut à gauche : 25mm x 23mm (proportions 206x189)
-    doc.addImage('data:image/png;base64,' + LOGO_BIO N TRUFFE, 'PNG', 15, 6, 25, 23);
-  } catch(e) { console.warn('Logo BIO N TRUFFE:', e); }
+    doc.addImage('data:image/png;base64,' + LOGO_MDM, 'PNG', 15, 6, 25, 23);
+  } catch(e) { console.warn('Logo MDM:', e); }
 
   // ── Couleurs ──────────────────────────────────────────────────────────
   var BORDER  = [80, 80, 80];
@@ -7570,7 +7561,7 @@ function renderCommandes() {
   const tbody=document.getElementById('tbody-commandes');
   if (!list.length) { tbody.innerHTML=`<tr><td colspan="7"><div class="empty"><div class="empty-icon">📦</div><div class="empty-title">Aucune commande</div><div class="empty-sub">Créez une commande depuis un client</div></div></td></tr>`; return; }
   tbody.innerHTML=list.map(o=>`<tr>
-    <td><span class="text-em" style="font-weight:600;font-size:.8rem">BIO N TRUFFE-${o.id.slice(-6).toUpperCase()}</span></td>
+    <td><span class="text-em" style="font-weight:600;font-size:.8rem">MDM-${o.id.slice(-6).toUpperCase()}</span></td>
     <td>${o.clientNom||'—'}</td><td>${fd(o.createdAt)}</td>
     <td><span class="badge ${cB(o.statut)}">${o.statut}</span></td>
     <td><strong style="color:var(--white)">${(o.montant||0).toFixed(2)} €</strong></td>
@@ -7700,7 +7691,7 @@ function exportFraisCSV() {
   if (!cache.frais.length) { toast('Aucun frais à exporter','err'); return; }
   const rows=[['Date','Commercial','Type','Motif','Client visité','Km','Montant (€)','Statut','Justificatif','Notes']];
   cache.frais.forEach(f=>rows.push([f.dateFrais||'',f.commercial,f.typeFrais,f.motif,f.clientVisite||'',f.km||0,(f.montant||0).toFixed(2),f.statut,f.justif||'',f.notes||'']));
-  dlCSV(rows,'BIO N TRUFFE2026_Frais'); toast('Export frais téléchargé');
+  dlCSV(rows,'MDM2026_Frais'); toast('Export frais téléchargé');
 }
 
 // ═══════════════════════════════════════════════
@@ -7841,8 +7832,8 @@ function exportCSV() {
   const rows=[['Type','Raison sociale','Contact','Email','Téléphone','Ville','Statut/Profil','Remise','Date']];
   cache.prospects.forEach(p=>rows.push(['Prospect',p.raison,p.contact||'',p.email||'',p.tel||'',p.ville||'',p.statut,'',fd(p.createdAt)]));
   cache.clients.forEach(c=>rows.push(['Client',c.raison,c.contact||'',c.email||'',c.tel||'',c.ville||'',c.profil,(c.remise||0)+'%',fd(c.createdAt)]));
-  cache.commandes.forEach(o=>rows.push(['Commande','BIO N TRUFFE-'+o.id.slice(-6).toUpperCase(),o.clientNom,'','','',o.statut,(o.montant||0).toFixed(2)+' €',fd(o.createdAt)]));
-  dlCSV(rows,'BIO N TRUFFE2026_CRM'); toast('Export CSV téléchargé');
+  cache.commandes.forEach(o=>rows.push(['Commande','MDM-'+o.id.slice(-6).toUpperCase(),o.clientNom,'','','',o.statut,(o.montant||0).toFixed(2)+' €',fd(o.createdAt)]));
+  dlCSV(rows,'MDM2026_CRM'); toast('Export CSV téléchargé');
 }
 function dlCSV(rows,name) {
   const csv=rows.map(r=>r.map(c=>`"${String(c||'').replace(/"/g,'""')}"`).join(',')).join('\n');
@@ -7875,25 +7866,25 @@ function fsB(s) { if(s==='Validé'||s==='Remboursé') return 'badge-client'; if(
 //  INIT
 // ═══════════════════════════════════════════════
 document.addEventListener('keydown', e => { if(e.key==='Escape') ['prospect','client','commande','frais'].forEach(closeModal); });
-// Config Firebase BIO N TRUFFE 2026 — PROD (base réelle)
+// Config Firebase MDM 2026 — PROD (base réelle)
 const FIREBASE_CONFIG = {
-  apiKey: "AIzaSyBzJqYmivZ-dJxLDfPgujaTdPa4FsuRO4c",
-  authDomain: "bio-n-truffe.firebaseapp.com",
-  projectId: "bio-n-truffe",
-  storageBucket: "bio-n-truffe.firebasestorage.app",
+  apiKey:            "AIzaSyBzJqYmivZ-dJxLDfPgujaTdPa4FsuRO4c",
+  authDomain:        "bio-n-truffe.firebaseapp.com",
+  projectId:         "bio-n-truffe",
+  storageBucket:     "bio-n-truffe.firebasestorage.app",
   messagingSenderId: "129941520406",
-  appId: "1:129941520406:web:bd70f730d72856e68a7537"
+  appId:             "1:129941520406:web:bd70f730d72856e68a7537"
 };
 
 // Config Firebase — STAGING (bac à sable, données bidon). Utilisé UNIQUEMENT
-// si l'URL contient ?test  (ex: https://.../BioNTruffe/?test). Sinon = PROD.
+// si l'URL contient ?test  (ex: https://.../V3mdm/?test). Sinon = PROD.
 const FIREBASE_CONFIG_STAGING = {
-  apiKey: "AIzaSyBzJqYmivZ-dJxLDfPgujaTdPa4FsuRO4c",
-  authDomain: "bio-n-truffe.firebaseapp.com",
-  projectId: "bio-n-truffe",
-  storageBucket: "bio-n-truffe.firebasestorage.app",
-  messagingSenderId: "129941520406",
-  appId: "1:129941520406:web:bd70f730d72856e68a7537"
+  apiKey:            "AIzaSyDWaz0ZGgc9Wiz0gRbrxr1nO4jMf0nhhec",
+  authDomain:        "bdcmdm26-staging.firebaseapp.com",
+  projectId:         "bdcmdm26-staging",
+  storageBucket:     "bdcmdm26-staging.firebasestorage.app",
+  messagingSenderId: "997211002087",
+  appId:             "1:997211002087:web:c066f014e94a45090afe42"
 };
 
 // Interrupteur prod/test : ?test dans l'URL → bac à sable. Par défaut → PROD.
@@ -7956,27 +7947,13 @@ window.addEventListener('load', function() {
 });
 
 // ═══════════════════════════════════════════════
-//  BON DE COMMANDE — CATALOGUE BIO N TRUFFE
+//  BON DE COMMANDE — CATALOGUE MDM
 // ═══════════════════════════════════════════════
-var PRODUCTS_BIONTRUFFE = [
-{"code":"TARTUFFADE80","ean":"3770028175086","libelle":"TARTUFFADE a la Truffe Noire 2% Bio","poids":"80g","pcb":12,"tva":5.5,"pu_ht":8.50,"categorie":"Aides","certif":"AB","origine":"France"},
-{"code":"CEPES80","ean":"3770028175079","libelle":"DELICE DE CEPES et Truffe Noire 2% Bio","poids":"80g","pcb":12,"tva":5.5,"pu_ht":8.50,"categorie":"Aides","certif":"AB","origine":"France"},
-{"code":"SAUCE80","ean":"3770028175062","libelle":"SAUCE CREMEE a la Truffe Noire 1,5% Bio","poids":"80g","pcb":12,"tva":5.5,"pu_ht":8.50,"categorie":"Aides","certif":"AB","origine":"France"},
-{"code":"PARMESAN80","ean":"3770028175055","libelle":"CREME DE PARMESAN et Truffe Noire 1,5%","poids":"80g","pcb":12,"tva":5.5,"pu_ht":8.50,"categorie":"Aides","certif":"AB","origine":"France"},
-{"code":"BALSAMIQUE150","ean":"3770028175017","libelle":"CREME DE BALSAMIQUE Truffe Noire 1,1%","poids":"150ml","pcb":12,"tva":5.5,"pu_ht":10.50,"categorie":"Aides","certif":"AB","origine":"France"},
-{"code":"BALSAMIQUE100","ean":"3770028175147","libelle":"CREME DE BALSAMIQUE Truffe Noire 1,1% Format compact","poids":"100ml","pcb":12,"tva":5.5,"pu_ht":10.50,"categorie":"Aides","certif":"AB","origine":"France"},
-{"code":"HUILE250","ean":"3770028175109","libelle":"HUILE D OLIVE VIERGE EXTRA Truffe Noire Bio AOP Nyons 250ml","poids":"250ml","pcb":12,"tva":5.5,"pu_ht":19.00,"categorie":"Huiles","certif":"AB AOP","origine":"France"},
-{"code":"HUILE100","ean":"3770028175116","libelle":"HUILE D OLIVE VIERGE EXTRA Truffe Noire Bio AOP Nyons 100ml","poids":"100ml","pcb":12,"tva":5.5,"pu_ht":11.00,"categorie":"Huiles","certif":"AB AOP","origine":"France"},
-{"code":"MIEL100","ean":"3770028175000","libelle":"MIEL D ACCACIA a la Truffe Noire 1,1% Bio","poids":"100g","pcb":12,"tva":5.5,"pu_ht":10.50,"categorie":"Huiles","certif":"AB","origine":"France"},
-{"code":"TRUFFE20BROSS","ean":"3770028175130","libelle":"TRUFFES NOIRES Brossees 1ere Cuisson Bio Tuber Melanosporum","poids":"20g","pcb":6,"tva":5.5,"pu_ht":25.00,"categorie":"Truffes","certif":"AB","origine":"France"},
-{"code":"TRUFFE20BRISURES","ean":"3770028175123","libelle":"TRUFFE NOIRE Brisures 1ere Cuisson Bio Tuber Melanosporum","poids":"20g","pcb":6,"tva":5.5,"pu_ht":20.00,"categorie":"Truffes","certif":"AB","origine":"France"},
-{"code":"DUO_CAJOU_AMANDE","ean":"3770028175161","libelle":"DUO CAJOU AMANDE Truffe d Ete 1,4% Bio NEW","poids":"100g","pcb":6,"tva":5.5,"pu_ht":9.50,"categorie":"Nouveautes","certif":"AB","origine":"France"},
-{"code":"CHIPS_PDT","ean":"3770028175154","libelle":"CHIPS ARTISANALES Truffe d Ete 1% Bio NEW","poids":"100g","pcb":16,"tva":5.5,"pu_ht":3.90,"categorie":"Nouveautes","certif":"AB","origine":"France"}
-];
+var PRODUCTS_MDM = [{"code":"TARTUFFADE80","ean":"3770028175086","libelle":"TARTUFFADE a la Truffe Noire 2% Bio","poids":0.08,"pcb":12,"tva":5.5,"pu_ht":8.50,"certif":"BIO","origine":"France","stock":null},{"code":"CEPES80","ean":"3770028175079","libelle":"DELICE DE CEPES et Truffe Noire 2% Bio","poids":0.08,"pcb":12,"tva":5.5,"pu_ht":8.50,"certif":"BIO","origine":"France","stock":null},{"code":"SAUCE80","ean":"3770028175062","libelle":"SAUCE CREMEE a la Truffe Noire 1,5% Bio","poids":0.08,"pcb":12,"tva":5.5,"pu_ht":8.50,"certif":"BIO","origine":"France","stock":null},{"code":"PARMESAN80","ean":"3770028175055","libelle":"CREME DE PARMESAN et Truffe Noire 1,5%","poids":0.08,"pcb":12,"tva":5.5,"pu_ht":8.50,"certif":"BIO","origine":"France","stock":null},{"code":"BALSAMIQUE150","ean":"3770028175017","libelle":"CREME DE BALSAMIQUE Truffe Noire 1,1% - 150ml","poids":0.15,"pcb":12,"tva":5.5,"pu_ht":10.50,"certif":"BIO","origine":"France","stock":null},{"code":"BALSAMIQUE100","ean":"3770028175147","libelle":"CREME DE BALSAMIQUE Truffe Noire 1,1% - 100ml","poids":0.10,"pcb":12,"tva":5.5,"pu_ht":10.50,"certif":"BIO","origine":"France","stock":null},{"code":"HUILE250","ean":"3770028175109","libelle":"HUILE OLIVE VIERGE EXTRA Truffe Noire Bio AOP Nyons - 250ml","poids":0.25,"pcb":12,"tva":5.5,"pu_ht":19.00,"certif":"BIO","origine":"France","stock":null},{"code":"HUILE100","ean":"3770028175116","libelle":"HUILE OLIVE VIERGE EXTRA Truffe Noire Bio AOP Nyons - 100ml","poids":0.10,"pcb":12,"tva":5.5,"pu_ht":11.00,"certif":"BIO","origine":"France","stock":null},{"code":"MIEL100","ean":"3770028175000","libelle":"MIEL ACCACIA a la Truffe Noire 1,1% Bio - 100g","poids":0.10,"pcb":12,"tva":5.5,"pu_ht":10.50,"certif":"BIO","origine":"France","stock":null},{"code":"TRUFFE20BROSS","ean":"3770028175130","libelle":"TRUFFES NOIRES Brossees 1ere Cuisson Bio - 20g","poids":0.02,"pcb":6,"tva":5.5,"pu_ht":25.00,"certif":"BIO","origine":"France","stock":null},{"code":"TRUFFE20BRISURES","ean":"3770028175123","libelle":"TRUFFE NOIRE Brisures 1ere Cuisson Bio - 20g","poids":0.02,"pcb":6,"tva":5.5,"pu_ht":20.00,"certif":"BIO","origine":"France","stock":null},{"code":"DUO_CAJOU_AMANDE","ean":"3770028175161","libelle":"DUO CAJOU AMANDE Truffe Ete 1,4% Bio","poids":0.10,"pcb":6,"tva":5.5,"pu_ht":9.50,"certif":"BIO","origine":"France","stock":null},{"code":"CHIPS_PDT","ean":"3770028175154","libelle":"CHIPS ARTISANALES Truffe Ete 1% Bio","poids":0.10,"pcb":16,"tva":5.5,"pu_ht":3.90,"certif":"BIO","origine":"France","stock":null}];
 
-var PRODUCTS_BIO N TRUFFE = [{"code":"NABRICO","libelle":"Abricots secs entiers bio - 200g","ean":"3347430001359","origine":"","certif":"BIO","pcb":10,"poids":0.2,"tva":5.5,"pu_ht":3.0264,"stock":null},{"code":"NAILOUR25","libelle":"Ail des ours flocons bio - 25g","ean":"3347430018074","origine":"","certif":"BIO","pcb":6,"poids":0.025,"tva":5.5,"pu_ht":3.007,"stock":null},{"code":"NAIL100","libelle":"Ail semoule pot en verre bio - 100g","ean":"3347430018135","origine":"","certif":"BIO","pcb":6,"poids":0.1,"tva":5.5,"pu_ht":3.395,"stock":null},{"code":"NAMANDE","libelle":"Amandes décortiquées bio - 200g","ean":"3347433004302","origine":"","certif":"BIO","pcb":10,"poids":0.2,"tva":5.5,"pu_ht":3.1525,"stock":null},{"code":"NAMADECTOA100","libelle":"Amandes décortiquées toastées bio - 100g","ean":"3347430013703","origine":"","certif":"BIO","pcb":10,"poids":0.1,"tva":5.5,"pu_ht":2.7839,"stock":null},{"code":"NAMAMOU250","libelle":"Amandes moulues bio - 250g","ean":"3347436002220","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":4.2971,"stock":null},{"code":"NAMIMAI500","libelle":"Amidon de mais bio - 500g","ean":"3347436007478","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.5123,"stock":null},{"code":"NAPEEPEOIGOLI","libelle":"Apéro croki épeautre* oignon olive bio - 150g","ean":"3347430007801","origine":"","certif":"BIO","pcb":6,"poids":0.15,"tva":5.5,"pu_ht":1.9012,"stock":null},{"code":"NSOFFROPOI","libelle":"Apéro crousty, fromage et poivre bio - 120g","ean":"3347436007522","origine":"","certif":"BIO","pcb":12,"poids":0.12,"tva":5.5,"pu_ht":1.746,"stock":null},{"code":"NSOFPIZ","libelle":"Apéro crousty, saveur pizza bio - 120g","ean":"3347436007539","origine":"","certif":"BIO","pcb":12,"poids":0.12,"tva":5.5,"pu_ht":1.9012,"stock":null},{"code":"NAPEOEIBLE","libelle":"Apéro picco à l'oeillette bleue demeter bio - 150g","ean":"3347430007887","origine":"","certif":"BIO","pcb":6,"poids":0.15,"tva":5.5,"pu_ht":1.9012,"stock":null},{"code":"NAPEEPESESCUM","libelle":"Apéro picco épeautre au sésame et cumin demeter bio - 150g","ean":"3347430007795","origine":"","certif":"BIO","pcb":6,"poids":0.15,"tva":5.5,"pu_ht":1.9012,"stock":null},{"code":"NAPESESEPI","libelle":"Apéro picco sésame aux épices d'asie demeter bio - 150g","ean":"3347430007849","origine":"","certif":"BIO","pcb":6,"poids":0.15,"tva":5.5,"pu_ht":1.9012,"stock":null},{"code":"NARTBOC","libelle":"Artichauts au naturel bio - 320g","ean":"3347436007515","origine":"","certif":"BIO","pcb":12,"poids":0.32,"tva":5.5,"pu_ht":2.2407,"stock":null},{"code":"NAZUKI","libelle":"Azuki rouges bio - 500g","ean":"3347435473052","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.8615,"stock":null},{"code":"NGOJI","libelle":"Baies de goji bio - 100g","ean":"3347430005517","origine":"","certif":"BIO","pcb":10,"poids":0.1,"tva":5.5,"pu_ht":2.4735,"stock":null},{"code":"NBANANE","libelle":"Bananes chips bio - 200g","ean":"3347430000871","origine":"","certif":"BIO","pcb":10,"poids":0.2,"tva":5.5,"pu_ht":2.3668,"stock":null},{"code":"NBEUCAC350","libelle":"Beurre de cacahuète crémeux bio - 350g","ean":"3347430027236","origine":"","certif":"BIO","pcb":12,"poids":0.35,"tva":5.5,"pu_ht":2.8712,"stock":null},{"code":"NBEUCACCRU","libelle":"Beurre de cacahuète crunchy bio - 350g","ean":"3347436003234","origine":"","certif":"BIO","pcb":12,"poids":0.35,"tva":5.5,"pu_ht":3.0943,"stock":null},{"code":"BIEBRUNE","libelle":"Bière brune sikaru bio - 33cl","ean":"3347430002141","origine":"","certif":"BIO","pcb":12,"poids":0.33,"tva":5.5,"pu_ht":0.9894,"stock":null},{"code":"NBOUDOIRS","libelle":"Boudoirs de blé princesse bio - 200g","ean":"3347430005913","origine":"","certif":"BIO","pcb":12,"poids":0.2,"tva":5.5,"pu_ht":1.7557,"stock":null},{"code":"NBOUBLE","libelle":"Boulgour de blé dur bio - 500g","ean":"3347435163557","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.7169,"stock":null},{"code":"NBOUCPTEPE","libelle":"Boulgour d'épeautre* demeter bio - 500g","ean":"3347435200016","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.328,"stock":null},{"code":"NBREQUI","libelle":"Bretzels d'épeautre* au quinoa bio - 150g","ean":"3347437066313","origine":"","certif":"BIO","pcb":18,"poids":0.15,"tva":5.5,"pu_ht":1.2707,"stock":null},{"code":"NBRETZEL","libelle":"Bretzels d'épeautre* bio - 150g","ean":"3347437060311","origine":"","certif":"BIO","pcb":18,"poids":0.15,"tva":5.5,"pu_ht":1.2707,"stock":null},{"code":"NBREROY","libelle":"Bretzels royales épeautre* sésame bio - 125g","ean":"3347430002974","origine":"","certif":"BIO","pcb":12,"poids":0.125,"tva":5.5,"pu_ht":1.5132,"stock":null},{"code":"NBUCLAI","libelle":"Bûchettes d'épeautre chocolat au lait 150g bio","ean":"3347436003340","origine":"","certif":"BIO","pcb":16,"poids":0.15,"tva":5.5,"pu_ht":3.201,"stock":null},{"code":"NBUCHETTE","libelle":"Buchettes d'épeautre chocolat noir bio - 150g","ean":"3347437067310","origine":"","certif":"BIO","pcb":16,"poids":0.15,"tva":5.5,"pu_ht":2.8906,"stock":null},{"code":"NGALTOS200","libelle":"Burger végétal toscane vegan 200g bio","ean":"3347436007300","origine":"","certif":"BIO","pcb":6,"poids":0.2,"tva":5.5,"pu_ht":2.4832,"stock":null},{"code":"NCACAO","libelle":"Cacao en poudre bio - 500g","ean":"3347436002237","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":9.5836,"stock":null},{"code":"NCARRE","libelle":"Carrés d'épeautre bio - 150g","ean":"3347437063312","origine":"","certif":"BIO","pcb":12,"poids":0.15,"tva":5.5,"pu_ht":1.8624,"stock":null},{"code":"NCARCHO","libelle":"Carrés d'épeautre nappés de chocolat bio - 160g","ean":"3347437064319","origine":"","certif":"BIO","pcb":12,"poids":0.16,"tva":5.5,"pu_ht":2.522,"stock":null},{"code":"NNOIX","libelle":"Cerneaux de noix bio - 200g","ean":"3347433007303","origine":"","certif":"BIO","pcb":10,"poids":0.2,"tva":5.5,"pu_ht":3.783,"stock":null},{"code":"NCHADEC250","libelle":"Chanvre décortiqué bio - 250g","ean":"3347430000505","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":4.4911,"stock":null},{"code":"NCOOKNOICHO","libelle":"Cookies à la noisette aux pépites de chocolat noir bio - 200g","ean":"3347436005153","origine":"","certif":"BIO","pcb":12,"poids":0.2,"tva":5.5,"pu_ht":2.8809,"stock":null},{"code":"NCOOKIES","libelle":"Cookies d'épeautre chocolat et orange bio - 200g","ean":"3347437062315","origine":"","certif":"BIO","pcb":12,"poids":0.2,"tva":5.5,"pu_ht":2.328,"stock":null},{"code":"NCOOKCHONOI","libelle":"Cookies recette extra gourmande bio - 200g","ean":"3347436004538","origine":"","certif":"BIO","pcb":12,"poids":0.2,"tva":5.5,"pu_ht":3.1622,"stock":null},{"code":"NCOOKCHO","libelle":"Cookies tout chocolat bio - 200g","ean":"3347436005177","origine":"","certif":"BIO","pcb":12,"poids":0.2,"tva":5.5,"pu_ht":3.007,"stock":null},{"code":"NCORFLA","libelle":"Corn flakes bio - 250g","ean":"3347431913316","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":2.3086,"stock":null},{"code":"NCOULEG","libelle":"Couscous aux légumes bio - 250g","ean":"3347435265558","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":1.9885,"stock":null},{"code":"NCOUCLA","libelle":"Couscous de blé dur clair, grain moyen bio - 500g","ean":"3347435193554","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.5035,"stock":null},{"code":"NCOUCPT","libelle":"Couscous de blé dur complet, grain moyen bio - 500g","ean":"3347435183555","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.5035,"stock":null},{"code":"NCOUCOMEPE","libelle":"Couscous d'épeautre* bio - 500g","ean":"3347435117352","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.6675,"stock":null},{"code":"NCOUORG500","libelle":"Couscous d'orge bio - 500g","ean":"3347436007492","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.4056,"stock":null},{"code":"NCRAFROCOU","libelle":"Crackers complets au fromage et graines de courges bio - 110g","ean":"3347436007263","origine":"","certif":"BIO","pcb":12,"poids":0.11,"tva":5.5,"pu_ht":1.9303,"stock":null},{"code":"NCRA3GRA","libelle":"Crackers complets aux 3 graines bio - 110g","ean":"3347436007249","origine":"","certif":"BIO","pcb":12,"poids":0.11,"tva":5.5,"pu_ht":1.3871,"stock":null},{"code":"NCRAEPEGRA","libelle":"Crackers complets d'épeautre* et graines bio - 110g","ean":"3347436007256","origine":"","certif":"BIO","pcb":12,"poids":0.11,"tva":5.5,"pu_ht":1.5035,"stock":null},{"code":"NCRAMUL","libelle":"Crackers complets multicéréales bio - 110g","ean":"3347436007270","origine":"","certif":"BIO","pcb":12,"poids":0.11,"tva":5.5,"pu_ht":1.3774,"stock":null},{"code":"NCRAPETEPEAIL","libelle":"Crackers de petit épeautre ail des ours bio - 80g","ean":"3347436000172","origine":"","certif":"BIO","pcb":10,"poids":0.08,"tva":5.5,"pu_ht":1.6975,"stock":null},{"code":"NCRA100","libelle":"Cranberries bio - 100g","ean":"3347430002196","origine":"","certif":"BIO","pcb":10,"poids":0.1,"tva":5.5,"pu_ht":2.2407,"stock":null},{"code":"NCROAMA","libelle":"Croquants d'épeautre aux amandes bio - 175g","ean":"3347437076312","origine":"","certif":"BIO","pcb":6,"poids":0.175,"tva":5.5,"pu_ht":2.1534,"stock":null},{"code":"NCRUEPECHO250","libelle":"Crunchy d'épeautre chocolat bio - 250g","ean":"3347430011617","origine":"","certif":"BIO","pcb":12,"poids":0.25,"tva":5.5,"pu_ht":2.9973,"stock":null},{"code":"NCUR100","libelle":"Curcuma en poudre bio - 100g","ean":"3347430018050","origine":"","certif":"BIO","pcb":6,"poids":0.1,"tva":5.5,"pu_ht":2.9876,"stock":null},{"code":"NCURRY100","libelle":"Curry poudre pot en verre bio - 100g","ean":"3347430018210","origine":"","certif":"BIO","pcb":6,"poids":0.1,"tva":5.5,"pu_ht":3.6375,"stock":null},{"code":"NDELCHACHO","libelle":"Délices aux châtaignes nappées de chocolat bio - 250g","ean":"3347437052521","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":3.8703,"stock":null},{"code":"EAUFOR50","libelle":"Eau celtic forte bouteille rpet  - 50cl","ean":"3361730001345","origine":"","certif":"BIO","pcb":6,"poids":0.5,"tva":5.5,"pu_ht":0.5723,"stock":null},{"code":"EAUFOR150","libelle":"Eau celtic forte bouteille rpet - 1,5l","ean":"3361730201356","origine":"","certif":"BIO","pcb":6,"poids":1.5,"tva":5.5,"pu_ht":0.679,"stock":null},{"code":"EAULEG150","libelle":"Eau celtic légère bouteille rpet - 1,5l","ean":"3361730201257","origine":"","certif":"BIO","pcb":6,"poids":1.5,"tva":5.5,"pu_ht":0.6596,"stock":null},{"code":"EAULEG50","libelle":"Eau celtic légère bouteille rpet - 50cl","ean":"3361730001246","origine":"","certif":"BIO","pcb":6,"poids":0.5,"tva":5.5,"pu_ht":0.5723,"stock":null},{"code":"EAUPLA150","libelle":"Eau celtic plate bouteille rpet - 1,5l","ean":"3361730000010","origine":"","certif":"BIO","pcb":6,"poids":1.5,"tva":5.5,"pu_ht":0.6402,"stock":null},{"code":"EAUPLA50","libelle":"Eau celtic plate bouteille rpet - 50cl","ean":"3361730001147","origine":"","certif":"BIO","pcb":6,"poids":0.5,"tva":5.5,"pu_ht":0.5432,"stock":null},{"code":"NEPEDEC","libelle":"Epeautre* décortiqué bio - 500g","ean":"3347430006255","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.8236,"stock":null},{"code":"NFARSANGLU500","libelle":"Farine 4 céréales bio (riz, maïs, sarrasin et millet) - 500g","ean":"3347430001090","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.2892,"stock":null},{"code":"NFAR5CE500","libelle":"Farine 5 céréales et graines bio (avoine, blé, seigle, orge, épeautre, graines de tournesol et lin brun) - 500g","ean":"3347431100358","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.6412,"stock":null},{"code":"NFAR7CE500","libelle":"Farine 7 céréales bio (blé, avoine, seigle, orge, maïs, riz et épeautre) - 500g","ean":"3347431101355","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.5774,"stock":null},{"code":"NFARAVO500","libelle":"Farine d'avoine complète bio - 500g","ean":"3347430001168","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.5045,"stock":null},{"code":"NFARBLEPAT01","libelle":"Farine de blé blanche t45 bio équitable en france - 1kg","ean":"3347431045314","origine":"","certif":"BIO","pcb":10,"poids":1.0,"tva":5.5,"pu_ht":1.623,"stock":null},{"code":"NFARBLEPAT2.5","libelle":"Farine de blé blanche t45 bio équitable en france - 2,5kg","ean":"3347430004343","origine":"","certif":"BIO","pcb":4,"poids":2.5,"tva":5.5,"pu_ht":3.784,"stock":null},{"code":"NFARBLE55T01","libelle":"Farine de blé blanche t55 bio équitable en france - 1kg","ean":"3347431055313","origine":"","certif":"BIO","pcb":10,"poids":1.0,"tva":5.5,"pu_ht":1.5957,"stock":null},{"code":"NFARBLE552.5","libelle":"Farine de blé blanche t55 bio équitable en france - 2,5kg","ean":"3347430004503","origine":"","certif":"BIO","pcb":4,"poids":2.5,"tva":5.5,"pu_ht":3.9025,"stock":null},{"code":"NFARBLE55T05","libelle":"Farine de blé blanche t55 bio équitable en france - 5kg","ean":"3347430007184","origine":"","certif":"BIO","pcb":1,"poids":5.0,"tva":5.5,"pu_ht":7.3856,"stock":null},{"code":"NFARBLE6501","libelle":"Farine de blé blanche t65 bio équitable en france - 1kg","ean":"3347430021395","origine":"","certif":"BIO","pcb":10,"poids":1.0,"tva":5.5,"pu_ht":1.778,"stock":null},{"code":"NFARBLEBLC01","libelle":"Farine de blé blanche t70 meule de pierre bio équitable en france - 1kg","ean":"3347431070316","origine":"","certif":"BIO","pcb":10,"poids":1.0,"tva":5.5,"pu_ht":1.7233,"stock":null},{"code":"NFARBLEBLC2.5","libelle":"Farine de blé blanche t70 meule de pierre bio équitable en france - 2.5kg","ean":"3347430003179","origine":"","certif":"BIO","pcb":4,"poids":2.5,"tva":5.5,"pu_ht":4.0119,"stock":null},{"code":"NFARBLECPT01","libelle":"Farine de blé complete t150 meule de pierre bio équitable en france - 1kg","ean":"3347431090314","origine":"","certif":"BIO","pcb":10,"poids":1.0,"tva":5.5,"pu_ht":1.6412,"stock":null},{"code":"NFARBLEDCP01","libelle":"Farine de blé demi complète t110 meule de pierre bio équitable en france - 1kg","ean":"3347431080315","origine":"","certif":"BIO","pcb":10,"poids":1.0,"tva":5.5,"pu_ht":1.6412,"stock":null},{"code":"NFARKALBLA500","libelle":"Farine de blé khorasan kamut® blanche t65 bio - 500g","ean":"3347431805499","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.9269,"stock":null},{"code":"NFARKAM500","libelle":"Farine de blé khorasan kamut® complète bio - 500g","ean":"3347431081350","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.4892,"stock":null},{"code":"NFARBLE45TPIZ01","libelle":"Farine de blé pour pizza blanche t45 bio équitable en france - 1kg","ean":"3347436007461","origine":"","certif":"BIO","pcb":10,"poids":1.0,"tva":5.5,"pu_ht":1.623,"stock":null},{"code":"NFARCHA","libelle":"Farine de châtaigne ue bio - 500g","ean":"3347431092356","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":4.5134,"stock":null},{"code":"NFARFROCAM01","libelle":"Farine de froment campagne t80 meule de pierre bio - 1kg","ean":"3347431070217","origine":"","certif":"BIO","pcb":10,"poids":1.0,"tva":5.5,"pu_ht":1.7142,"stock":null},{"code":"NFARMAI500","libelle":"Farine de maïs bio - 500g","ean":"3347431200355","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.6139,"stock":null},{"code":"NFARMIL500","libelle":"Farine de millet jaune meule de pierre bio - 500g","ean":"3347431091359","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.5957,"stock":null},{"code":"NFARCOC500","libelle":"Farine de noix de coco bio - 500g","ean":"3347430013673","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.4619,"stock":null},{"code":"NFARPEPBLC500","libelle":"Farine de petit épeautre blanche t70 meule de pierre bio - 500g","ean":"3347431770353","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.1792,"stock":null},{"code":"NFARPEPCPT500","libelle":"Farine de petit épeautre complète t150 meule de pierre bio - 500g","ean":"3347431790351","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.9604,"stock":null},{"code":"NFARPEPDCP500","libelle":"Farine de petit épeautre demi-complète t110 meule de pierre bio - 500g","ean":"3347430000352","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.1518,"stock":null},{"code":"NFARPOICHI500","libelle":"Farine de pois chiches meule de pierre bio - 500g","ean":"3347431053135","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.7962,"stock":null},{"code":"NFARQUI500","libelle":"Farine de quinoa meule de pierre bio - 500g","ean":"3347431804508","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":3.556,"stock":null},{"code":"NFARRIZBLC500","libelle":"Farine de riz blanc bio - 500g","ean":"3347430004978","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.8327,"stock":null},{"code":"NFARRIZ500","libelle":"Farine de riz complet meule de pierre bio - 500g","ean":"3347431802351","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.7324,"stock":null},{"code":"NFARSANGLU","libelle":"Farine de riz et millet bio - 500g","ean":"3347431805253","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.0607,"stock":null},{"code":"NFARSAR500","libelle":"Farine de sarrasin complète meule de pierre bio - 500g","ean":"3347430001083","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.9604,"stock":null},{"code":"NFARSEICLA01","libelle":"Farine de seigle, claire bio - 1kg","ean":"3347431370324","origine":"","certif":"BIO","pcb":10,"poids":1.0,"tva":5.5,"pu_ht":1.7051,"stock":null},{"code":"NFARSEIFON01","libelle":"Farine de seigle, foncée bio - 1kg","ean":"3347431370713","origine":"","certif":"BIO","pcb":10,"poids":1.0,"tva":5.5,"pu_ht":1.5774,"stock":null},{"code":"NFARTEFF","libelle":"Farine de teff meule de pierre bio - 500g","ean":"3347430027618","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":3.2278,"stock":null},{"code":"NFAREPEBLC01","libelle":"Farine d'épeautre* blanche t70 meule de pierre bio - 1kg","ean":"3347431094213","origine":"","certif":"BIO","pcb":10,"poids":1.0,"tva":5.5,"pu_ht":2.5166,"stock":null},{"code":"NFAREPEBLC500","libelle":"Farine d'épeautre* blanche t70 meule de pierre bio - 500g","ean":"3347436007454","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.5683,"stock":null},{"code":"NFAREPEBLC2.5","libelle":"Farine d'épeautre* blanche t70_x000d_\n meule de pierre bio - 2.5kg","ean":"3347430003209","origine":"","certif":"BIO","pcb":4,"poids":2.5,"tva":5.5,"pu_ht":5.9723,"stock":null},{"code":"NFAREPECAM01","libelle":"Farine d'épeautre* campagne t80 meule de pierre bio - 1kg","ean":"3347431094114","origine":"","certif":"BIO","pcb":10,"poids":1.0,"tva":5.5,"pu_ht":2.5074,"stock":null},{"code":"NFAREPECPT01","libelle":"Farine d'épeautre* complète t150 meule de pierre bio - 1kg","ean":"3347431094312","origine":"","certif":"BIO","pcb":10,"poids":1.0,"tva":5.5,"pu_ht":2.3069,"stock":null},{"code":"NFAREPECPT500","libelle":"Farine d'épeautre* complète t150 meule de pierre bio - 500g","ean":"3347431094350","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.5045,"stock":null},{"code":"NFAREPEDCP01","libelle":"Farine d'épeautre* demi-complète t110 meule de pierre bio - 1kg","ean":"3347431094121","origine":"","certif":"BIO","pcb":10,"poids":1.0,"tva":5.5,"pu_ht":2.4436,"stock":null},{"code":"NFARMAN500","libelle":"Fécule de manioc bio - 500g","ean":"3347436007485","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":3.3174,"stock":null},{"code":"NFIGUE","libelle":"Figues séchées entières bio - 200g","ean":"3347433002308","origine":"","certif":"BIO","pcb":10,"poids":0.2,"tva":5.5,"pu_ht":2.6675,"stock":null},{"code":"NFLAEPE","libelle":"Flakes d'épeautre bio - 250g","ean":"3347431923315","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":2.231,"stock":null},{"code":"NFLO5CE","libelle":"Flocons 5 céréales bio - 500g","ean":"3347431920314","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.6975,"stock":null},{"code":"NFLOAVO","libelle":"Flocons d'avoine baby (petits) bio - 500g","ean":"3347431910315","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.6102,"stock":null},{"code":"NFLOAVOGRO","libelle":"Flocons d'avoine gros bio - 500g","ean":"3347431910254","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.6102,"stock":null},{"code":"NFLOSAR250","libelle":"Flocons de sarrasin bio - 250g","ean":"3347431929621","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":2.134,"stock":null},{"code":"NFLOSEI","libelle":"Flocons de seigle bio - 500g","ean":"3347431905311","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.261,"stock":null},{"code":"NFLOEPE","libelle":"Flocons d'épeautre bio - 500g","ean":"3347431901313","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.9012,"stock":null},{"code":"NGAL7CE","libelle":"Galettes 7 céréales bio - 100g","ean":"3347439966314","origine":"","certif":"BIO","pcb":12,"poids":0.1,"tva":5.5,"pu_ht":0.9118,"stock":null},{"code":"NGAL7CECAC","libelle":"Galettes 7 céréales et chocolat bio - 150g","ean":"3347439963313","origine":"","certif":"BIO","pcb":12,"poids":0.15,"tva":5.5,"pu_ht":2.037,"stock":null},{"code":"NGALBLECOC","libelle":"Galettes de blé chocolat à la noix de coco bio - 160g","ean":"3347439971318","origine":"","certif":"BIO","pcb":12,"poids":0.16,"tva":5.5,"pu_ht":2.037,"stock":null},{"code":"NGALBLECAC","libelle":"Galettes de blé et chocolat bio - 150g","ean":"3347439941311","origine":"","certif":"BIO","pcb":12,"poids":0.15,"tva":5.5,"pu_ht":2.037,"stock":null},{"code":"NGALPEPCHO","libelle":"Galettes de petit épeautre et chocolat bio - 150g","ean":"3347439950412","origine":"","certif":"BIO","pcb":12,"poids":0.15,"tva":5.5,"pu_ht":2.037,"stock":null},{"code":"NGALRIZCAC","libelle":"Galettes de riz et chocolat bio - 150g","ean":"3347439944312","origine":"","certif":"BIO","pcb":12,"poids":0.15,"tva":5.5,"pu_ht":1.9206,"stock":null},{"code":"NGALEPE","libelle":"Galettes d'épeautre bio - 100g","ean":"3347439942134","origine":"","certif":"BIO","pcb":12,"poids":0.1,"tva":5.5,"pu_ht":0.8924,"stock":null},{"code":"NGALEPECAC","libelle":"Galettes d'épeautre et chocolat bio - 150g","ean":"3347439950313","origine":"","certif":"BIO","pcb":12,"poids":0.15,"tva":5.5,"pu_ht":2.037,"stock":null},{"code":"NGALSES","libelle":"Galettes d'épeautre riz chocolat sésame bio - 160g","ean":"3347439972315","origine":"","certif":"BIO","pcb":12,"poids":0.16,"tva":5.5,"pu_ht":2.037,"stock":null},{"code":"NGAZAND","libelle":"Gaspacho andalou bio - 500ml","ean":"3347436003630","origine":"","certif":"BIO","pcb":12,"poids":0.5,"tva":5.5,"pu_ht":1.843,"stock":null},{"code":"NGOMASIO","libelle":"Gomasio pot en verre bio - 150g","ean":"3347436007508","origine":"","certif":"BIO","pcb":6,"poids":0.15,"tva":5.5,"pu_ht":2.5608,"stock":null},{"code":"NGRACHI250","libelle":"Graines de chia bio - 250g","ean":"3347430010351","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":2.813,"stock":null},{"code":"NGRACOU","libelle":"Graines de courge non ue bio - 250g","ean":"3347435583553","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":2.5705,"stock":null},{"code":"NLINBRUN250","libelle":"Graines de lin brun bio - 250g","ean":"3347435503049","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":1.5326,"stock":null},{"code":"NLINBRUN500","libelle":"Graines de lin brun bio - 500g","ean":"3347435503056","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.328,"stock":null},{"code":"NLINDORE250","libelle":"Graines de lin doré bio - 250g","ean":"3347435510047","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":1.6005,"stock":null},{"code":"NSESAMEBLC250","libelle":"Graines de sésame blanc bio - 250g","ean":"3347434889892","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":1.843,"stock":null},{"code":"NSESAME250","libelle":"Graines de sésame complet bio - 250g","ean":"3347435513048","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":1.6975,"stock":null},{"code":"NSESAME500","libelle":"Graines de sésame complet bio - 500g","ean":"3347435513055","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.8906,"stock":null},{"code":"NTOURNESOL250","libelle":"Graines de tournesol décortiqué bio - 250g","ean":"3347435543540","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":1.4938,"stock":null},{"code":"NTOURNESOL500","libelle":"Graines de tournesol décortiqué bio - 500g","ean":"3347435543557","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.134,"stock":null},{"code":"NGREOLI","libelle":"Gressins à l'huile d'olive bio - 125g","ean":"3347431105797","origine":"","certif":"BIO","pcb":14,"poids":0.125,"tva":5.5,"pu_ht":1.4162,"stock":null},{"code":"NGRESES","libelle":"Gressins au sésame bio - 125g","ean":"3347431105896","origine":"","certif":"BIO","pcb":14,"poids":0.125,"tva":5.5,"pu_ht":1.4162,"stock":null},{"code":"NGREEPE","libelle":"Gressins d'épeautre* bio - 125g","ean":"3347431105995","origine":"","certif":"BIO","pcb":14,"poids":0.125,"tva":5.5,"pu_ht":1.5035,"stock":null},{"code":"NHARBLC500","libelle":"Haricots blancs bio - 500g","ean":"3347435403059","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.425,"stock":null},{"code":"NHARNOI","libelle":"Haricots noirs bio - 500g","ean":"3347430000772","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.2698,"stock":null},{"code":"NHARROU","libelle":"Haricots rouges bio - 500g","ean":"3347435483051","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":3.104,"stock":null},{"code":"HERBA500","libelle":"Herbamare bio - 500g","ean":"7610313391264","origine":"","certif":"BIO","pcb":6,"poids":0.5,"tva":5.5,"pu_ht":5.8491,"stock":null},{"code":"PLANTAM","libelle":"Herbamare concentré (plantmare) bio - 250g","ean":"7610313412815","origine":"","certif":"BIO","pcb":6,"poids":0.25,"tva":5.5,"pu_ht":5.6842,"stock":null},{"code":"NATINFTHYEUC","libelle":"Infusion thym eucalyptus bio","ean":"7290000529974","origine":"","certif":"BIO","pcb":12,"poids":0.045,"tva":5.5,"pu_ht":2.3765,"stock":null},{"code":"NATINFVERCIT","libelle":"Infusion verveine citronnelle fleur d'oranger bio","ean":"7290016897012","origine":"","certif":"BIO","pcb":12,"poids":0.03,"tva":5.5,"pu_ht":2.3765,"stock":null},{"code":"KELPA500","libelle":"Kelpamare - 500ml","ean":"3322270412459","origine":"","certif":"BIO","pcb":6,"poids":0.5,"tva":5.5,"pu_ht":8.1771,"stock":null},{"code":"KELPA","libelle":"Kelpamare - 85ml","ean":"3322270412411","origine":"","certif":"BIO","pcb":12,"poids":0.085,"tva":5.5,"pu_ht":3.395,"stock":null},{"code":"KOMCITGIN","libelle":"Kombucha citron gingembre bio - 33cl","ean":"3347436007331","origine":"","certif":"BIO","pcb":12,"poids":0.33,"tva":5.5,"pu_ht":1.6781,"stock":null},{"code":"KOMFRACIT","libelle":"Kombucha framboise citron vert bio - 33cl","ean":"3347436007355","origine":"","certif":"BIO","pcb":12,"poids":0.33,"tva":5.5,"pu_ht":1.8042,"stock":null},{"code":"KOMORIG","libelle":"Kombucha original bio - 33cl","ean":"3347436007362","origine":"","certif":"BIO","pcb":12,"poids":0.33,"tva":5.5,"pu_ht":1.5714,"stock":null},{"code":"KOMORIG75","libelle":"Kombucha original bio - 75cl","ean":"3347436007379","origine":"","certif":"BIO","pcb":12,"poids":0.75,"tva":5.5,"pu_ht":2.522,"stock":null},{"code":"KOMPECSUR","libelle":"Kombucha pêche sureau bio - 33cl","ean":"3347436007348","origine":"","certif":"BIO","pcb":12,"poids":0.33,"tva":5.5,"pu_ht":1.6781,"stock":null},{"code":"NLENBLO","libelle":"Lentilles blondes bio - 500g","ean":"3347435383559","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.4735,"stock":null},{"code":"NLENNOI500","libelle":"Lentilles noires beluga bio - 500g","ean":"3347430004688","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":3.0167,"stock":null},{"code":"NLENROU","libelle":"Lentilles rouges corail bio - 500g","ean":"3347435373550","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.2795,"stock":null},{"code":"NLENVER","libelle":"Lentilles vertes bio - 500g","ean":"3347435303052","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.5511,"stock":null},{"code":"NLETMOU","libelle":"Lettres du moulin nappage chocolat bio - 300g","ean":"3347437079993","origine":"","certif":"BIO","pcb":10,"poids":0.3,"tva":5.5,"pu_ht":3.0943,"stock":null},{"code":"NLEVBIERE","libelle":"Levure de bière maltée - 300g","ean":"3347431961331","origine":"","certif":"BIO","pcb":10,"poids":0.3,"tva":5.5,"pu_ht":4.3941,"stock":null},{"code":"NMAISPOP","libelle":"Maïs à pop corn bio - 500g","ean":"3347432001555","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.0079,"stock":null},{"code":"NMELFRU","libelle":"Mélange de fruits secs bio - 200g","ean":"3347433008331","origine":"","certif":"BIO","pcb":10,"poids":0.2,"tva":5.5,"pu_ht":3.1525,"stock":null},{"code":"NLEGUMI","libelle":"Mélange de légumineuses bio - 500g","ean":"3347435593453","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.6675,"stock":null},{"code":"NMELAND","libelle":"Mélange des andes bio - 500g","ean":"3347435842155","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.5705,"stock":null},{"code":"NMELINC","libelle":"Mélange des incas bio  - 250g","ean":"3347430000833","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":2.1922,"stock":null},{"code":"NMELBOU","libelle":"Mélange du boulanger  bio - 250g","ean":"3347435732159","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":2.2795,"stock":null},{"code":"NMELEXO","libelle":"Mélange exotique bio  - 500g","ean":"3347435263554","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.425,"stock":null},{"code":"NMINEST","libelle":"Mélange minestrone bio  - 500g","ean":"3347435593552","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.5705,"stock":null},{"code":"NPREPAI5CE","libelle":"Mélange pour pain prêt à l'emploi 5 céréales bio - 500g","ean":"3347431002072","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.7848,"stock":null},{"code":"NMIELACA","libelle":"Miel d'acacia bio - 250g","ean":"3347433062326","origine":"","certif":"BIO","pcb":6,"poids":0.25,"tva":5.5,"pu_ht":5.626,"stock":null},{"code":"NMIELMON","libelle":"Miel de montagne bio - 250g","ean":"3347433063323","origine":"","certif":"BIO","pcb":6,"poids":0.25,"tva":5.5,"pu_ht":6.693,"stock":null},{"code":"NMIELROM","libelle":"Miel de romarin bio - 250g","ean":"3347433067352","origine":"","certif":"BIO","pcb":6,"poids":0.25,"tva":5.5,"pu_ht":4.8015,"stock":null},{"code":"NMIELTHY","libelle":"Miel de thym bio - 250g","ean":"3347430000512","origine":"","certif":"BIO","pcb":6,"poids":0.25,"tva":5.5,"pu_ht":4.462,"stock":null},{"code":"NMIELEUC250BIO","libelle":"Miel d'eucalyptus bio - 250g","ean":"3347430013543","origine":"","certif":"BIO","pcb":6,"poids":0.25,"tva":5.5,"pu_ht":5.044,"stock":null},{"code":"NMILLET","libelle":"Millet jaune décortiqué bio - 500g","ean":"3347435103553","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.6975,"stock":null},{"code":"NMINSABAFH","libelle":"Mini sablés d'épeautre* ail & fines herbes bio - 125g","ean":"3347436003890","origine":"","certif":"BIO","pcb":12,"poids":0.125,"tva":5.5,"pu_ht":2.3086,"stock":null},{"code":"NMINSABOIG","libelle":"Mini sablés d'épeautre* oignon bio - 125g","ean":"3347436003876","origine":"","certif":"BIO","pcb":12,"poids":0.125,"tva":5.5,"pu_ht":2.2504,"stock":null},{"code":"NMINSABBBQ","libelle":"Mini sablés d'épeautre* saveur barbecue bio - 125g","ean":"3347436003838","origine":"","certif":"BIO","pcb":12,"poids":0.125,"tva":5.5,"pu_ht":2.1825,"stock":null},{"code":"NMINSABPIZ","libelle":"Mini sablés d'épeautre* saveur italienne bio - 125g","ean":"3347436003852","origine":"","certif":"BIO","pcb":12,"poids":0.125,"tva":5.5,"pu_ht":2.2504,"stock":null},{"code":"NMINSABMEX","libelle":"Mini sablés d'épeautre* saveur mexicaine bio - 125g","ean":"3347436003814","origine":"","certif":"BIO","pcb":12,"poids":0.125,"tva":5.5,"pu_ht":2.1825,"stock":null},{"code":"NMUECHO","libelle":"Muesli aux pépites de chocolat bio - 500g","ean":"3347431928358","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.8615,"stock":null},{"code":"NMUECRO","libelle":"Muesli croustillant bio - 500g","ean":"3347431929263","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.8615,"stock":null},{"code":"NMUEBAS","libelle":"Muesli de base bio - 500g","ean":"3347431926354","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.0855,"stock":null},{"code":"NMUEDEL","libelle":"Muesli délice aux fruits exotiques et graines bio - 500g","ean":"3347431924350","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.5705,"stock":null},{"code":"NMUEFRUROU","libelle":"Muesli fruits rouges bio - 500g","ean":"3347431929256","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":3.395,"stock":null},{"code":"NMUEPLA","libelle":"Muesli plaisir fruité bio - 500g","ean":"3347431927351","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.5705,"stock":null},{"code":"NMUEQUICHO","libelle":"Muesli quinoa et chocolat bio - 500g","ean":"3347431930313","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.6287,"stock":null},{"code":"NMUESANSUC","libelle":"Muesli sans sucre ajouté bio - 500g","ean":"3347431921359","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.1825,"stock":null},{"code":"NMUESPO","libelle":"Muesli sport aux fruits et graines bio - 500g","ean":"3347431923353","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.1825,"stock":null},{"code":"NMUETRA","libelle":"Muesli tradition bio - 500g","ean":"3347431922356","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.425,"stock":null},{"code":"NMULBER100","libelle":"Mulberries bio - 100g","ean":"3347430008266","origine":"","certif":"BIO","pcb":10,"poids":0.1,"tva":5.5,"pu_ht":1.94,"stock":null},{"code":"NNOISET","libelle":"Noisettes décortiquées bio - 200g","ean":"3347433003305","origine":"","certif":"BIO","pcb":10,"poids":0.2,"tva":5.5,"pu_ht":3.9479,"stock":null},{"code":"NNOICAJ100","libelle":"Noix de cajou bio - 100g","ean":"3347433009376","origine":"","certif":"BIO","pcb":10,"poids":0.1,"tva":5.5,"pu_ht":2.3086,"stock":null},{"code":"NCOCO","libelle":"Noix de coco rapée bio - 200g","ean":"3347433009352","origine":"","certif":"BIO","pcb":10,"poids":0.2,"tva":5.5,"pu_ht":2.134,"stock":null},{"code":"NNOIBRE100","libelle":"Noix du brésil bio - 100g","ean":"3347430012546","origine":"","certif":"BIO","pcb":10,"poids":0.1,"tva":5.5,"pu_ht":3.3465,"stock":null},{"code":"NOEIBLEUE","libelle":"Œillette bleue (pavot) bio - 250g","ean":"3347435533046","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":2.6675,"stock":null},{"code":"NOLIVERMAR","libelle":"Olives vertes marinées aux herbes bio - 345g","ean":"3347436003531","origine":"","certif":"BIO","pcb":12,"poids":0.345,"tva":5.5,"pu_ht":1.9885,"stock":null},{"code":"NORGMON","libelle":"Orge mondé bio - 500g","ean":"3347431001259","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.5326,"stock":null},{"code":"NPAINEPIMIEL","libelle":"Pain d'épices a l'ancienne bio - 300g","ean":"3347430697774","origine":"","certif":"BIO","pcb":12,"poids":0.3,"tva":5.5,"pu_ht":2.4735,"stock":null},{"code":"NPASSATA","libelle":"Passata coulis de tomate bio - 680g","ean":"3347430020558","origine":"","certif":"BIO","pcb":6,"poids":0.68,"tva":5.5,"pu_ht":1.455,"stock":null},{"code":"NPENEPE","libelle":"Penne d'épeautre bio - 500g","ean":"3347436006501","origine":"","certif":"BIO","pcb":12,"poids":0.5,"tva":5.5,"pu_ht":2.6675,"stock":null},{"code":"NPENTRI","libelle":"Penne tricolore bio - 500g","ean":"3347430019125","origine":"","certif":"BIO","pcb":12,"poids":0.5,"tva":5.5,"pu_ht":1.6975,"stock":null},{"code":"NPEPLEGCHA","libelle":"Petit épeautre aux légumes bio - 250g","ean":"3347435268559","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":2.0855,"stock":null},{"code":"NPETEPEAU","libelle":"Petit épeautre décortiqué bio - 500g","ean":"3347430007269","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.8915,"stock":null},{"code":"NPETBEUEPE","libelle":"Petits beurre à l'épeautre bio - 150g","ean":"3347436003210","origine":"","certif":"BIO","pcb":12,"poids":0.15,"tva":5.5,"pu_ht":1.6684,"stock":null},{"code":"NPIGPIN100","libelle":"Pignons de pin bio - 100g","ean":"3347436007560","origine":"","certif":"BIO","pcb":10,"poids":0.1,"tva":5.5,"pu_ht":4.9955,"stock":null},{"code":"NPISDECNAT100","libelle":"Pistaches décortiquées natures bio - 100g","ean":"3347436007546","origine":"","certif":"BIO","pcb":10,"poids":0.1,"tva":5.5,"pu_ht":4.559,"stock":null},{"code":"NPISCOQSAL","libelle":"Pistaches en coques salées bio - 100g","ean":"3347436007553","origine":"","certif":"BIO","pcb":10,"poids":0.1,"tva":5.5,"pu_ht":2.6675,"stock":null},{"code":"NPOICAS","libelle":"Pois cassés verts bio - 500g","ean":"3347435353057","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.8236,"stock":null},{"code":"NPOICHI","libelle":"Pois chiches bio - 500g","ean":"3347435313556","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.8915,"stock":null},{"code":"NPOINOI100","libelle":"Poivre noir moulu pot en verre bio - 100g","ean":"3347430018203","origine":"","certif":"BIO","pcb":6,"poids":0.1,"tva":5.5,"pu_ht":3.783,"stock":null},{"code":"NPSYBLO300","libelle":"Psyllium blond téguments bio - 300g","ean":"3347430019873","origine":"","certif":"BIO","pcb":10,"poids":0.3,"tva":5.5,"pu_ht":5.723,"stock":null},{"code":"NPURAMA","libelle":"Purée d'amandes complète bio - 350g","ean":"3347437005534","origine":"","certif":"BIO","pcb":6,"poids":0.35,"tva":5.5,"pu_ht":7.5563,"stock":null},{"code":"NPURNOI","libelle":"Purée de noisettes complètes bio - 350g","ean":"3347437005633","origine":"","certif":"BIO","pcb":6,"poids":0.35,"tva":5.5,"pu_ht":9.4575,"stock":null},{"code":"NPURNOICOC","libelle":"Purée de noix de coco bio - 200g","ean":"3347430018623","origine":"","certif":"BIO","pcb":6,"poids":0.2,"tva":5.5,"pu_ht":5.7812,"stock":null},{"code":"NPURPOM","libelle":"Purée de pomme bio - 690g","ean":"3347430021449","origine":"","certif":"BIO","pcb":6,"poids":0.69,"tva":5.5,"pu_ht":3.0361,"stock":null},{"code":"NPURSES","libelle":"Purée de sésame bio - 350g","ean":"3347437005435","origine":"","certif":"BIO","pcb":6,"poids":0.35,"tva":5.5,"pu_ht":3.9382,"stock":null},{"code":"NQUI2SAV","libelle":"Quinoa 2 saveurs bio - 250g","ean":"3347435990535","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":1.8915,"stock":null},{"code":"NQUILEG","libelle":"Quinoa aux légumes bio - 250g","ean":"3347435267552","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":1.9885,"stock":null},{"code":"NQUINOA500","libelle":"Quinoa blanc bio - 500g","ean":"3347435990504","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":3.2786,"stock":null},{"code":"NQUINOANOI","libelle":"Quinoa noir bio - 500g","ean":"3347430000802","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":3.492,"stock":null},{"code":"NQUINOAROU","libelle":"Quinoa rouge bio - 500g","ean":"3347435990511","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":3.201,"stock":null},{"code":"NRAISIN","libelle":"Raisins secs sultanines bio - 200g","ean":"3347433000304","origine":"","certif":"BIO","pcb":10,"poids":0.2,"tva":5.5,"pu_ht":2.1146,"stock":null},{"code":"NRATESP","libelle":"Ratatouille espagnole \"pisto\" bio - 345g","ean":"3347436003517","origine":"","certif":"BIO","pcb":12,"poids":0.345,"tva":5.5,"pu_ht":1.8333,"stock":null},{"code":"NRISLEG","libelle":"Risotto aux légumes bio - 250g","ean":"3347435264551","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":1.8915,"stock":null},{"code":"NRIZ3SAV","libelle":"Riz 3 saveurs (long complet, rouge, sauvage) bio - 500g","ean":"3347435013159","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.1825,"stock":null},{"code":"NRIZBASBLSCLEG","libelle":"Riz basmati aux légumes bio - 250g","ean":"3347430010795","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":1.8915,"stock":null},{"code":"NRIZBASBLC500","libelle":"Riz basmati blanc bio - 500g","ean":"3347435053032","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.1922,"stock":null},{"code":"NRIZBASCPT500","libelle":"Riz basmati complet bio - 500g","ean":"3347435019359","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.134,"stock":null},{"code":"NRIZLONBLA","libelle":"Riz long blanc bio - 1kg","ean":"3347435023318","origine":"","certif":"BIO","pcb":10,"poids":1.0,"tva":5.5,"pu_ht":2.9003,"stock":null},{"code":"NRIZLONBLA500","libelle":"Riz long blanc bio - 500g","ean":"3347436002602","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.746,"stock":null},{"code":"NRIZLONCPT","libelle":"Riz long complet bio - 1kg","ean":"3347435023011","origine":"","certif":"BIO","pcb":10,"poids":1.0,"tva":5.5,"pu_ht":2.6578,"stock":null},{"code":"NRIZLONCPT500","libelle":"Riz long complet bio - 500g","ean":"3347435023554","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.649,"stock":null},{"code":"NRIZDCPCAM","libelle":"Riz long demi complet de méditerranée bio - 1kg","ean":"3347435043118","origine":"","certif":"BIO","pcb":10,"poids":1.0,"tva":5.5,"pu_ht":3.2883,"stock":null},{"code":"NRIZROU","libelle":"Riz rouge bio - 500g","ean":"3347431823950","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.6966,"stock":null},{"code":"NRIZTHAI","libelle":"Riz thaï blanc bio - 500g","ean":"3347435066988","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.619,"stock":null},{"code":"NRIZTHAICPT","libelle":"Riz thaï complet bio - 500g","ean":"3347436005405","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.1922,"stock":null},{"code":"NSARRASIN","libelle":"Sarrasin décortiqué bio - 500g","ean":"3347435143559","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.619,"stock":null},{"code":"NSAUTOM","libelle":"Sauce tomate à l'huile d'olive bio - 345g","ean":"3347436003494","origine":"","certif":"BIO","pcb":12,"poids":0.345,"tva":5.5,"pu_ht":1.8236,"stock":null},{"code":"NSEMBLDCLA500","libelle":"Semoule de blé dur clair fine bio - 500g","ean":"3347431851359","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.7557,"stock":null},{"code":"NSEMMAIFIN500","libelle":"Semoule de maïs fine bio - 500g","ean":"3347431853353","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.7169,"stock":null},{"code":"NSEMMAIGRO500","libelle":"Semoule de maïs grosse bio - 500g","ean":"3347431853254","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.7557,"stock":null},{"code":"NSOJVER","libelle":"Soja vert mungo bio - 500g","ean":"3347435123551","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.619,"stock":null},{"code":"NSONAVO","libelle":"Son d'avoine bio - 500g","ean":"3347437779848","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.7945,"stock":null},{"code":"NSON","libelle":"Son de blé bio équitable en france - 500g","ean":"3347431951318","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.1446,"stock":null},{"code":"NSPABLC","libelle":"Spaghetti bio - 500g","ean":"3347430120197","origine":"","certif":"BIO","pcb":12,"poids":0.5,"tva":5.5,"pu_ht":1.4065,"stock":null},{"code":"NSPACPT","libelle":"Spaghetti complets bio - 500g","ean":"3347430100199","origine":"","certif":"BIO","pcb":12,"poids":0.5,"tva":5.5,"pu_ht":1.4065,"stock":null},{"code":"NSPADCP","libelle":"Spaghetti demi-complets bio - 500g","ean":"3347430111195","origine":"","certif":"BIO","pcb":12,"poids":0.5,"tva":5.5,"pu_ht":1.4065,"stock":null},{"code":"NSPATRI","libelle":"Spaghetti tricolores bio - 500g","ean":"3347430191395","origine":"","certif":"BIO","pcb":12,"poids":0.5,"tva":5.5,"pu_ht":1.6975,"stock":null},{"code":"NSPAEPE500","libelle":"Spaghettines d'épeautre demi-complètes bio - 500g","ean":"3347439960350","origine":"","certif":"BIO","pcb":12,"poids":0.5,"tva":5.5,"pu_ht":2.6675,"stock":null},{"code":"NSPECULPETEPE","libelle":"Spéculoos de petit épeautre bio - 230g","ean":"3347430011457","origine":"","certif":"BIO","pcb":12,"poids":0.23,"tva":5.5,"pu_ht":2.7645,"stock":null},{"code":"NSPECULOS","libelle":"Spéculoos d'épeautre bio - 230g","ean":"3347436002183","origine":"","certif":"BIO","pcb":12,"poids":0.23,"tva":5.5,"pu_ht":2.522,"stock":null},{"code":"NSPI100","libelle":"Spiruline poudre pot en verre bio - 100g","ean":"3347430022668","origine":"","certif":"BIO","pcb":6,"poids":0.1,"tva":5.5,"pu_ht":4.365,"stock":null},{"code":"NSTICKS","libelle":"Sticks d'épeautre* à l'huile d'olive bio - 200g","ean":"3347437264313","origine":"","certif":"BIO","pcb":18,"poids":0.2,"tva":5.5,"pu_ht":1.4259,"stock":null},{"code":"NSUCCAN01","libelle":"Sucre de canne roux clair bio - 1kg","ean":"3347432033310","origine":"","certif":"BIO","pcb":10,"poids":1.0,"tva":5.5,"pu_ht":3.3465,"stock":null},{"code":"NSUCCAN500","libelle":"Sucre de canne roux clair bio - 500g","ean":"3347432033358","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":1.8236,"stock":null},{"code":"NSUCCOC250","libelle":"Sucre fin de coco bio - 250g","ean":"3347436002107","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":2.3765,"stock":null},{"code":"TABCHOPAT62","libelle":"Tablette chocolat noir 62% dessert bio - 100g","ean":"3347430019002","origine":"","certif":"BIO","pcb":10,"poids":0.1,"tva":5.5,"pu_ht":2.8324,"stock":null},{"code":"TABCHONOISEL","libelle":"Tablette chocolat noir 74% à la fleur de sel bio - 100g","ean":"3347430019071","origine":"","certif":"BIO","pcb":10,"poids":0.1,"tva":5.5,"pu_ht":2.8324,"stock":null},{"code":"NCHOCAF","libelle":"Tablette chocolat noir 74% au café bio - 100g","ean":"3347436007409","origine":"","certif":"BIO","pcb":10,"poids":0.1,"tva":5.5,"pu_ht":2.8324,"stock":null},{"code":"TABCHONOIGIN","libelle":"Tablette chocolat noir 74% au gingembre confit bio - 100g","ean":"3347430019217","origine":"","certif":"BIO","pcb":10,"poids":0.1,"tva":5.5,"pu_ht":2.8324,"stock":null},{"code":"TABCHONOIAMA","libelle":"Tablette chocolat noir 74% aux amandes bio - 100g","ean":"3347430019026","origine":"","certif":"BIO","pcb":10,"poids":0.1,"tva":5.5,"pu_ht":2.8324,"stock":null},{"code":"TABCHONOICRA","libelle":"Tablette chocolat noir 74% aux cranberries bio - 100g","ean":"3347430019040","origine":"","certif":"BIO","pcb":10,"poids":0.1,"tva":5.5,"pu_ht":2.8324,"stock":null},{"code":"TABCHNOIFEV","libelle":"Tablette chocolat noir 74% aux éclats de fèves de cacao bio - 100g","ean":"3347430019057","origine":"","certif":"BIO","pcb":10,"poids":0.1,"tva":5.5,"pu_ht":2.8324,"stock":null},{"code":"TABCHONOIMYR","libelle":"Tablette chocolat noir 74% aux myrtilles bio - 100g","ean":"3347430019064","origine":"","certif":"BIO","pcb":10,"poids":0.1,"tva":5.5,"pu_ht":2.8324,"stock":null},{"code":"TABCHONOINOI","libelle":"Tablette chocolat noir 74% aux noisettes entières bio - 100g","ean":"3347430019088","origine":"","certif":"BIO","pcb":10,"poids":0.1,"tva":5.5,"pu_ht":2.8324,"stock":null},{"code":"TABCHONOI74","libelle":"Tablette chocolat noir 74% bio - 100g","ean":"3347430019019","origine":"","certif":"BIO","pcb":10,"poids":0.1,"tva":5.5,"pu_ht":2.8324,"stock":null},{"code":"TABCHONOI85","libelle":"Tablette chocolat noir 85% intense bio - 100g","ean":"3347430019095","origine":"","certif":"BIO","pcb":10,"poids":0.1,"tva":5.5,"pu_ht":3.007,"stock":null},{"code":"TABCHONOI100","libelle":"Tablette pure pâte de cacao bio - 100g","ean":"3347430019101","origine":"","certif":"BIO","pcb":10,"poids":0.1,"tva":5.5,"pu_ht":3.0846,"stock":null},{"code":"NTAPBOC","libelle":"Tapenade d'olives noires bio - 120g","ean":"3347436003555","origine":"","certif":"BIO","pcb":12,"poids":0.12,"tva":5.5,"pu_ht":1.8721,"stock":null},{"code":"NTHAFRO","libelle":"Thalers d'épeautre au fromage bio - 100g","ean":"3347430009126","origine":"","certif":"BIO","pcb":18,"poids":0.1,"tva":5.5,"pu_ht":1.3774,"stock":null},{"code":"NTOFBBQ200","libelle":"Tofu à griller barbecue - 200g","ean":"3347436007294","origine":"","certif":"BIO","pcb":6,"poids":0.2,"tva":5.5,"pu_ht":2.6675,"stock":null},{"code":"NTOFCUR200","libelle":"Tofu à griller curry - 200g","ean":"3347436007317","origine":"","certif":"BIO","pcb":6,"poids":0.2,"tva":5.5,"pu_ht":2.4832,"stock":null},{"code":"NTOFFUM200","libelle":"Tofu fumé vegan bio - 200g","ean":"3347430118019","origine":"","certif":"BIO","pcb":6,"poids":0.2,"tva":5.5,"pu_ht":1.9982,"stock":null},{"code":"NTOFNAT200","libelle":"Tofu nature vegan bio - 200g","ean":"3347436000431","origine":"","certif":"BIO","pcb":6,"poids":0.2,"tva":5.5,"pu_ht":1.9594,"stock":null},{"code":"NLENLEG","libelle":"Trio de lentilles aux légumes bio - 250g","ean":"3347434889908","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":2.1146,"stock":null},{"code":"NLENTRIO500","libelle":"Trio de lentilles bio - 500g","ean":"3347430005487","origine":"","certif":"BIO","pcb":10,"poids":0.5,"tva":5.5,"pu_ht":2.7063,"stock":null},{"code":"NTUBSTIBRE","libelle":"Tubo sticks et bretzels d'épeautre* bio - 290g","ean":"3347430002738","origine":"","certif":"BIO","pcb":12,"poids":0.29,"tva":5.5,"pu_ht":2.7063,"stock":null},{"code":"NSABAVO","libelle":"Vitalines, sablés amandes citron au son d'avoine bio - 200g","ean":"3347430007092","origine":"","certif":"BIO","pcb":12,"poids":0.2,"tva":5.5,"pu_ht":2.5123,"stock":null},{"code":"NSUCBOU250","libelle":"Xylitol cristallisé bio - 250g","ean":"3347436001117","origine":"","certif":"BIO","pcb":10,"poids":0.25,"tva":5.5,"pu_ht":3.1622,"stock":null}];
+var PRODUCTS_NATURALINE = [{"code":"TARTUFFADE80","ean":"3770028175086","libelle":"TARTUFFADE a la Truffe Noire 2% Bio","poids":0.08,"pcb":12,"tva":5.5,"pu_ht":8.50,"certif":"BIO","origine":"France","stock":null},{"code":"CEPES80","ean":"3770028175079","libelle":"DELICE DE CEPES et Truffe Noire 2% Bio","poids":0.08,"pcb":12,"tva":5.5,"pu_ht":8.50,"certif":"BIO","origine":"France","stock":null},{"code":"SAUCE80","ean":"3770028175062","libelle":"SAUCE CREMEE a la Truffe Noire 1,5% Bio","poids":0.08,"pcb":12,"tva":5.5,"pu_ht":8.50,"certif":"BIO","origine":"France","stock":null},{"code":"PARMESAN80","ean":"3770028175055","libelle":"CREME DE PARMESAN et Truffe Noire 1,5%","poids":0.08,"pcb":12,"tva":5.5,"pu_ht":8.50,"certif":"BIO","origine":"France","stock":null},{"code":"BALSAMIQUE150","ean":"3770028175017","libelle":"CREME DE BALSAMIQUE Truffe Noire 1,1% - 150ml","poids":0.15,"pcb":12,"tva":5.5,"pu_ht":10.50,"certif":"BIO","origine":"France","stock":null},{"code":"BALSAMIQUE100","ean":"3770028175147","libelle":"CREME DE BALSAMIQUE Truffe Noire 1,1% - 100ml","poids":0.10,"pcb":12,"tva":5.5,"pu_ht":10.50,"certif":"BIO","origine":"France","stock":null},{"code":"HUILE250","ean":"3770028175109","libelle":"HUILE OLIVE VIERGE EXTRA Truffe Noire Bio AOP Nyons - 250ml","poids":0.25,"pcb":12,"tva":5.5,"pu_ht":19.00,"certif":"BIO","origine":"France","stock":null},{"code":"HUILE100","ean":"3770028175116","libelle":"HUILE OLIVE VIERGE EXTRA Truffe Noire Bio AOP Nyons - 100ml","poids":0.10,"pcb":12,"tva":5.5,"pu_ht":11.00,"certif":"BIO","origine":"France","stock":null},{"code":"MIEL100","ean":"3770028175000","libelle":"MIEL ACCACIA a la Truffe Noire 1,1% Bio - 100g","poids":0.10,"pcb":12,"tva":5.5,"pu_ht":10.50,"certif":"BIO","origine":"France","stock":null},{"code":"TRUFFE20BROSS","ean":"3770028175130","libelle":"TRUFFES NOIRES Brossees 1ere Cuisson Bio - 20g","poids":0.02,"pcb":6,"tva":5.5,"pu_ht":25.00,"certif":"BIO","origine":"France","stock":null},{"code":"TRUFFE20BRISURES","ean":"3770028175123","libelle":"TRUFFE NOIRE Brisures 1ere Cuisson Bio - 20g","poids":0.02,"pcb":6,"tva":5.5,"pu_ht":20.00,"certif":"BIO","origine":"France","stock":null},{"code":"DUO_CAJOU_AMANDE","ean":"3770028175161","libelle":"DUO CAJOU AMANDE Truffe Ete 1,4% Bio","poids":0.10,"pcb":6,"tva":5.5,"pu_ht":9.50,"certif":"BIO","origine":"France","stock":null},{"code":"CHIPS_PDT","ean":"3770028175154","libelle":"CHIPS ARTISANALES Truffe Ete 1% Bio","poids":0.10,"pcb":16,"tva":5.5,"pu_ht":3.90,"certif":"BIO","origine":"France","stock":null}];
 // CURRENT_BRAND déjà défini en haut du script (avant tout usage)
-var PRODUCTS = (CURRENT_BRAND === 'bio-n-truffe') ? PRODUCTS_BIO N TRUFFE : PRODUCTS_BIONTRUFFE;
+var PRODUCTS = (CURRENT_BRAND === 'naturaline') ? PRODUCTS_NATURALINE : PRODUCTS_MDM;
 
 
 
@@ -7985,7 +7962,7 @@ var bdcRemise = 0;
 var bdcSearchMode = 'all';
 var bdcInitDone = false;
 var bdcImportedQtys = {};
-function BDC_STOCK_KEY() { return 'biontruffe_stock_map_v1' + (currentUser && currentUser.uid ? '_' + currentUser.uid : ''); } // par commercial (chacun son fichier de stock), commun aux deux marques
+function BDC_STOCK_KEY() { return 'mdm_stock_map_v1' + (currentUser && currentUser.uid ? '_' + currentUser.uid : ''); } // par commercial (chacun son fichier de stock), commun aux deux marques
 var bdcStockMap = {}; // code -> stock disponible
 function BDC_STOCK_DATE_KEY() { return BDC_STOCK_KEY() + '_at'; }
 
@@ -8093,10 +8070,10 @@ function bdcOnRemiseLigne(input) {
 
 
 // ══════════════════════════════════════════════════════════════════════════
-//  MODULE COMMISSIONS Bio N Truffe CRM
+//  MODULE COMMISSIONS MDM CRM
 // ══════════════════════════════════════════════════════════════════════════
-function COMM_KEY() { return 'biontruffe_commissions_v1_' + CURRENT_BRAND + (currentUser && currentUser.uid ? '_' + currentUser.uid : ''); }
-function COMM_MODE_KEY() { return 'biontruffe_comm_mode_v1_' + CURRENT_BRAND + (currentUser && currentUser.uid ? '_' + currentUser.uid : ''); }
+function COMM_KEY() { return 'mdm_commissions_v1_' + CURRENT_BRAND + (currentUser && currentUser.uid ? '_' + currentUser.uid : ''); }
+function COMM_MODE_KEY() { return 'mdm_comm_mode_v1_' + CURRENT_BRAND + (currentUser && currentUser.uid ? '_' + currentUser.uid : ''); }
 
 function commGetMode() {
   return localStorage.getItem(COMM_MODE_KEY()) || 'client';
@@ -8569,7 +8546,7 @@ function commInit() {
 
 
 // ── Bandeau récapitulatif BDC + persistance localStorage ─────────────────
-function BDC_STORAGE_KEY() { return 'biontruffe_bdc_encours_v1_' + CURRENT_BRAND + (currentUser && currentUser.uid ? '_' + currentUser.uid : ''); }
+function BDC_STORAGE_KEY() { return 'mdm_bdc_encours_v1_' + CURRENT_BRAND + (currentUser && currentUser.uid ? '_' + currentUser.uid : ''); }
 
 var bdcCloudSyncTimer = null;
 var bdcPendingCloud = null;   // derniere version en attente d'envoi
@@ -8580,7 +8557,7 @@ var bdcSyncPending = null;    // version recue d'un autre appareil, en attente d
 // propres ecritures dans le listener temps reel.
 function BDC_DEVICE_ID() {
   try {
-    var k = 'biontruffe_device_id';
+    var k = 'mdm_device_id';
     var v = localStorage.getItem(k);
     if (!v) {
       v = 'dev_' + Math.random().toString(36).slice(2, 10) + Date.now().toString(36);
@@ -8905,7 +8882,7 @@ function bdcHistResend(id) {
 
   // Reconstruit le texte de la commande depuis les lignes sauvegardées
   var date = new Date().toLocaleDateString('fr-FR');
-  var lines = ['BON DE COMMANDE — ' + (CURRENT_BRAND==='bio-n-truffe'?'BIO N TRUFFE':'BIO N TRUFFE'), ''];
+  var lines = ['BON DE COMMANDE — ' + (CURRENT_BRAND==='naturaline'?'BIO N TRUFFE':'MOULIN DES MOINES'), ''];
   if (cmd.clientNom) lines.push('Client : ' + cmd.clientNom);
   if (cmd.numClient) lines.push('N° Client : ' + cmd.numClient);
   if (cmd.contact) lines.push('Contact : ' + cmd.contact);
@@ -8924,8 +8901,8 @@ function bdcHistResend(id) {
   if (cmd.commentaire) { lines.push(''); lines.push('Commentaire : ' + cmd.commentaire); }
   var body = lines.join('\n');
 
-  var subject = 'Bon de commande BIO N TRUFFE 2026 — ' + (cmd.clientNom||'') + ' — ' + date;
-  var mailtoUrl = 'mailto:' + encodeURIComponent('spoto.christophe@gmail.com') + '?subject=' + encodeURIComponent(subject);
+  var subject = 'Bon de commande MDM 2026 — ' + (cmd.clientNom||'') + ' — ' + date;
+  var mailtoUrl = 'mailto:' + encodeURIComponent('commande@moulindesmoines.com') + '?subject=' + encodeURIComponent(subject);
 
   // Ouvrir le client mail de façon synchrone
   var a = document.createElement('a'); a.href = mailtoUrl; a.style.display='none';
@@ -8949,7 +8926,7 @@ function bdcHistExportPDF(id) {
 
   withJsPdf(function() {
     var doc = new window.jspdf.jsPDF({ unit:'mm', format:'a4' });
-    var brand = CURRENT_BRAND === 'bio-n-truffe' ? 'BIO N TRUFFE' : 'BIO N TRUFFE';
+    var brand = CURRENT_BRAND === 'naturaline' ? 'BIO N TRUFFE' : 'MOULIN DES MOINES';
     var date = cmd.createdAt ? new Date(cmd.createdAt.seconds ? cmd.createdAt.seconds*1000 : cmd.createdAt).toLocaleDateString('fr-FR') : '—';
     var fname = 'BDC_' + (cmd.clientNom||'client').replace(/[^a-zA-Z0-9]/g,'_') + '_' + date.replace(/\//g,'-') + '.pdf';
 
@@ -9015,7 +8992,7 @@ function bdcHistExportPDF(id) {
     // Pied de page
     var pageH = doc.internal.pageSize.height;
     doc.setFontSize(8); doc.setTextColor(148,163,184);
-    doc.text('Bio N Truffe CRM 2026 · LOAC DEV Solutions', 12, pageH-8);
+    doc.text('MDM CRM 2026 · LOAC DEV Solutions', 12, pageH-8);
     doc.text('Page 1', 198, pageH-8, {align:'right'});
 
     doc.save(fname);
@@ -9034,7 +9011,7 @@ function bdcHistExportXLS(id) {
 
     // Feuille 1 : détail articles
     var rows = [
-      ['BON DE COMMANDE — ' + (CURRENT_BRAND==='bio-n-truffe'?'BIO N TRUFFE':'BIO N TRUFFE')],
+      ['BON DE COMMANDE — ' + (CURRENT_BRAND==='naturaline'?'BIO N TRUFFE':'MOULIN DES MOINES')],
       [],
       ['Client', cmd.clientNom||'—'],
       ['N° Client', cmd.numClient||''],
@@ -9500,7 +9477,7 @@ function bdcBuildHtml() {
     '<tr><td style="padding:20px 28px 28px;text-align:center;">' +
       '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #e6efe6;"><tr><td style="padding-top:16px;text-align:center;">' +
       '<div style="font-size:11px;color:#94a3b8;">' +
-        'Ce bon de commande a \u00e9t\u00e9 transmis via Bio N Truffe CRM 2026 \u00b7 R\u00e9alis\u00e9 par <strong style="color:#FF4D1C;">LOAC DEV Solutions</strong>' +
+        'Ce bon de commande a \u00e9t\u00e9 transmis via MDM CRM 2026 \u00b7 R\u00e9alis\u00e9 par <strong style="color:#FF4D1C;">LOAC DEV Solutions</strong>' +
       '</div>' +
       '</td></tr></table>' +
     '</td></tr>' +
@@ -9512,7 +9489,7 @@ function bdcBuildText() {
   var mag  = g('bdc-magasin'), mail = g('bdc-email'), nc = g('bdc-numclient');
   var ct   = g('bdc-contact'), tel  = g('bdc-tel'),   dl = g('bdc-datelivraison'), com = g('bdc-comment');
   var today = new Date().toLocaleDateString('fr-FR');
-  var lines = ['BON DE COMMANDE - BIO N TRUFFE 2026','Magasin : '+mag];
+  var lines = ['BON DE COMMANDE - MOULIN DES MOINES 2026','Magasin : '+mag];
   if(nc) lines.push('N° Client : '+nc);
   if(ct) lines.push('Contact : '+ct);
   lines.push('Email : '+mail);
@@ -9540,7 +9517,7 @@ function bdcOpenOutlook() {
   if (!hasOrder)  { bdcShowAlert('Aucun article commandé.', 'err'); return; }
 
   var today = new Date().toLocaleDateString('fr-FR');
-  var subject = 'Bon de commande BIO N TRUFFE 2026 — ' + mag + ' — ' + today;
+  var subject = 'Bon de commande MDM 2026 — ' + mag + ' — ' + today;
 
   // Construire le corps en texte brut (même format que bdcBuildText)
   var body = bdcBuildText();
@@ -9549,7 +9526,7 @@ function bdcOpenOutlook() {
   // être très long pour les grosses commandes, est copié dans le presse-papiers
   // séparément pour éviter de dépasser la limite de longueur des liens mailto:
   // (environ 2000 caractères sur Windows, parfois bien moins selon le client mail).
-  var mailtoUrl = 'mailto:' + encodeURIComponent('spoto.christophe@gmail.com')
+  var mailtoUrl = 'mailto:' + encodeURIComponent('commande@moulindesmoines.com')
     + '?subject=' + encodeURIComponent(subject);
 
   // Ouvrir eM Client de façon SYNCHRONE (dans le geste utilisateur direct)
@@ -9604,14 +9581,14 @@ function bdcSendOrder() {
 
   var today=new Date().toLocaleDateString('fr-FR');
   var payload={
-    _subject:'Bon de commande BIO N TRUFFE 2026 — '+mag+' — '+today,
+    _subject:'Bon de commande MDM 2026 — '+mag+' — '+today,
     _captcha:'false', magasin:mag, email:mail,
     // Web3Forms liste chaque champ comme texte brut dans son propre template
     // (il ne permet pas d'injecter du HTML personnalisé comme corps du mail) :
     // on envoie donc la version texte, structurée et lisible, plutôt que le HTML.
     commande:bdcBuildText()
   };
-  if(mail.toLowerCase()!=='spoto.christophe@gmail.com') payload._replyto=mail;
+  if(mail.toLowerCase()!=='cspoto@moulindesmoines.com') payload._replyto=mail;
 
   // Sauvegarder dans Firebase (sans await)
   if(db && currentUser){
@@ -9630,8 +9607,8 @@ function bdcSendOrder() {
 
   // Envoi email via Web3Forms
   payload.access_key = 'c25bd306-bfaf-4a71-ac6d-36658c0df2ed';
-  payload.from_name  = 'Bio N Truffe CRM';
-  payload.email      = 'spoto.christophe@gmail.com';
+  payload.from_name  = 'MDM CRM';
+  payload.email      = 'cspoto@moulindesmoines.com';
   fetch('https://api.web3forms.com/submit',{
     method:'POST',
     headers:{'Content-Type':'application/json','Accept':'application/json'},
@@ -9648,7 +9625,7 @@ function bdcSendOrder() {
       },1500);
     } else { throw new Error('Réponse invalide'); }
   }).catch(function(){
-    bdcShowAlert('⚠️ Erreur lors de l\'envoi. Réessayez ou contactez BIO N TRUFFE.','err');
+    bdcShowAlert('⚠️ Erreur lors de l\'envoi. Réessayez ou contactez MDM.','err');
   }).finally(function(){
     btn.disabled=false; spinner.style.display='none';
     s2('bdc-send-label','Envoyer la commande');
@@ -9867,14 +9844,14 @@ function bdcApplyImport() {
 }
 
 // ─── Module Création BOX (5 étages, 1 produit par étage) ──────────────────
-// ─── Catalogue BOX BIO N TRUFFE (43 produits issus du Plan Plateau 2025) ───────────
+// ─── Catalogue BOX MDM (43 produits issus du Plan Plateau 2025) ───────────
 // Logique : 1 étage = 2 cartons du même produit. Colis = nb_box × nb_etages × 2. UVC = colis × pcb.
-var BOX_BIONTRUFFE_PRODUCTS = [{"code":"GALEPECAC","libelle":"Galettes d'épeautre nappées chocolat bio","pcb":12,"poids":"150 g","certif":"BIO","origine":"UE/NON UE"},{"code":"GALSES","libelle":"Galettes d'épeautre et riz nappées chocolat et sésame bio","pcb":12,"poids":"150 g","certif":"BIO","origine":"UE/NON UE"},{"code":"GALRIZCAC","libelle":"Galettes de riz nappées chocolat bio","pcb":12,"poids":"150 g","certif":"BIO","origine":"UE/NON UE"},{"code":"GAL7CECAC","libelle":"Galettes 7 céréales nappées chocolat bio","pcb":12,"poids":"150 g","certif":"BIO","origine":"UE/NON UE"},{"code":"APEEPESESCUM","libelle":"Apéro Picco à l'épeautre sésame & cumin noir","pcb":6,"poids":"150g","certif":"BIO (VEGAN)","origine":"UE/NON UE"},{"code":"APESESEPI","libelle":"Apéro Picco sésame noir & épices d'Asie","pcb":6,"poids":"150g","certif":"BIO (VEGAN)","origine":"UE/NON UE"},{"code":"APEOEIBLE","libelle":"Apéro Picco à l'œillette Bleu","pcb":6,"poids":"150g","certif":"BIO (VEGAN)","origine":"UE/NON UE"},{"code":"APEEPEOIGOLI","libelle":"Apéro Croki d'épeautre oignons & olives bio","pcb":6,"poids":"150g","certif":"BIO (VEGAN)","origine":"UE/NON UE"},{"code":"BRETZEL","libelle":"Bretzels épeautre (salés au sel de mer) bio","pcb":15,"poids":"150 g","certif":"BIO","origine":"UE/NON UE"},{"code":"BREROY","libelle":"Bretzel royal bio épeautre et sésame","pcb":12,"poids":"125 g","certif":"BIO","origine":"UE/NON UE"},{"code":"GRESES","libelle":"Gressins bio de blé au sésame","pcb":20,"poids":"125 g","certif":"BIO","origine":"UE/NON UE"},{"code":"MUETRA","libelle":"Muesli Tradition (fruits et graines) bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"UE/NON UE"},{"code":"MUECHO","libelle":"Muesli aux pépites de chocolat et flocons 5 céréales bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"UE/NON UE"},{"code":"MUECRO","libelle":"Muesli croustillant bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"UE/NON UE"},{"code":"FLOAVO","libelle":"Flocons d'avoine baby bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"UE"},{"code":"FLO5CE","libelle":"Flocons 5 céréales (blé, seigle, avoine, orge, épeautre) bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"UE"},{"code":"FARRIZ500","libelle":"Farine bio de riz complète","pcb":10,"poids":"500 g","certif":"BIO","origine":"FRANCE/Italie"},{"code":"FARSAR500","libelle":"Farine bio de sarrasin complète  (extraction 98%) type 150","pcb":10,"poids":"500 g","certif":"BIO","origine":"FRANCE/UE/non UE"},{"code":"FARMAI500","libelle":"Farine bio de maïs complète  (extraction 98%)","pcb":10,"poids":"500 g","certif":"BIO","origine":"Italie"},{"code":"FARCHA","libelle":"Farine bio de châtaignes","pcb":10,"poids":"500 g","certif":"BIO","origine":"UE"},{"code":"FARBLEPAT01","libelle":"Farine bio de blé pâtissière type 45","pcb":10,"poids":"1 kg","certif":"BIO","origine":"France/UE"},{"code":"PASSATA","libelle":"Passata coulis de tomate","pcb":12,"poids":"680 g","certif":"BIO","origine":"UE"},{"code":"PENTRI","libelle":"Penne tricolores bio – Blanches","pcb":12,"poids":"500 g","certif":"BIO","origine":"UE"},{"code":"SPATRI","libelle":"Spaghetti tricolores bio – Blanches","pcb":12,"poids":"500 g","certif":"BIO","origine":"UE"},{"code":"RIZTHAI","libelle":"Riz thaï blanc bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"Italie"},{"code":"RIZLONCPT","libelle":"Riz long complet bio","pcb":10,"poids":"1 kg","certif":"BIO","origine":"Italie"},{"code":"QUINOA500","libelle":"Quinoa (céréale des Incas) blanc bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"Bolivie/Pérou"},{"code":"COUCLA","libelle":"Couscous clair moyen bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"Italie/France"},{"code":"BOUBLE","libelle":"Boulgour blé dur concassé précuit gros bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"Turquie"},{"code":"LENVER","libelle":"Lentilles vertes bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"FRANCE"},{"code":"LENROU","libelle":"Lentilles rouges \"Corail\" bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"Turquie"},{"code":"GRACOU","libelle":"Graines de courge bio","pcb":10,"poids":"250 g","certif":"BIO","origine":"NON UE"},{"code":"TOUNU250","libelle":"Tournesol décortiqué bio","pcb":10,"poids":"250 g","certif":"BIO","origine":"NON UE"},{"code":"SESAME250","libelle":"Sésame complet bio","pcb":10,"poids":"250 g","certif":"BIO","origine":"NON UE"},{"code":"MELBOU","libelle":"Mélange du boulanger (tournesol, lin brun, sésame) bio","pcb":10,"poids":"250 g","certif":"BIO","origine":"UE/NON UE"},{"code":"OEIBLEUE","libelle":"Oeillette bleu bio (Pavot)","pcb":10,"poids":"250 g","certif":"BIO","origine":"Turquie"},{"code":"LINBRUN250","libelle":"Lin brun bio","pcb":10,"poids":"250 g","certif":"BIO","origine":"UE/NON UE"},{"code":"LINDORE250","libelle":"Lin doré bio","pcb":10,"poids":"250 g","certif":"BIO","origine":"NON UE"},{"code":"DELCHACHO","libelle":"Délices aux châtaignes nappés de chocolat bio","pcb":10,"poids":"250 g","certif":"BIO","origine":"UE/NON UE"},{"code":"BOUDOIRS","libelle":"Boudoirs de blé « Princesse » bio","pcb":12,"poids":"200 g","certif":"BIO","origine":"UE/NON UE"},{"code":"PAINEPIMIEL","libelle":"Pain d'épices nature à l'ancienne pré-tranché bio","pcb":12,"poids":"300 g","certif":"BIO","origine":"UE/NON UE"},{"code":"AMANDE","libelle":"Amandes décortiquées bio","pcb":10,"poids":"200 g","certif":"BIO","origine":"UE"},{"code":"MELFRU","libelle":"Mélange de fruits secs bio (abricot-noix-amande-raisin-noisette-pomme-banane)","pcb":10,"poids":"200 g","certif":"BIO","origine":"UE/NON UE"}];
+var BOX_MDM_PRODUCTS = [{"code":"GALEPECAC","libelle":"Galettes d'épeautre nappées chocolat bio","pcb":12,"poids":"150 g","certif":"BIO","origine":"UE/NON UE"},{"code":"GALSES","libelle":"Galettes d'épeautre et riz nappées chocolat et sésame bio","pcb":12,"poids":"150 g","certif":"BIO","origine":"UE/NON UE"},{"code":"GALRIZCAC","libelle":"Galettes de riz nappées chocolat bio","pcb":12,"poids":"150 g","certif":"BIO","origine":"UE/NON UE"},{"code":"GAL7CECAC","libelle":"Galettes 7 céréales nappées chocolat bio","pcb":12,"poids":"150 g","certif":"BIO","origine":"UE/NON UE"},{"code":"APEEPESESCUM","libelle":"Apéro Picco à l'épeautre sésame & cumin noir","pcb":6,"poids":"150g","certif":"BIO (VEGAN)","origine":"UE/NON UE"},{"code":"APESESEPI","libelle":"Apéro Picco sésame noir & épices d'Asie","pcb":6,"poids":"150g","certif":"BIO (VEGAN)","origine":"UE/NON UE"},{"code":"APEOEIBLE","libelle":"Apéro Picco à l'œillette Bleu","pcb":6,"poids":"150g","certif":"BIO (VEGAN)","origine":"UE/NON UE"},{"code":"APEEPEOIGOLI","libelle":"Apéro Croki d'épeautre oignons & olives bio","pcb":6,"poids":"150g","certif":"BIO (VEGAN)","origine":"UE/NON UE"},{"code":"BRETZEL","libelle":"Bretzels épeautre (salés au sel de mer) bio","pcb":15,"poids":"150 g","certif":"BIO","origine":"UE/NON UE"},{"code":"BREROY","libelle":"Bretzel royal bio épeautre et sésame","pcb":12,"poids":"125 g","certif":"BIO","origine":"UE/NON UE"},{"code":"GRESES","libelle":"Gressins bio de blé au sésame","pcb":20,"poids":"125 g","certif":"BIO","origine":"UE/NON UE"},{"code":"MUETRA","libelle":"Muesli Tradition (fruits et graines) bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"UE/NON UE"},{"code":"MUECHO","libelle":"Muesli aux pépites de chocolat et flocons 5 céréales bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"UE/NON UE"},{"code":"MUECRO","libelle":"Muesli croustillant bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"UE/NON UE"},{"code":"FLOAVO","libelle":"Flocons d'avoine baby bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"UE"},{"code":"FLO5CE","libelle":"Flocons 5 céréales (blé, seigle, avoine, orge, épeautre) bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"UE"},{"code":"FARRIZ500","libelle":"Farine bio de riz complète","pcb":10,"poids":"500 g","certif":"BIO","origine":"FRANCE/Italie"},{"code":"FARSAR500","libelle":"Farine bio de sarrasin complète  (extraction 98%) type 150","pcb":10,"poids":"500 g","certif":"BIO","origine":"FRANCE/UE/non UE"},{"code":"FARMAI500","libelle":"Farine bio de maïs complète  (extraction 98%)","pcb":10,"poids":"500 g","certif":"BIO","origine":"Italie"},{"code":"FARCHA","libelle":"Farine bio de châtaignes","pcb":10,"poids":"500 g","certif":"BIO","origine":"UE"},{"code":"FARBLEPAT01","libelle":"Farine bio de blé pâtissière type 45","pcb":10,"poids":"1 kg","certif":"BIO","origine":"France/UE"},{"code":"PASSATA","libelle":"Passata coulis de tomate","pcb":12,"poids":"680 g","certif":"BIO","origine":"UE"},{"code":"PENTRI","libelle":"Penne tricolores bio – Blanches","pcb":12,"poids":"500 g","certif":"BIO","origine":"UE"},{"code":"SPATRI","libelle":"Spaghetti tricolores bio – Blanches","pcb":12,"poids":"500 g","certif":"BIO","origine":"UE"},{"code":"RIZTHAI","libelle":"Riz thaï blanc bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"Italie"},{"code":"RIZLONCPT","libelle":"Riz long complet bio","pcb":10,"poids":"1 kg","certif":"BIO","origine":"Italie"},{"code":"QUINOA500","libelle":"Quinoa (céréale des Incas) blanc bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"Bolivie/Pérou"},{"code":"COUCLA","libelle":"Couscous clair moyen bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"Italie/France"},{"code":"BOUBLE","libelle":"Boulgour blé dur concassé précuit gros bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"Turquie"},{"code":"LENVER","libelle":"Lentilles vertes bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"FRANCE"},{"code":"LENROU","libelle":"Lentilles rouges \"Corail\" bio","pcb":10,"poids":"500 g","certif":"BIO","origine":"Turquie"},{"code":"GRACOU","libelle":"Graines de courge bio","pcb":10,"poids":"250 g","certif":"BIO","origine":"NON UE"},{"code":"TOUNU250","libelle":"Tournesol décortiqué bio","pcb":10,"poids":"250 g","certif":"BIO","origine":"NON UE"},{"code":"SESAME250","libelle":"Sésame complet bio","pcb":10,"poids":"250 g","certif":"BIO","origine":"NON UE"},{"code":"MELBOU","libelle":"Mélange du boulanger (tournesol, lin brun, sésame) bio","pcb":10,"poids":"250 g","certif":"BIO","origine":"UE/NON UE"},{"code":"OEIBLEUE","libelle":"Oeillette bleu bio (Pavot)","pcb":10,"poids":"250 g","certif":"BIO","origine":"Turquie"},{"code":"LINBRUN250","libelle":"Lin brun bio","pcb":10,"poids":"250 g","certif":"BIO","origine":"UE/NON UE"},{"code":"LINDORE250","libelle":"Lin doré bio","pcb":10,"poids":"250 g","certif":"BIO","origine":"NON UE"},{"code":"DELCHACHO","libelle":"Délices aux châtaignes nappés de chocolat bio","pcb":10,"poids":"250 g","certif":"BIO","origine":"UE/NON UE"},{"code":"BOUDOIRS","libelle":"Boudoirs de blé « Princesse » bio","pcb":12,"poids":"200 g","certif":"BIO","origine":"UE/NON UE"},{"code":"PAINEPIMIEL","libelle":"Pain d'épices nature à l'ancienne pré-tranché bio","pcb":12,"poids":"300 g","certif":"BIO","origine":"UE/NON UE"},{"code":"AMANDE","libelle":"Amandes décortiquées bio","pcb":10,"poids":"200 g","certif":"BIO","origine":"UE"},{"code":"MELFRU","libelle":"Mélange de fruits secs bio (abricot-noix-amande-raisin-noisette-pomme-banane)","pcb":10,"poids":"200 g","certif":"BIO","origine":"UE/NON UE"}];
 
 var boxLines = []; // [{code, libelle, pcb, nbEtages}, ...]
 
 function boxOpen() {
-  var brand = CURRENT_BRAND === 'bio-n-truffe' ? 'BIO N TRUFFE' : 'BIO N TRUFFE';
+  var brand = CURRENT_BRAND === 'naturaline' ? 'BIO N TRUFFE' : 'BIO N TRUFFE';
   document.getElementById('box-brand-label').textContent = brand;
   document.getElementById('box-nb').value = 1;
   boxLines = [];
@@ -9888,9 +9865,9 @@ function boxClose() {
 }
 
 function boxGetCatalog() {
-  // En mode BIO N TRUFFE : catalogue du fichier Plan Plateau (43 produits spécifiques BOX)
-  // En mode BIO N TRUFFE : catalogue BIO N TRUFFE standard du CRM
-  return CURRENT_BRAND === 'bio-n-truffe' ? PRODUCTS_BIO N TRUFFE : BOX_BIONTRUFFE_PRODUCTS;
+  // En mode MDM : catalogue du fichier Plan Plateau (43 produits spécifiques BOX)
+  // En mode NATURALINE : catalogue NATURALINE standard du CRM
+  return CURRENT_BRAND === 'naturaline' ? PRODUCTS_NATURALINE : BOX_MDM_PRODUCTS;
 }
 
 function boxAddLine() {
@@ -10055,7 +10032,7 @@ function boxExportCSV() {
   var blob = new Blob([lines.join('\n')], { type: 'text/csv;charset=utf-8;' });
   var url = URL.createObjectURL(blob);
   var a = document.createElement('a');
-  a.href = url; a.download = 'BOX_' + (CURRENT_BRAND === 'bio-n-truffe' ? 'BIO N TRUFFE' : 'BIO N TRUFFE') + '_' + nbBox + 'box_' + new Date().toISOString().slice(0,10) + '.csv';
+  a.href = url; a.download = 'BOX_' + (CURRENT_BRAND === 'naturaline' ? 'BIO N TRUFFE' : 'BIO N TRUFFE') + '_' + nbBox + 'box_' + new Date().toISOString().slice(0,10) + '.csv';
   document.body.appendChild(a); a.click(); document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
@@ -10087,7 +10064,7 @@ function boxExportCSV() {
     </div>
     <div style="margin-top:.8rem;font-size:.73rem;color:var(--s600);background:rgba(30,41,59,.5);border-radius:6px;padding:.7rem .9rem;line-height:1.75;">
       <strong style="color:var(--em400)">Identification des produits (au choix) :</strong><br>
-      &bull; <code style="background:rgba(16,185,129,.1);padding:1px 4px;border-radius:3px;color:var(--em400)">code</code> &mdash; code article BIO N TRUFFE (ex : QUINOA500)<br>
+      &bull; <code style="background:rgba(16,185,129,.1);padding:1px 4px;border-radius:3px;color:var(--em400)">code</code> &mdash; code article MDM (ex : QUINOA500)<br>
       &bull; <code style="background:rgba(16,185,129,.1);padding:1px 4px;border-radius:3px;color:var(--em400)">ean</code> &mdash; code-barres EAN / Gencod<br>
       &bull; <code style="background:rgba(16,185,129,.1);padding:1px 4px;border-radius:3px;color:var(--em400)">libelle</code> &mdash; d&eacute;signation (correspondance partielle accept&eacute;e)<br>
       <strong style="color:var(--em400)">Colonne obligatoire :</strong> <code style="background:rgba(16,185,129,.1);padding:1px 4px;border-radius:3px;color:var(--em400)">quantite</code> (ou qte, qty, colis)<br>
@@ -10102,7 +10079,7 @@ function boxExportCSV() {
 
 <!-- MODULE CRÉATION BOX -->
 <div class="modal-bg hidden" id="box-modal"><div class="modal" style="max-width:800px;">
-  <div class="modal-head"><span class="modal-title">📦 Création BOX — <span id="box-brand-label">BIO N TRUFFE</span></span><button class="close-btn" onclick="boxClose()">✕</button></div>
+  <div class="modal-head"><span class="modal-title">📦 Création BOX — <span id="box-brand-label">Bio N Truffe</span></span><button class="close-btn" onclick="boxClose()">✕</button></div>
   <div class="modal-body">
     <div style="font-size:.78rem;color:var(--g600);margin-bottom:1rem;padding:.6rem .8rem;background:var(--blue-p50);border-radius:7px;border-left:3px solid var(--blue-p400);line-height:1.6;">
       📐 <strong>Logique box :</strong> 1 étage = 2 cartons du même produit.
@@ -10166,8 +10143,8 @@ function boxExportCSV() {
     </div>
 
     <div style="margin-top:.8rem;font-size:.73rem;color:var(--s600);background:rgba(30,41,59,.5);border-radius:6px;padding:.7rem .9rem;line-height:1.7;">
-      <strong style="color:#e8c98a;">Format attendu (export BIO N TRUFFE) :</strong><br>
-      &bull; Colonne <code style="background:rgba(245,158,11,.12);padding:1px 4px;border-radius:3px;color:#e8c98a;">Code article</code> &mdash; code interne BIO N TRUFFE<br>
+      <strong style="color:#e8c98a;">Format attendu (export MDM) :</strong><br>
+      &bull; Colonne <code style="background:rgba(245,158,11,.12);padding:1px 4px;border-radius:3px;color:#e8c98a;">Code article</code> &mdash; code interne MDM<br>
       &bull; Colonne <code style="background:rgba(245,158,11,.12);padding:1px 4px;border-radius:3px;color:#e8c98a;">Disponible</code> &mdash; stock net disponible<br>
       Les stocks mis à jour s'affichent immédiatement dans le catalogue sans recharger la page.
     </div>
@@ -10246,10 +10223,10 @@ function stockParseCSV(text) {
   if (stockIdx < 0) { toast("Colonne 'Disponible' non trouvée",'err'); return; }
 
   // Construire index des codes produits pour matching rapide
-  // (les deux catalogues à la fois : le fichier de stock est commun à BIO N TRUFFE et BIO N TRUFFE)
+  // (les deux catalogues à la fois : le fichier de stock est commun à MDM et NATURALINE)
   var knownCodes = {};
-  PRODUCTS_BIONTRUFFE.forEach(function(p){ knownCodes[p.code.toUpperCase()] = true; });
-  PRODUCTS_BIO N TRUFFE.forEach(function(p){ knownCodes[p.code.toUpperCase()] = true; });
+  PRODUCTS_MDM.forEach(function(p){ knownCodes[p.code.toUpperCase()] = true; });
+  PRODUCTS_NATURALINE.forEach(function(p){ knownCodes[p.code.toUpperCase()] = true; });
 
   pendingStockMap = {};
   var matched = 0, unknown = 0, rupture = 0, exemples = [];
@@ -10388,7 +10365,7 @@ function applyStockImport() {
 
     <div style="margin-top:.8rem;font-size:.72rem;color:var(--s600);background:rgba(30,41,59,.5);border-radius:6px;padding:.7rem .9rem;line-height:1.7;">
       <strong style="color:#7fb47f;">Extraction automatique depuis le PDF :</strong><br>
-      Le système recherche les codes BIO N TRUFFE (ex: <code style="background:rgba(59,130,246,.12);padding:1px 4px;border-radius:3px;color:#7fb47f;">QUINOA500</code>) et les quantités associées.<br>
+      Le système recherche les codes MDM (ex: <code style="background:rgba(59,130,246,.12);padding:1px 4px;border-radius:3px;color:#7fb47f;">QUINOA500</code>) et les quantités associées.<br>
       Fonctionne avec les PDFs de bons de commande textuels (non scanné).
     </div>
   </div>
@@ -10401,7 +10378,7 @@ function applyStockImport() {
 <script>
 // ═══════════════════════════════════════════════
 //  IMPORT PDF — extraction texte + parsing
-//  Format: BON DE COMMANDE BIO N TRUFFE (Référence Désignation Qté PU_B PU_N Total T)
+//  Format: BON DE COMMANDE MDM (Référence Désignation Qté PU_B PU_N Total T)
 // ═══════════════════════════════════════════════
 var pdfImportedQtys = {};
 
@@ -10625,7 +10602,7 @@ function parsePdfText(text) {
         if (mTail) qtyUVC = parseFloat(mTail[2]);
       }
 
-    // Cas 2 : ligne commence par un code produit BIO N TRUFFE
+    // Cas 2 : ligne commence par un code produit MDM
     } else if (CODE_RE.test(parts[0]) && !SKIP[parts[0]]) {
       codeRef = parts[0];
       var nums00b = line.match(/\b(\d+)\.00\b/g) || [];
@@ -10680,7 +10657,7 @@ function parsePdfText(text) {
     '</div>';
 
   document.getElementById('pdf-import-rows').innerHTML = ok === 0
-    ? '<div style="padding:1rem;text-align:center;color:var(--s600);font-size:.8rem;">Aucun produit BIO N TRUFFE reconnu dans ce PDF.<br><small>Vérifiez que les codes du PDF correspondent au catalogue.</small></div>'
+    ? '<div style="padding:1rem;text-align:center;color:var(--s600);font-size:.8rem;">Aucun produit MDM reconnu dans ce PDF.<br><small>Vérifiez que les codes du PDF correspondent au catalogue.</small></div>'
     : results.map(function(r) {
         var label = (qtyIsUvc && r.pcb > 1)
           ? '<span style="font-size:.65rem;color:#b07d1a;margin-left:4px;">' + r.qtyOrig + ' UVC ÷ ' + r.pcb + ' = ' + r.qty + ' colis</span>'
@@ -11034,7 +11011,7 @@ function dashCaDetectCols(row) {
   }
 
   // Les colonnes sont détectées avec correspondance exacte EN PRIORITÉ
-  // (noms exacts de l'export BIO N TRUFFE), puis fallback patterns génériques
+  // (noms exacts de l'export MDM), puis fallback patterns génériques
   var cols = {
     numCmd:       find('N° de cmd',    ['ndecommande','numcmd','ncmd','commandeno','orderno']),
     etat:         find('Etat',         ['etat','statut','status','state']),
@@ -11214,15 +11191,15 @@ function dashCaProcess(rows) {
 
 // ═══════════════════════════════════════════════
 // VERSION DU CODE — pour vérifier le déploiement
-var BIONTRUFFE_VERSION = 'v7.2-fix-' + Date.now(); console.log('%c[Bio N Truffe CRM] Version chargée : ' + BIONTRUFFE_VERSION, 'color:#2563b0;font-weight:bold;font-size:14px');
+var MDM_VERSION = 'v7.2-fix-' + Date.now(); console.log('%c[Bio N Truffe CRM] Version chargée : ' + MDM_VERSION, 'color:#2563b0;font-weight:bold;font-size:14px');
 
 // ═══════════════════════════════════════════════
 // SAUVEGARDE / CHARGEMENT FIRESTORE DES COMMANDES
 // Stockage compact dans collection 'commandes_stats'
 // + Cache localStorage pour affichage instantané
 // ═══════════════════════════════════════════════
-function DASHCA_CACHE_KEY() { return 'biontruffe_commandes_stats_cache_v1_' + CURRENT_BRAND + (currentUser && currentUser.uid ? '_' + currentUser.uid : ''); }
-function DASHCA_META_KEY() { return 'biontruffe_commandes_stats_meta_v1_' + CURRENT_BRAND + (currentUser && currentUser.uid ? '_' + currentUser.uid : ''); }
+function DASHCA_CACHE_KEY() { return 'mdm_commandes_stats_cache_v1_' + CURRENT_BRAND + (currentUser && currentUser.uid ? '_' + currentUser.uid : ''); }
+function DASHCA_META_KEY() { return 'mdm_commandes_stats_meta_v1_' + CURRENT_BRAND + (currentUser && currentUser.uid ? '_' + currentUser.uid : ''); }
 
 function dashCaSaveCache() {
   try {
@@ -12519,7 +12496,7 @@ function dashCaDrawTops(filtered) {
 // ═══════════════════════════════════════════════
 // BASE CONTACTS — Firestore + cache localStorage
 // ═══════════════════════════════════════════════
-function CDB_CACHE_KEY() { return 'biontruffe_contacts_cache_v1_' + CURRENT_BRAND + (currentUser && currentUser.uid ? '_' + currentUser.uid : ''); }
+function CDB_CACHE_KEY() { return 'mdm_contacts_cache_v1_' + CURRENT_BRAND + (currentUser && currentUser.uid ? '_' + currentUser.uid : ''); }
 var cdbContacts = [];          // array complet de contacts
 var cdbImportRaw = null;
 var cdbImportColsIndex = [];       // raw data de l\'import en attente
@@ -14278,7 +14255,7 @@ var ML_AI_MODEL_CLAUDE = 'claude-sonnet-4-5-20250929';
 // nouveaux comptes...) et la disponibilité varie selon les comptes. On interroge
 // donc ListModels avec la clé de l'utilisateur et on choisit le meilleur Flash
 // accessible. Le résultat est mémorisé, et redétecté si le modèle devient invalide.
-function mlAiGeminiModelKey(){ return 'biontruffe_ai_gemini_model' + mlAiUid(); }
+function mlAiGeminiModelKey(){ return 'mdm_ai_gemini_model' + mlAiUid(); }
 function mlAiGetGeminiModel(){ try { return localStorage.getItem(mlAiGeminiModelKey()) || ''; } catch(e){ return ''; } }
 function mlAiSetGeminiModel(m){ try { localStorage.setItem(mlAiGeminiModelKey(), m); } catch(e){} }
 
@@ -14300,7 +14277,7 @@ function mlAiScoreGeminiModel(id){
   return score;
 }
 
-function mlAiModelsKey(){ return 'biontruffe_ai_gemini_models' + mlAiUid(); }
+function mlAiModelsKey(){ return 'mdm_ai_gemini_models' + mlAiUid(); }
 function mlAiGetGeminiModels(){
   try { return JSON.parse(localStorage.getItem(mlAiModelsKey()) || '[]'); } catch(e){ return []; }
 }
@@ -14395,8 +14372,8 @@ function mlAiSyncToCloud(){
   if (!db || !currentUser) return Promise.resolve();
   var payload = {
     provider: mlAiGetProvider(),
-    geminiKey: (function(){ try { return localStorage.getItem('biontruffe_ai_key_gemini' + mlAiUid()) || ''; } catch(e){ return ''; } })(),
-    claudeKey: (function(){ try { return localStorage.getItem('biontruffe_ai_key_claude' + mlAiUid()) || ''; } catch(e){ return ''; } })(),
+    geminiKey: (function(){ try { return localStorage.getItem('mdm_ai_key_gemini' + mlAiUid()) || ''; } catch(e){ return ''; } })(),
+    claudeKey: (function(){ try { return localStorage.getItem('mdm_ai_key_claude' + mlAiUid()) || ''; } catch(e){ return ''; } })(),
     geminiModel: mlAiGetGeminiModel(),
     updatedAt: new Date().toISOString()
   };
@@ -14412,9 +14389,9 @@ function mlAiSyncFromCloud(){
     var d = doc.data() || {};
     try {
       // on n'écrase le local que si le cloud a une valeur
-      if (d.geminiKey)   localStorage.setItem('biontruffe_ai_key_gemini' + mlAiUid(), d.geminiKey);
-      if (d.claudeKey)   localStorage.setItem('biontruffe_ai_key_claude' + mlAiUid(), d.claudeKey);
-      if (d.provider)    localStorage.setItem('biontruffe_ai_provider' + mlAiUid(), d.provider);
+      if (d.geminiKey)   localStorage.setItem('mdm_ai_key_gemini' + mlAiUid(), d.geminiKey);
+      if (d.claudeKey)   localStorage.setItem('mdm_ai_key_claude' + mlAiUid(), d.claudeKey);
+      if (d.provider)    localStorage.setItem('mdm_ai_provider' + mlAiUid(), d.provider);
       if (d.geminiModel) localStorage.setItem(mlAiGeminiModelKey(), d.geminiModel);
       console.log('[IA] Clé récupérée depuis le compte');
     } catch(e){}
@@ -14427,14 +14404,14 @@ function mlAiSyncFromCloud(){
 
 function mlAiUid(){ return (currentUser && currentUser.uid) ? ('_' + currentUser.uid) : ''; }
 function mlAiGetProvider(){
-  try { return localStorage.getItem('biontruffe_ai_provider' + mlAiUid()) || 'gemini'; } catch(e){ return 'gemini'; }
+  try { return localStorage.getItem('mdm_ai_provider' + mlAiUid()) || 'gemini'; } catch(e){ return 'gemini'; }
 }
 function mlAiSetProvider(p){
-  try { localStorage.setItem('biontruffe_ai_provider' + mlAiUid(), p); } catch(e){}
+  try { localStorage.setItem('mdm_ai_provider' + mlAiUid(), p); } catch(e){}
   mlAiRefreshSettings();
   mlAiSyncToCloud();
 }
-function mlAiKeyName(p){ return 'biontruffe_ai_key_' + (p || mlAiGetProvider()) + mlAiUid(); }
+function mlAiKeyName(p){ return 'mdm_ai_key_' + (p || mlAiGetProvider()) + mlAiUid(); }
 function mlAiGetKey(){ try { return localStorage.getItem(mlAiKeyName()) || ''; } catch(e){ return ''; } }
 
 function mlAiRefreshSettings(){
@@ -14614,7 +14591,7 @@ function mlAiCall(systemPrompt, userPrompt, schema, pdf){
 }
 
 function mlAiBrandCtx(){
-  var brand = (CURRENT_BRAND === 'bio-n-truffe') ? 'BIO N TRUFFE' : 'Bio N Truffe';
+  var brand = (CURRENT_BRAND === 'naturaline') ? 'BIO N TRUFFE' : 'Bio N Truffe';
   return 'Tu rédiges pour ' + brand + ', marque française de produits biologiques (épicerie bio, farines, céréales, petit-épeautre). ' +
     'Les destinataires sont des professionnels : magasins bio, épiceries, revendeurs — PAS des particuliers. ' +
     'Les prix sont HT. Le ton doit être celui d\'un commercial de terrain qui connaît ses clients.';
@@ -14852,7 +14829,7 @@ function iaInit(){
   if (lbl) {
     var key = mlAiGetKey();
     lbl.textContent = key
-      ? ((mlAiGetProvider() === 'gemini' ? 'Gemini' : 'Claude') + ' · ' + (CURRENT_BRAND === 'bio-n-truffe' ? 'BIO N TRUFFE' : 'BIO N TRUFFE'))
+      ? ((mlAiGetProvider() === 'gemini' ? 'Gemini' : 'Claude') + ' · ' + (CURRENT_BRAND === 'naturaline' ? 'BIO N TRUFFE' : 'BIO N TRUFFE'))
       : 'Aucune clé configurée';
     lbl.style.color = key ? 'var(--g500)' : '#b0402f';
   }
@@ -14874,7 +14851,7 @@ function botPanelToggle(){
     var sub = document.getElementById('botp-sub');
     if (sub) {
       sub.textContent = mlAiGetKey()
-        ? ((mlAiGetProvider() === 'gemini' ? 'Gemini' : 'Claude') + ' · ' + (CURRENT_BRAND === 'bio-n-truffe' ? 'BIO N TRUFFE' : 'BIO N TRUFFE'))
+        ? ((mlAiGetProvider() === 'gemini' ? 'Gemini' : 'Claude') + ' · ' + (CURRENT_BRAND === 'naturaline' ? 'BIO N TRUFFE' : 'BIO N TRUFFE'))
         : 'Aucune clé configurée';
     }
     botLoadCloud().then(function(){
@@ -14959,7 +14936,7 @@ function botPush(kind, text){
 // ── Instantané des données du CRM (compact, pour tenir dans le contexte) ──
 function botBuildContext(){
   var L = [];
-  var brand = (CURRENT_BRAND === 'bio-n-truffe') ? 'BIO N TRUFFE' : 'Bio N Truffe';
+  var brand = (CURRENT_BRAND === 'naturaline') ? 'BIO N TRUFFE' : 'Bio N Truffe';
   var today = new Date();
   L.push('DATE DU JOUR : ' + today.toLocaleDateString('fr-FR'));
   L.push('MARQUE ACTIVE : ' + brand);
@@ -15586,7 +15563,7 @@ function syncApplyStk() {
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('sw.js', { scope: '/BioNTruffe/' })
+    navigator.serviceWorker.register('sw.js', { scope: '/BIONTRUFFE/' })
       .then(function(reg) {
         console.log('[PWA] Service Worker enregistré, scope:', reg.scope);
       })
