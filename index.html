@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<script>
-window.CURRENT_BRAND = 'BIO_N_TRUFFE';
-</script>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>MDM CRM — Bio N Truffe</title>
@@ -9439,11 +9435,7 @@ function bdcBuildHtml() {
   // ── Version "Outlook-safe" : pas de linear-gradient, box-shadow ni border-radius
   // (non supportés par Outlook desktop/web, voir https://www.contactmonkey.com/blog/outlook-rendering-issues)
   // Couleur pleine en fallback, bordures carrées, bgcolor en attribut HTML en plus du style inline.
-  return '<!DOCTYPE html><html><head>
-<script>
-window.CURRENT_BRAND = 'BIO_N_TRUFFE';
-</script>
-<meta charset="UTF-8"></head><body style="margin:0;padding:0;background-color:#f0f6fb;font-family:Arial,Helvetica,sans-serif;">' +
+  return '<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body style="margin:0;padding:0;background-color:#f0f6fb;font-family:Arial,Helvetica,sans-serif;">' +
     '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f0f6fb;">' +
     '<tr><td align="center" style="padding:24px 12px;">' +
     '<table role="presentation" width="620" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff;border:1px solid #e6efe6;">' +
@@ -9499,7 +9491,30 @@ window.CURRENT_BRAND = 'BIO_N_TRUFFE';
       '</td></tr></table>' +
     '</td></tr>' +
 
-    '</table></td></tr></table></body></html>';
+    '</table></td></tr></table>
+<!-- Catalogue Bio N Truffe -->
+<script>
+const PRODUCTS_BIONTRUFFE = [
+  {code:'TARTUFFADE80',ean:'3770028175086',libelle:'TARTUFFADE a la Truffe Noire 2% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
+  {code:'CEPES80',ean:'3770028175079',libelle:'DELICE DE CEPES et Truffe Noire 2% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
+  {code:'SAUCE80',ean:'3770028175062',libelle:'SAUCE CREMEE a la Truffe Noire 1,5% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
+  {code:'PARMESAN80',ean:'3770028175055',libelle:'CREME DE PARMESAN et Truffe Noire 1,5%',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
+  {code:'BALSAMIQUE150',ean:'3770028175017',libelle:'CREME DE BALSAMIQUE Truffe Noire 1,1%',poids:'150ml',pcb:12,tva:5.5,pu_ht:10.50,categorie:'Aides',certif:'AB',origine:'France'},
+  {code:'BALSAMIQUE100',ean:'3770028175147',libelle:'CREME DE BALSAMIQUE Truffe Noire 1,1% Format compact',poids:'100ml',pcb:12,tva:5.5,pu_ht:10.50,categorie:'Aides',certif:'AB',origine:'France'},
+  {code:'HUILE250',ean:'3770028175109',libelle:'HUILE D OLIVE VIERGE EXTRA Truffe Noire Bio AOP Nyons 250ml',poids:'250ml',pcb:12,tva:5.5,pu_ht:19.00,categorie:'Huiles',certif:'AB AOP',origine:'France'},
+  {code:'HUILE100',ean:'3770028175116',libelle:'HUILE D OLIVE VIERGE EXTRA Truffe Noire Bio AOP Nyons 100ml',poids:'100ml',pcb:12,tva:5.5,pu_ht:11.00,categorie:'Huiles',certif:'AB AOP',origine:'France'},
+  {code:'MIEL100',ean:'3770028175000',libelle:'MIEL D ACCACIA a la Truffe Noire 1,1% Bio',poids:'100g',pcb:12,tva:5.5,pu_ht:10.50,categorie:'Huiles',certif:'AB',origine:'France'},
+  {code:'TRUFFE20BROSS',ean:'3770028175130',libelle:'TRUFFES NOIRES Brossees 1ere Cuisson Bio Tuber Melanosporum',poids:'20g',pcb:6,tva:5.5,pu_ht:25.00,categorie:'Truffes',certif:'AB',origine:'France'},
+  {code:'TRUFFE20BRISURES',ean:'3770028175123',libelle:'TRUFFE NOIRE Brisures 1ere Cuisson Bio Tuber Melanosporum',poids:'20g',pcb:6,tva:5.5,pu_ht:20.00,categorie:'Truffes',certif:'AB',origine:'France'},
+  {code:'DUO_CAJOU_AMANDE',ean:'3770028175161',libelle:'DUO CAJOU AMANDE Truffe d Ete 1,4% Bio NEW',poids:'100g',pcb:6,tva:5.5,pu_ht:9.50,categorie:'Nouveautes',certif:'AB',origine:'France'},
+  {code:'CHIPS_PDT',ean:'3770028175154',libelle:'CHIPS ARTISANALES Truffe d Ete 1% Bio NEW',poids:'100g',pcb:16,tva:5.5,pu_ht:3.90,categorie:'Nouveautes',certif:'AB',origine:'France'}
+];
+
+// Remplacer PRODUCTS par PRODUCTS_BIONTRUFFE dans le code
+var PRODUCTS = PRODUCTS_BIONTRUFFE;
+</script>
+
+</body></html>';
 }
 
 function bdcBuildText() {
@@ -14619,11 +14634,7 @@ var ML_AI_SYS = 'Tu es un assistant qui rédige des emails commerciaux B2B en fr
   'Va droit au bénéfice pour le revendeur (marge, rotation, nouveauté, saisonnalité). ' +
   'Termine par un appel à l\'action simple et concret. ' +
   'Tu réponds UNIQUEMENT avec un objet JSON valide, sans balises markdown, au format exact : ' +
-  '{"subject":"...","body_html":"..."} où body_html contient du HTML simple (<p>, <strong>, <ul>, <li>, <br>) — jamais de <html>, <head>
-<script>
-window.CURRENT_BRAND = 'BIO_N_TRUFFE';
-</script>
- ni <style>.';
+  '{"subject":"...","body_html":"..."} où body_html contient du HTML simple (<p>, <strong>, <ul>, <li>, <br>) — jamais de <html>, <head> ni <style>.';
 
 // Schémas de sortie (Gemini les respecte strictement)
 var ML_AI_SCHEMA_EMAIL = { type:'OBJECT',
@@ -15753,5 +15764,28 @@ if ('serviceWorker' in navigator) {
 })();
 </script>
 <!-- ═══ COHOR-SWITCH-END ═══ -->
+
+<!-- Catalogue Bio N Truffe -->
+<script>
+const PRODUCTS_BIONTRUFFE = [
+  {code:'TARTUFFADE80',ean:'3770028175086',libelle:'TARTUFFADE a la Truffe Noire 2% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
+  {code:'CEPES80',ean:'3770028175079',libelle:'DELICE DE CEPES et Truffe Noire 2% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
+  {code:'SAUCE80',ean:'3770028175062',libelle:'SAUCE CREMEE a la Truffe Noire 1,5% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
+  {code:'PARMESAN80',ean:'3770028175055',libelle:'CREME DE PARMESAN et Truffe Noire 1,5%',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
+  {code:'BALSAMIQUE150',ean:'3770028175017',libelle:'CREME DE BALSAMIQUE Truffe Noire 1,1%',poids:'150ml',pcb:12,tva:5.5,pu_ht:10.50,categorie:'Aides',certif:'AB',origine:'France'},
+  {code:'BALSAMIQUE100',ean:'3770028175147',libelle:'CREME DE BALSAMIQUE Truffe Noire 1,1% Format compact',poids:'100ml',pcb:12,tva:5.5,pu_ht:10.50,categorie:'Aides',certif:'AB',origine:'France'},
+  {code:'HUILE250',ean:'3770028175109',libelle:'HUILE D OLIVE VIERGE EXTRA Truffe Noire Bio AOP Nyons 250ml',poids:'250ml',pcb:12,tva:5.5,pu_ht:19.00,categorie:'Huiles',certif:'AB AOP',origine:'France'},
+  {code:'HUILE100',ean:'3770028175116',libelle:'HUILE D OLIVE VIERGE EXTRA Truffe Noire Bio AOP Nyons 100ml',poids:'100ml',pcb:12,tva:5.5,pu_ht:11.00,categorie:'Huiles',certif:'AB AOP',origine:'France'},
+  {code:'MIEL100',ean:'3770028175000',libelle:'MIEL D ACCACIA a la Truffe Noire 1,1% Bio',poids:'100g',pcb:12,tva:5.5,pu_ht:10.50,categorie:'Huiles',certif:'AB',origine:'France'},
+  {code:'TRUFFE20BROSS',ean:'3770028175130',libelle:'TRUFFES NOIRES Brossees 1ere Cuisson Bio Tuber Melanosporum',poids:'20g',pcb:6,tva:5.5,pu_ht:25.00,categorie:'Truffes',certif:'AB',origine:'France'},
+  {code:'TRUFFE20BRISURES',ean:'3770028175123',libelle:'TRUFFE NOIRE Brisures 1ere Cuisson Bio Tuber Melanosporum',poids:'20g',pcb:6,tva:5.5,pu_ht:20.00,categorie:'Truffes',certif:'AB',origine:'France'},
+  {code:'DUO_CAJOU_AMANDE',ean:'3770028175161',libelle:'DUO CAJOU AMANDE Truffe d Ete 1,4% Bio NEW',poids:'100g',pcb:6,tva:5.5,pu_ht:9.50,categorie:'Nouveautes',certif:'AB',origine:'France'},
+  {code:'CHIPS_PDT',ean:'3770028175154',libelle:'CHIPS ARTISANALES Truffe d Ete 1% Bio NEW',poids:'100g',pcb:16,tva:5.5,pu_ht:3.90,categorie:'Nouveautes',certif:'AB',origine:'France'}
+];
+
+// Remplacer PRODUCTS par PRODUCTS_BIONTRUFFE dans le code
+var PRODUCTS = PRODUCTS_BIONTRUFFE;
+</script>
+
 </body>
 </html>
