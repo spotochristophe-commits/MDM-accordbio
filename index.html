@@ -1513,7 +1513,7 @@ thead th.ts-active { text-decoration:underline; text-underline-offset:3px; }
     <div class="brand-plate" id="brand-logo" aria-label="COHOR">
       <div class="cohor-topbrand"><span class="cohor-topbrand-ico"><svg viewBox="0 0 46 26" fill="none"><circle cx="30" cy="13" r="9.5" stroke="currentColor" stroke-width="3.8"/><circle cx="16" cy="13" r="9.5" stroke="currentColor" stroke-width="3.8"/><path d="M26.75 21.93 A9.5 9.5 0 0 1 20.82 15.46" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/></svg></span><span class="cohor-topbrand-name">COHOR</span></div>
     </div>
-    <div id="brand-switcher" style="display:flex;align-items:center;background:var(--bg2);border-radius:10px;padding:3px;margin-left:12px;">
+    <div id="brand-switcher" style="display:none !important;align-items:center;background:var(--bg2);border-radius:10px;padding:3px;margin-left:12px;">
       <button id="brand-btn-mdm" onclick="setCurrentBrand('mdm')" style="border:none;background:var(--surface);color:var(--blue-p700);font-size:.72rem;font-weight:600;padding:6px 10px;border-radius:7px;cursor:pointer;transition:background .15s;white-space:nowrap;box-shadow:0 1px 2px rgba(26,28,26,.08);">Bio N Truffe</button>
       <button id="brand-btn-naturaline" onclick="setCurrentBrand('naturaline')" style="border:none;background:transparent;color:var(--g500);font-size:.72rem;font-weight:600;padding:6px 10px;border-radius:7px;cursor:pointer;transition:background .15s;white-space:nowrap;">Bio N Truffe</button>
     </div>
@@ -3283,7 +3283,7 @@ thead th.ts-active { text-decoration:underline; text-underline-offset:3px; }
 </div>
 
 <!-- ══ BASCULE MARQUE MOBILE — bouton flottant, zone du pouce ══ -->
-<button id="brand-fab" onclick="brandFabToggle()" aria-label="Changer de marque">
+<button id="brand-fab" onclick="brandFabToggle()" aria-label="Changer de marque" style="display:none !important;">
   <span id="brand-fab-ico">🌾</span>
   <span id="brand-fab-label">Bio N Truffe</span>
   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" style="width:13px;height:13px;opacity:.8;"><path d="M5 6l3-3 3 3M5 10l3 3 3-3"/></svg>
