@@ -4371,7 +4371,7 @@ function accordsGetHtml(accordId) {
 // ─── Gestion des comptes (admin uniquement) ───────────────────────────────
 // ⚠️ Emails administrateurs. En cas de changement d'adresse de connexion,
 // ajoutez simplement la nouvelle ici (l'ancienne peut rester, sans effet).
-var ADMIN_EMAILS = ['loacdev@outlook.fr', 'cspoto@moulindesmoines.com'];
+var ADMIN_EMAILS = ['loacdev@outlook.fr', 'spoto.christophe@gmail.com'];
 var ADMIN_EMAIL = ADMIN_EMAILS[0];   // conservé pour compatibilité
 // Repli : l'uid de l'admin est mémorisé au 1er accès, ce qui préserve les
 // droits même si l'email change (l'uid, lui, ne change jamais).
@@ -8911,7 +8911,7 @@ function bdcHistResend(id) {
   var body = lines.join('\n');
 
   var subject = 'Bon de commande BIONTRUFFE 2026 — ' + (cmd.clientNom||'') + ' — ' + date;
-  var mailtoUrl = 'mailto:' + encodeURIComponent('commande@moulindesmoines.com') + '?subject=' + encodeURIComponent(subject);
+  var mailtoUrl = 'mailto:' + encodeURIComponent('spoto.christophe@gmail.com') + '?subject=' + encodeURIComponent(subject);
 
   // Ouvrir le client mail de façon synchrone
   var a = document.createElement('a'); a.href = mailtoUrl; a.style.display='none';
@@ -9491,7 +9491,8 @@ function bdcBuildHtml() {
       '</td></tr></table>' +
     '</td></tr>' +
 
-    '</table></td></tr></table></body></html>';
+    '</table></td></tr></table><script src="catalogue_biontruffe.js"></script>
+</body></html>';
 }
 
 function bdcBuildText() {
@@ -9535,7 +9536,7 @@ function bdcOpenOutlook() {
   // être très long pour les grosses commandes, est copié dans le presse-papiers
   // séparément pour éviter de dépasser la limite de longueur des liens mailto:
   // (environ 2000 caractères sur Windows, parfois bien moins selon le client mail).
-  var mailtoUrl = 'mailto:' + encodeURIComponent('commande@moulindesmoines.com')
+  var mailtoUrl = 'mailto:' + encodeURIComponent('spoto.christophe@gmail.com')
     + '?subject=' + encodeURIComponent(subject);
 
   // Ouvrir eM Client de façon SYNCHRONE (dans le geste utilisateur direct)
@@ -9597,7 +9598,7 @@ function bdcSendOrder() {
     // on envoie donc la version texte, structurée et lisible, plutôt que le HTML.
     commande:bdcBuildText()
   };
-  if(mail.toLowerCase()!=='cspoto@moulindesmoines.com') payload._replyto=mail;
+  if(mail.toLowerCase()!=='spoto.christophe@gmail.com') payload._replyto=mail;
 
   // Sauvegarder dans Firebase (sans await)
   if(db && currentUser){
@@ -9617,7 +9618,7 @@ function bdcSendOrder() {
   // Envoi email via Web3Forms
   payload.access_key = 'c25bd306-bfaf-4a71-ac6d-36658c0df2ed';
   payload.from_name  = 'Bio N Truffe CRM';
-  payload.email      = 'cspoto@moulindesmoines.com';
+  payload.email      = 'spoto.christophe@gmail.com';
   fetch('https://api.web3forms.com/submit',{
     method:'POST',
     headers:{'Content-Type':'application/json','Accept':'application/json'},
@@ -15741,5 +15742,6 @@ if ('serviceWorker' in navigator) {
 })();
 </script>
 <!-- ═══ COHOR-SWITCH-END ═══ -->
+<script src="catalogue_biontruffe.js"></script>
 </body>
 </html>
