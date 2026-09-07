@@ -1412,6 +1412,22 @@ thead th.ts-active { text-decoration:underline; text-underline-offset:3px; }
 <!-- ═══ COHOR-GLOBAL-END ═══ -->
 <!-- ═══ COHOR-ROLE-START — interface réservée au responsable ═══ -->
 <style id="cohor-role">
+  /* Mode VIEWER (lecture seule) : masque tout ce qui modifie des données. */
+  body.cohor-viewer .cohor-hide-viewer,
+  body.cohor-viewer #nav-item-comptes,
+  body.cohor-viewer #t-tab-comptes,
+  body.cohor-viewer #mtab-comptes,
+  body.cohor-viewer [onclick*="openModal"],
+  body.cohor-viewer [onclick*="Save"],
+  body.cohor-viewer [onclick*="Delete"],
+  body.cohor-viewer [onclick*="Add"],
+  body.cohor-viewer [onclick*="Create"],
+  body.cohor-viewer [onclick*="Edit"],
+  body.cohor-viewer button[type="submit"] { display:none !important; }
+  body.cohor-viewer .bdc-recap-actions,
+  body.cohor-viewer #bdc-send,
+  body.cohor-viewer #bdc-save { display:none !important; }
+
   /* Import du fichier CA national : masqué pour les commerciaux */
   body.cohor-commercial #dash-ca-upload,
   body.cohor-commercial #dash-ca-reload,
@@ -4362,7 +4378,7 @@ function accordsGetHtml(accordId) {
 // ─── Gestion des comptes (admin uniquement) ───────────────────────────────
 // ⚠️ Emails administrateurs. En cas de changement d'adresse de connexion,
 // ajoutez simplement la nouvelle ici (l'ancienne peut rester, sans effet).
-var ADMIN_EMAILS = ['loacdev@outlook.fr', 'cspoto@moulindesmoines.com'];
+var ADMIN_EMAILS = ['spoto.christophe@gmail.com', 'loacdev@outlook.fr', 'cspoto@moulindesmoines.com'];
 var ADMIN_EMAIL = ADMIN_EMAILS[0];   // conservé pour compatibilité
 // Repli : l'uid de l'admin est mémorisé au 1er accès, ce qui préserve les
 // droits même si l'email change (l'uid, lui, ne change jamais).
@@ -4394,6 +4410,14 @@ function isManagerUser() {
   try {
     if (typeof isAdminUser === 'function' && isAdminUser()) return true;
     return !!(window.Equipe && Equipe.roleForCurrent && Equipe.roleForCurrent() === 'manager');
+  } catch(e) { return false; }
+}
+
+// Rôle viewer : lecture seule. Récupéré depuis le profil Firestore chargé au login.
+function isViewerUser() {
+  try {
+    if (isAdminUser()) return false;             // l'admin n'est jamais bridé
+    return (window.CURRENT_PROFILE_ROLE === 'viewer');
   } catch(e) { return false; }
 }
 
@@ -4524,7 +4548,7 @@ async function comptesRender() {
     tbody.innerHTML = rows.map(function(r) {
       var isMe = (r.id === currentUser.uid);
       var actif = (r.actif !== false); // par défaut actif si le champ n'existe pas encore
-      var roleLabel = (r.role === 'admin') ? '👑 Admin' : '👤 Commercial';
+      var roleLabel = (r.role === 'admin') ? '👑 Admin' : (r.role === 'viewer') ? '👁️ Viewer' : '👤 Commercial';
       var statutBadge = actif
         ? '<span style="display:inline-block;padding:2px 10px;border-radius:20px;background:var(--em100,#FFF3EE);color:var(--em700,#FF4D1C);font-size:.72rem;font-weight:600;">● Actif</span>'
         : '<span style="display:inline-block;padding:2px 10px;border-radius:20px;background:#f8ede9;color:#b91c1c;font-size:.72rem;font-weight:600;">● Désactivé</span>';
@@ -4572,11 +4596,11 @@ async function comptesToggleActif(uid, currentlyActive) {
 
 async function comptesEditRole(uid, currentRole) {
   if (!isAdminUser()) return;
-  var newRole = prompt('Rôle pour ce compte ("admin" ou "commercial") :', currentRole || 'commercial');
+  var newRole = prompt('Rôle pour ce compte :\n\n- admin : accès complet (gestion comptes, tout voir/modifier)\n- commercial : ses clients + commandes\n- viewer : lecture seule (aucune modification)', currentRole || 'commercial');
   if (newRole === null) return;
   newRole = newRole.trim().toLowerCase();
-  if (newRole !== 'admin' && newRole !== 'commercial') {
-    toast('Rôle invalide — utilisez "admin" ou "commercial"', 'err');
+  if (newRole !== 'admin' && newRole !== 'commercial' && newRole !== 'viewer') {
+    toast('Rôle invalide — utilisez "admin", "commercial" ou "viewer"', 'err');
     return;
   }
   try {
@@ -4819,8 +4843,11 @@ async function showApp() {
   try {
     const profil = await db.collection('profils').doc(currentUser.uid).get();
     const role = profil.exists ? (profil.data().role || 'commercial') : 'commercial';
+    window.CURRENT_PROFILE_ROLE = role;
     s2('sb-role', role.charAt(0).toUpperCase()+role.slice(1));
-    s2('menu-role-lbl', role==='admin' ? '👑 Administrateur' : '👤 Commercial');
+    s2('menu-role-lbl', role==='admin' ? '👑 Administrateur' : (role==='viewer' ? '👁️ Viewer (lecture seule)' : '👤 Commercial'));
+    // Mode lecture seule : ajoute une classe sur <body> qui masque les actions.
+    document.body.classList.toggle('cohor-viewer', role === 'viewer' && !isAdminUser());
 
     // Compte désactivé par l'administrateur : on bloque l'accès immédiatement.
     if (profil.exists && profil.data().actif === false) {
