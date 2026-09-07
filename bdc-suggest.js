@@ -1,0 +1,1 @@
+// Module BDC Suggest - Stub
