@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>MDM CRM — Bio N Truffe</title>
+<title>Bio N Truffe CRM — Bio N Truffe</title>
 
 <!-- ═══ PWA ═══ -->
 <link rel="manifest" href="manifest.json">
@@ -11,7 +11,7 @@
 <!-- iOS / Safari -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="MDM CRM">
+<meta name="apple-mobile-web-app-title" content="Bio N Truffe CRM">
 <link rel="apple-touch-icon" href="icons/icon-152.png">
 <link rel="apple-touch-icon" sizes="120x120" href="icons/icon-128.png">
 <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png">
@@ -20,7 +20,7 @@
 <!-- Android / Chrome -->
 <meta name="theme-color" content="#1e3a5f">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="application-name" content="MDM CRM">
+<meta name="application-name" content="Bio N Truffe CRM">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
@@ -4371,7 +4371,7 @@ function accordsGetHtml(accordId) {
 // ─── Gestion des comptes (admin uniquement) ───────────────────────────────
 // ⚠️ Emails administrateurs. En cas de changement d'adresse de connexion,
 // ajoutez simplement la nouvelle ici (l'ancienne peut rester, sans effet).
-var ADMIN_EMAILS = ['loacdev@outlook.fr', 'spoto.christophe@gmail.com'];
+var ADMIN_EMAILS = ['spoto.christophe@gmail.com', 'spoto.christophe@gmail.com'];
 var ADMIN_EMAIL = ADMIN_EMAILS[0];   // conservé pour compatibilité
 // Repli : l'uid de l'admin est mémorisé au 1er accès, ce qui préserve les
 // droits même si l'email change (l'uid, lui, ne change jamais).
@@ -7886,7 +7886,7 @@ const FIREBASE_CONFIG = {
 };
 
 // Config Firebase — STAGING (bac à sable, données bidon). Utilisé UNIQUEMENT
-// si l'URL contient ?test  (ex: https://.../V3mdm/?test). Sinon = PROD.
+// si l'URL contient ?test  (ex: https://.../BioNTruffe/?test). Sinon = PROD.
 const FIREBASE_CONFIG_STAGING = {
   apiKey:            "AIzaSyDWaz0ZGgc9Wiz0gRbrxr1nO4jMf0nhhec",
   authDomain:        "bdcmdm26-staging.firebaseapp.com",
@@ -8079,7 +8079,7 @@ function bdcOnRemiseLigne(input) {
 
 
 // ══════════════════════════════════════════════════════════════════════════
-//  MODULE COMMISSIONS MDM CRM
+//  MODULE COMMISSIONS Bio N Truffe CRM
 // ══════════════════════════════════════════════════════════════════════════
 function COMM_KEY() { return 'mdm_commissions_v1_' + CURRENT_BRAND + (currentUser && currentUser.uid ? '_' + currentUser.uid : ''); }
 function COMM_MODE_KEY() { return 'mdm_comm_mode_v1_' + CURRENT_BRAND + (currentUser && currentUser.uid ? '_' + currentUser.uid : ''); }
@@ -9001,7 +9001,7 @@ function bdcHistExportPDF(id) {
     // Pied de page
     var pageH = doc.internal.pageSize.height;
     doc.setFontSize(8); doc.setTextColor(148,163,184);
-    doc.text('MDM CRM 2026 · LOAC DEV Solutions', 12, pageH-8);
+    doc.text('Bio N Truffe CRM 2026 · LOAC DEV Solutions', 12, pageH-8);
     doc.text('Page 1', 198, pageH-8, {align:'right'});
 
     doc.save(fname);
@@ -9486,35 +9486,12 @@ function bdcBuildHtml() {
     '<tr><td style="padding:20px 28px 28px;text-align:center;">' +
       '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #e6efe6;"><tr><td style="padding-top:16px;text-align:center;">' +
       '<div style="font-size:11px;color:#94a3b8;">' +
-        'Ce bon de commande a \u00e9t\u00e9 transmis via MDM CRM 2026 \u00b7 R\u00e9alis\u00e9 par <strong style="color:#FF4D1C;">LOAC DEV Solutions</strong>' +
+        'Ce bon de commande a \u00e9t\u00e9 transmis via Bio N Truffe CRM 2026 \u00b7 R\u00e9alis\u00e9 par <strong style="color:#FF4D1C;">LOAC DEV Solutions</strong>' +
       '</div>' +
       '</td></tr></table>' +
     '</td></tr>' +
 
-    '</table></td></tr></table>
-<!-- Catalogue Bio N Truffe -->
-<script>
-const PRODUCTS_BIONTRUFFE = [
-  {code:'TARTUFFADE80',ean:'3770028175086',libelle:'TARTUFFADE a la Truffe Noire 2% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'CEPES80',ean:'3770028175079',libelle:'DELICE DE CEPES et Truffe Noire 2% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'SAUCE80',ean:'3770028175062',libelle:'SAUCE CREMEE a la Truffe Noire 1,5% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'PARMESAN80',ean:'3770028175055',libelle:'CREME DE PARMESAN et Truffe Noire 1,5%',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'BALSAMIQUE150',ean:'3770028175017',libelle:'CREME DE BALSAMIQUE Truffe Noire 1,1%',poids:'150ml',pcb:12,tva:5.5,pu_ht:10.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'BALSAMIQUE100',ean:'3770028175147',libelle:'CREME DE BALSAMIQUE Truffe Noire 1,1% Format compact',poids:'100ml',pcb:12,tva:5.5,pu_ht:10.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'HUILE250',ean:'3770028175109',libelle:'HUILE D OLIVE VIERGE EXTRA Truffe Noire Bio AOP Nyons 250ml',poids:'250ml',pcb:12,tva:5.5,pu_ht:19.00,categorie:'Huiles',certif:'AB AOP',origine:'France'},
-  {code:'HUILE100',ean:'3770028175116',libelle:'HUILE D OLIVE VIERGE EXTRA Truffe Noire Bio AOP Nyons 100ml',poids:'100ml',pcb:12,tva:5.5,pu_ht:11.00,categorie:'Huiles',certif:'AB AOP',origine:'France'},
-  {code:'MIEL100',ean:'3770028175000',libelle:'MIEL D ACCACIA a la Truffe Noire 1,1% Bio',poids:'100g',pcb:12,tva:5.5,pu_ht:10.50,categorie:'Huiles',certif:'AB',origine:'France'},
-  {code:'TRUFFE20BROSS',ean:'3770028175130',libelle:'TRUFFES NOIRES Brossees 1ere Cuisson Bio Tuber Melanosporum',poids:'20g',pcb:6,tva:5.5,pu_ht:25.00,categorie:'Truffes',certif:'AB',origine:'France'},
-  {code:'TRUFFE20BRISURES',ean:'3770028175123',libelle:'TRUFFE NOIRE Brisures 1ere Cuisson Bio Tuber Melanosporum',poids:'20g',pcb:6,tva:5.5,pu_ht:20.00,categorie:'Truffes',certif:'AB',origine:'France'},
-  {code:'DUO_CAJOU_AMANDE',ean:'3770028175161',libelle:'DUO CAJOU AMANDE Truffe d Ete 1,4% Bio NEW',poids:'100g',pcb:6,tva:5.5,pu_ht:9.50,categorie:'Nouveautes',certif:'AB',origine:'France'},
-  {code:'CHIPS_PDT',ean:'3770028175154',libelle:'CHIPS ARTISANALES Truffe d Ete 1% Bio NEW',poids:'100g',pcb:16,tva:5.5,pu_ht:3.90,categorie:'Nouveautes',certif:'AB',origine:'France'}
-];
-
-// Remplacer PRODUCTS par PRODUCTS_BIONTRUFFE dans le code
-var PRODUCTS = PRODUCTS_BIONTRUFFE;
-</script>
-
-</body></html>';
+    '</table></td></tr></table></body></html>';
 }
 
 function bdcBuildText() {
@@ -9639,7 +9616,7 @@ function bdcSendOrder() {
 
   // Envoi email via Web3Forms
   payload.access_key = 'c25bd306-bfaf-4a71-ac6d-36658c0df2ed';
-  payload.from_name  = 'MDM CRM';
+  payload.from_name  = 'Bio N Truffe CRM';
   payload.email      = 'spoto.christophe@gmail.com';
   fetch('https://api.web3forms.com/submit',{
     method:'POST',
@@ -11223,7 +11200,7 @@ function dashCaProcess(rows) {
 
 // ═══════════════════════════════════════════════
 // VERSION DU CODE — pour vérifier le déploiement
-var MDM_VERSION = 'v7.2-fix-' + Date.now(); console.log('%c[MDM CRM] Version chargée : ' + MDM_VERSION, 'color:#2563b0;font-weight:bold;font-size:14px');
+var MDM_VERSION = 'v7.2-fix-' + Date.now(); console.log('%c[Bio N Truffe CRM] Version chargée : ' + MDM_VERSION, 'color:#2563b0;font-weight:bold;font-size:14px');
 
 // ═══════════════════════════════════════════════
 // SAUVEGARDE / CHARGEMENT FIRESTORE DES COMMANDES
@@ -15595,7 +15572,7 @@ function syncApplyStk() {
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('sw.js', { scope: '/V3mdm/' })
+    navigator.serviceWorker.register('sw.js', { scope: '/BioNTruffe/' })
       .then(function(reg) {
         console.log('[PWA] Service Worker enregistré, scope:', reg.scope);
       })
@@ -15764,28 +15741,5 @@ if ('serviceWorker' in navigator) {
 })();
 </script>
 <!-- ═══ COHOR-SWITCH-END ═══ -->
-
-<!-- Catalogue Bio N Truffe -->
-<script>
-const PRODUCTS_BIONTRUFFE = [
-  {code:'TARTUFFADE80',ean:'3770028175086',libelle:'TARTUFFADE a la Truffe Noire 2% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'CEPES80',ean:'3770028175079',libelle:'DELICE DE CEPES et Truffe Noire 2% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'SAUCE80',ean:'3770028175062',libelle:'SAUCE CREMEE a la Truffe Noire 1,5% Bio',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'PARMESAN80',ean:'3770028175055',libelle:'CREME DE PARMESAN et Truffe Noire 1,5%',poids:'80g',pcb:12,tva:5.5,pu_ht:8.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'BALSAMIQUE150',ean:'3770028175017',libelle:'CREME DE BALSAMIQUE Truffe Noire 1,1%',poids:'150ml',pcb:12,tva:5.5,pu_ht:10.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'BALSAMIQUE100',ean:'3770028175147',libelle:'CREME DE BALSAMIQUE Truffe Noire 1,1% Format compact',poids:'100ml',pcb:12,tva:5.5,pu_ht:10.50,categorie:'Aides',certif:'AB',origine:'France'},
-  {code:'HUILE250',ean:'3770028175109',libelle:'HUILE D OLIVE VIERGE EXTRA Truffe Noire Bio AOP Nyons 250ml',poids:'250ml',pcb:12,tva:5.5,pu_ht:19.00,categorie:'Huiles',certif:'AB AOP',origine:'France'},
-  {code:'HUILE100',ean:'3770028175116',libelle:'HUILE D OLIVE VIERGE EXTRA Truffe Noire Bio AOP Nyons 100ml',poids:'100ml',pcb:12,tva:5.5,pu_ht:11.00,categorie:'Huiles',certif:'AB AOP',origine:'France'},
-  {code:'MIEL100',ean:'3770028175000',libelle:'MIEL D ACCACIA a la Truffe Noire 1,1% Bio',poids:'100g',pcb:12,tva:5.5,pu_ht:10.50,categorie:'Huiles',certif:'AB',origine:'France'},
-  {code:'TRUFFE20BROSS',ean:'3770028175130',libelle:'TRUFFES NOIRES Brossees 1ere Cuisson Bio Tuber Melanosporum',poids:'20g',pcb:6,tva:5.5,pu_ht:25.00,categorie:'Truffes',certif:'AB',origine:'France'},
-  {code:'TRUFFE20BRISURES',ean:'3770028175123',libelle:'TRUFFE NOIRE Brisures 1ere Cuisson Bio Tuber Melanosporum',poids:'20g',pcb:6,tva:5.5,pu_ht:20.00,categorie:'Truffes',certif:'AB',origine:'France'},
-  {code:'DUO_CAJOU_AMANDE',ean:'3770028175161',libelle:'DUO CAJOU AMANDE Truffe d Ete 1,4% Bio NEW',poids:'100g',pcb:6,tva:5.5,pu_ht:9.50,categorie:'Nouveautes',certif:'AB',origine:'France'},
-  {code:'CHIPS_PDT',ean:'3770028175154',libelle:'CHIPS ARTISANALES Truffe d Ete 1% Bio NEW',poids:'100g',pcb:16,tva:5.5,pu_ht:3.90,categorie:'Nouveautes',certif:'AB',origine:'France'}
-];
-
-// Remplacer PRODUCTS par PRODUCTS_BIONTRUFFE dans le code
-var PRODUCTS = PRODUCTS_BIONTRUFFE;
-</script>
-
 </body>
 </html>
